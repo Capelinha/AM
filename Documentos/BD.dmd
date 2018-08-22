@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="BD" id="86EF04FE-6D7F-EE4B-4FD5-C27C872010E1" version="3.5">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 19:42:43 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>86EF04FE-6D7F-EE4B-4FD5-C27C872010E1</designId>
+</OSDM_Design>

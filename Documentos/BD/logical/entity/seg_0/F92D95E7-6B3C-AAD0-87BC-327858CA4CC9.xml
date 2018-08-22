@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F92D95E7-6B3C-AAD0-87BC-327858CA4CC9" name="DEPARTAMENTO">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 20:12:21 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_departamento" id="C460E2A5-04F8-B73C-9739-913947A8E08C">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 21:57:59 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome" id="CA4AEC98-77E5-60CC-5AA0-08814CD72228">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 21:58:05 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_responsavel" id="D9394842-9E2A-9DA3-027F-CCE98EECD0F2">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 22:50:19 UTC</createdTime>
+<generatorID>54ACA262-4172-68AC-70C9-65BD7A23460C</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<referedAttribute>0B97D392-FE9B-86ED-DBF3-26F488823CF2</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="560338E0-A735-E3BE-4F4D-3DEC07B5C618" name="DEPARTAMENTO PK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 21:58:04 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C460E2A5-04F8-B73C-9739-913947A8E08C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
