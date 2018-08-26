@@ -65,6 +65,16 @@
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="tipo" id="9B40BBCE-9795-F52F-AD3F-775FBEE2EF7C">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-25 13:14:25 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="area_atuacao" id="54E1BECD-596E-82E2-8FDE-6FDD98EB4426">
 <createdBy>mateu</createdBy>
 <createdTime>2018-08-22 21:04:23 UTC</createdTime>
@@ -98,6 +108,46 @@
 <Attribute name="data_abertura" id="0376EE3F-2173-4CE6-024F-9D1602F1DEFD">
 <createdBy>mateu</createdBy>
 <createdTime>2018-08-22 21:09:43 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="endereco" id="CBD55564-0102-3513-9409-B630DFAFFBD1">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-25 13:03:36 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cidade" id="B94D4E6B-8BBA-10BB-372D-244176EBE00D">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-25 13:03:42 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estado" id="B62C221D-63E0-6E23-46FB-003BC41DE42C">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-25 13:03:46 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pais" id="F2E06F5A-6749-7DF7-409D-6B3A5AEF7E88">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-25 13:03:50 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
@@ -144,6 +194,16 @@
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
 <referedAttribute>C460E2A5-04F8-B73C-9739-913947A8E08C</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="status" id="EFAA1FE6-2706-77AC-8B69-879A9969CF3B">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-25 11:29:45 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>

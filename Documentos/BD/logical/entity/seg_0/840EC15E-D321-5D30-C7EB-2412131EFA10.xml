@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="36D54C78-E616-FF8F-B927-A58E8DAA558D" name="ENTREVISTA">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="840EC15E-D321-5D30-C7EB-2412131EFA10" name="FUNCIONARIO">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-22 20:13:08 UTC</createdTime>
+<createdTime>2018-08-25 21:50:43 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_entrevista" id="C4389D28-53F3-E419-10B1-5307C4DCF4BD">
+<Attribute name="id_funcionario" id="F82AA26B-4B2D-9B34-4649-22AB2E723510">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-22 22:21:34 UTC</createdTime>
+<createdTime>2018-08-25 21:51:12 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
@@ -25,9 +25,9 @@
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="data" id="7E2956B9-5743-8434-A867-9DD8153B044D">
+<Attribute name="nome" id="0C850BCB-04EF-9F33-20D4-6C7B5CB76882">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-22 22:21:40 UTC</createdTime>
+<createdTime>2018-08-25 21:51:18 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
@@ -35,9 +35,9 @@
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="endereco" id="22BDED2C-BF67-9F38-002F-2DF2CF0E7443">
+<Attribute name="sobrenome" id="971E941C-43EF-D26E-C6E2-23C68C1B7160">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-25 13:02:56 UTC</createdTime>
+<createdTime>2018-08-25 21:51:40 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
@@ -45,9 +45,9 @@
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cidade" id="7129F42A-30F6-3440-94A8-D4FF0F0E9D4A">
+<Attribute name="email" id="CFC4264B-70B8-A4BE-7563-A953449206EC">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-25 13:03:10 UTC</createdTime>
+<createdTime>2018-08-25 21:51:45 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
@@ -55,9 +55,9 @@
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="estado" id="2255EAF1-E32C-AC94-BDB1-5F38C2A385CA">
+<Attribute name="senha" id="9C21D1FD-6A61-2713-24BC-D6ABD4A9B3A4">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-25 13:03:14 UTC</createdTime>
+<createdTime>2018-08-25 21:51:50 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
@@ -65,52 +65,28 @@
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="pais" id="33D9DC8C-4E0E-E62D-2631-5CA8771261BA">
+<Attribute name="tipo" id="7E83D5CB-0883-F605-730C-74080577468D">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-25 13:03:18 UTC</createdTime>
+<createdTime>2018-08-25 21:51:54 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id_candidato" id="886A9916-6F61-B24C-5C23-1F728AF68A3B">
-<createdBy>mateu</createdBy>
-<createdTime>2018-08-25 11:49:04 UTC</createdTime>
-<generatorID>6ADB1976-9D3D-6698-A2B2-AB647B7D72F2</generatorID>
-<ownerDesignName>BD</ownerDesignName>
-<engineerTo>
-<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
-</engineerTo>
-<referedAttribute>F8883523-CC38-D396-B223-1E0A377990E9</referedAttribute>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id_vaga" id="A7476036-CA82-3086-6E0E-F0ECBF46B760">
-<createdBy>mateu</createdBy>
-<createdTime>2018-08-25 11:49:04 UTC</createdTime>
-<generatorID>6ADB1976-9D3D-6698-A2B2-AB647B7D72F2</generatorID>
-<ownerDesignName>BD</ownerDesignName>
-<engineerTo>
-<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
-</engineerTo>
-<referedAttribute>C0B1BEC2-CA47-D717-1E5D-522F0DD0A95B</referedAttribute>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="55F81463-BCAA-D1AC-81D1-E385EB50F4F2" name="ENTREVISTAS PK">
+<identifier id="7F530F68-3E2C-A7A3-833C-81AE390D2584" name="FUNCIONARIO PK">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-22 22:22:21 UTC</createdTime>
+<createdTime>2018-08-25 21:51:39 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>C4389D28-53F3-E419-10B1-5307C4DCF4BD</attributeRef>
+<attributeRef>F82AA26B-4B2D-9B34-4649-22AB2E723510</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

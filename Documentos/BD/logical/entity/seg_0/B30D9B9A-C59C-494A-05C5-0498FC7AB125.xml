@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A8A3A69E-45D2-AAE6-2F41-50C81E1F4ADE" name="INSCRICAO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B30D9B9A-C59C-494A-05C5-0498FC7AB125" name="PROVA">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-22 23:17:09 UTC</createdTime>
+<createdTime>2018-08-25 11:53:12 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
@@ -15,33 +15,39 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_candidato" id="F8883523-CC38-D396-B223-1E0A377990E9">
+<Attribute name="id_prova" id="C2350CBF-14CC-0DCC-CB4F-5629DBAED3CB">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-22 23:21:44 UTC</createdTime>
-<generatorID>059B6CC7-7417-4DE6-F4CD-AC302023CEAC</generatorID>
+<createdTime>2018-08-25 11:53:30 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
-<referedAttribute>8E3661F7-4F65-46EB-F46B-B8A318925349</referedAttribute>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_vaga" id="C0B1BEC2-CA47-D717-1E5D-522F0DD0A95B">
+<Attribute name="titulo" id="104946AC-85D2-21B2-CAB1-1FAAF6174FE9">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-22 23:21:47 UTC</createdTime>
-<generatorID>625DB398-F1C0-B9D3-B43A-5EBADB96EEC2</generatorID>
+<createdTime>2018-08-25 11:53:18 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
-<referedAttribute>E2E22B09-A5F4-963D-61E5-8B58B47B0CD2</referedAttribute>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="status" id="6481BA02-BC42-CEE7-6068-1EC5559586A0">
+<Attribute name="area_conhecimento" id="8FC70EA6-4406-89A4-D9D5-FCA589E2BCC1">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-25 11:42:51 UTC</createdTime>
+<createdTime>2018-08-25 11:53:39 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo" id="5CA90A7E-C418-717E-2CB9-94699D842C69">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-25 11:53:46 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
@@ -51,17 +57,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="8CA0CFE4-8DF8-C53D-BDAE-361FBD44C1BC" name="INSCRICAO PK">
+<identifier id="095C603D-5442-FAC6-1437-7D146222FB0B" name="PROVA PK">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-22 23:21:44 UTC</createdTime>
+<createdTime>2018-08-25 11:53:38 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>F8883523-CC38-D396-B223-1E0A377990E9</attributeRef>
-<attributeRef>C0B1BEC2-CA47-D717-1E5D-522F0DD0A95B</attributeRef>
+<attributeRef>C2350CBF-14CC-0DCC-CB4F-5629DBAED3CB</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
