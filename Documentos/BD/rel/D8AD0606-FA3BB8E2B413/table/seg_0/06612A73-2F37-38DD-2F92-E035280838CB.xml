@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="06612A73-2F37-38DD-2F92-E035280838CB" name="TAG_VAGA">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>C35A1F18-D671-6DA3-9E2D-F2F692FFEFFC</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tag" id="A16836D2-B79C-0068-4250-7A55939A881C">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>FBB91FFD-9E88-C0F6-045B-A41A712969DB</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5123251F-BBA7-E90E-CF2F-92AFF8E253C1" referredColumn="17174984-FFA8-57ED-87AA-B4E643CFF3E8"/>
+</associations>
+</Column>
+<Column name="id_vaga" id="882ACED4-8C96-B21C-1F69-1EB9AD9A0B73">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>701A6CAC-328B-FDDE-286D-94893C76A506</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BC9A6F6D-A927-AF88-A708-3A12A9779393" referredColumn="B2A862F3-E05C-961A-A4C6-EC21DEE6F47D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="38AC8CEA-F768-2610-13CD-449935E0973D" name="TAG_VAGA_PK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>29DFEF76-F109-8107-3A5D-AFD0C89FADF9</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A16836D2-B79C-0068-4250-7A55939A881C"/>
+<colUsage columnID="882ACED4-8C96-B21C-1F69-1EB9AD9A0B73"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B940A347-92E3-4A05-ACD0-03EF3CC403F5" name="tag_tag_vaga_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>9848AAC5-8A71-4D2F-41F8-C83FAD3D2830</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A16836D2-B79C-0068-4250-7A55939A881C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="610B3E12-6A67-F860-C5E4-055166823843" name="vag_tag_vaga_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>48F0401D-712F-06E8-3DFF-BEB26938BC87</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="882ACED4-8C96-B21C-1F69-1EB9AD9A0B73"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

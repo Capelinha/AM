@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="tag_tag_vaga_FK" directorySegmentName="seg_0" id="9848AAC5-8A71-4D2F-41F8-C83FAD3D2830">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-25 21:21:29 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<sourcePk>F2915157-0959-5C90-31ED-2C7C7E66258D</sourcePk>
+<targetPk>29DFEF76-F109-8107-3A5D-AFD0C89FADF9</targetPk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>183923B3-F20B-D102-EC61-BBD63B3AACB1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C35A1F18-D671-6DA3-9E2D-F2F692FFEFFC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B07A7A25-C5E2-4FAF-912D-02F786ED7F48" name="VAGA_PROVA">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>FC1ED94A-D464-41D8-775D-A62638FA4DB5</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_prova" id="B080CBCD-29A8-997F-0918-752F304ECD20">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>3662F230-B242-92EA-0873-DDA574BC4F55</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="413FA6F7-BC21-C727-D58A-70CA2C997D9C" referredColumn="4674E0A1-8DA7-239A-73B0-8D2FBC9CE107"/>
+</associations>
+</Column>
+<Column name="id_vaga" id="2434CA8D-EB46-55EA-5630-354FD1814070">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>23076EF9-2DF7-5720-BE2A-BFD699C9E02D</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9772D164-41D8-63DC-1C0F-36C957995707" referredColumn="B2A862F3-E05C-961A-A4C6-EC21DEE6F47D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A9131995-2F93-8AE7-DC58-7D8C7220F8E7" name="VAGAS_PROVAS_PK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>A885FE93-070D-908E-AEEF-CAF10F73239B</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2434CA8D-EB46-55EA-5630-354FD1814070"/>
+<colUsage columnID="B080CBCD-29A8-997F-0918-752F304ECD20"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3E00DDDB-F589-1FC1-8BFF-15BCBFBA2544" name="prova_vaga_prova_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>9B21D154-323D-9DF3-7E69-413A3AD69589</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B080CBCD-29A8-997F-0918-752F304ECD20"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27DE8F23-3A5B-A403-FE91-E7AAB88854BC" name="vaga_vaga_prova_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>51EF546C-38E7-6789-CCE0-9855334B6496</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2434CA8D-EB46-55EA-5630-354FD1814070"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="56D29B1C-70B7-D8F7-9575-0154E9B1BC0A" name="TAG_CANDIDATO">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>027A3AC9-2E70-46D7-FCE1-E8788574692A</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tag" id="71584A58-ECB1-8664-DC68-50E494C2FD7A">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>D2EEACCF-FF4E-390B-F8F5-DE8260FB8182</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="854F7CAB-9F0A-7D8F-3165-88EAFFA57094" referredColumn="17174984-FFA8-57ED-87AA-B4E643CFF3E8"/>
+</associations>
+</Column>
+<Column name="id_candidato" id="48F1E69D-BCB9-7DB6-184D-98ECD297AB2F">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>5F6430D1-3EF7-694C-6B36-2676A916DE3A</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2A96EF46-4BE8-9096-FCA3-943EA9DF4E30" referredColumn="47A0263B-BEF1-492F-41A0-90D362A9EB84"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="49B26CF0-877A-6C0C-EAA2-1F91DF3D1195" name="TAG_CANDIDATO_PK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>43C6B599-A27F-BD6C-5215-A9A0D0C1B27B</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48F1E69D-BCB9-7DB6-184D-98ECD297AB2F"/>
+<colUsage columnID="71584A58-ECB1-8664-DC68-50E494C2FD7A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="739CA965-5215-C34A-67F4-4B9A8709275C" name="candidato_tag_candidato_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>0037376F-9E03-F5FF-EAC4-878A71298E4B</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="48F1E69D-BCB9-7DB6-184D-98ECD297AB2F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="25DD62E5-A1A6-330B-BDDE-88F6CA59ADE9" name="tag_tag_candidato_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>5CD64425-766C-6C76-0018-761BD108AAEE</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="71584A58-ECB1-8664-DC68-50E494C2FD7A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

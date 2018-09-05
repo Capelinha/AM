@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="78E4656D-CF0D-D727-2853-76B16248EF69" name="RESPOSTA_QUESTAO">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-25 12:14:05 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="resposta" id="F23D0E17-A7B0-64C1-6744-0CD2EF75E142">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-25 12:14:23 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tentativa" directorySegmentName="seg_0" id="169AFCB9-4976-BE44-8451-F425796167B2">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-30 20:23:03 UTC</createdTime>
+<generatorID>52113EAA-C860-17C6-C446-5AFFC8FD6A24</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<referedAttribute>9AD9F52E-1924-322F-A486-D03A4487905A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_questao" id="6DFD3BD1-4D2E-4DE5-1802-42EB8881E1CB">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 12:51:41 UTC</createdTime>
+<generatorID>43445172-FCCC-BCD9-5F10-7B807BE427AF</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<referedAttribute>C92E4A71-7D08-CC05-4EC0-6E88E85662E4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3A188D45-346B-04D6-A941-6231F9A26C67" name="RESPOSTA_QUESTAO_PK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-30 20:22:27 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>43445172-FCCC-BCD9-5F10-7B807BE427AF,52113EAA-C860-17C6-C446-5AFFC8FD6A24</newElementsIDs>
+<usedAttributes>
+<attributeRef>6DFD3BD1-4D2E-4DE5-1802-42EB8881E1CB</attributeRef>
+<attributeRef>169AFCB9-4976-BE44-8451-F425796167B2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

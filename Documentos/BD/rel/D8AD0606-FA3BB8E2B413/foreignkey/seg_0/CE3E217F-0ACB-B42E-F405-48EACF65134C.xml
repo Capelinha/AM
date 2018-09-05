@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CE3E217F-0ACB-B42E-F405-48EACF65134C" containerWithKeyObject="916C0914-F5AC-9F1C-DCC9-F9B51D891E42" localFKIndex="D59A5539-D786-3B24-2335-3CFF43639C47" name="questao_resosta_questao_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>43445172-FCCC-BCD9-5F10-7B807BE427AF</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<referredTableLongName>QUESTAO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>1517312C-DE56-8D01-2171-3B8596DBEDAF</referredTableID>
+<keyObject>5E3ECCC3-0C6E-3EE9-A90D-9DB91E06D95E</keyObject>
+<referredKeyID>5E3ECCC3-0C6E-3EE9-A90D-9DB91E06D95E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_questao</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
