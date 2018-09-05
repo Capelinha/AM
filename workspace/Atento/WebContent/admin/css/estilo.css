@@ -1,0 +1,23 @@
+.tabela-icone{
+  color: #337ab7;
+}
+
+.tabela-opcoes{
+  width: 100px;
+  text-align: center;
+}
+
+.tabla-id{
+  width: 50px;
+  text-align: right;
+}
+
+.navbar-nav li a i{
+  margin-left: 5px;
+  margin-right: 20px;
+  font-size: 25px;
+}
+
+.navbar-nav li a b{
+  font-size: 16px;
+}
