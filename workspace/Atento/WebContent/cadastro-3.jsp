@@ -37,4 +37,4 @@
         <div class="bloco-cruz bloco-cruz-di"> </div>
     </section>
 </main>
-<%@ include file="atento-flooter.jsp" %>
+<%@ include file="atento-footer.jsp" %>

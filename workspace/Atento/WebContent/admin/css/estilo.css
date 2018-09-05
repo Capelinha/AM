@@ -21,3 +21,23 @@
 .navbar-nav li a b{
   font-size: 16px;
 }
+
+.content-header h1{
+	display:inline-block
+}
+
+.botao-cadastrar{
+	font-size: 23px;
+	margin-left:20px;
+	padding: 0px 10px 0px 10px;
+	display:inline-block;
+	border: 2px solid #3c8dbc;
+	
+}
+
+@media (max-width: 356px) {
+	.botao-cadastrar{
+		dislay:inline;
+		margin:15px 0px 15px 0px;
+	}	
+}

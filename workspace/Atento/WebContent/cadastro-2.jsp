@@ -224,4 +224,4 @@
         </section>
     </form>
 </main>
-<%@ include file="atento-flooter.jsp" %>
+<%@ include file="atento-footer.jsp" %>
