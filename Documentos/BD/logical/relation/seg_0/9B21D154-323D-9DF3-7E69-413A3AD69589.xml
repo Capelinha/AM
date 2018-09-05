@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_13" directorySegmentName="seg_0" id="9B21D154-323D-9DF3-7E69-413A3AD69589">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="prova_vaga_prova_FK" directorySegmentName="seg_0" id="9B21D154-323D-9DF3-7E69-413A3AD69589">
 <createdBy>mateu</createdBy>
 <createdTime>2018-08-25 11:55:22 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
@@ -7,6 +7,7 @@
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
 <sourcePk>095C603D-5442-FAC6-1437-7D146222FB0B</sourcePk>
+<targetPk>A885FE93-070D-908E-AEEF-CAF10F73239B</targetPk>
 <identifying>true</identifying>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>

@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="010C9796-ACD6-A387-6A30-106BC8B2F91B" name="INSCRICAO">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>A8A3A69E-45D2-AAE6-2F41-50C81E1F4ADE</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nota_compatibilidade" id="868D370A-B60B-6A17-94E4-AC583AC165CC">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>CAF14506-2BD5-EAC4-EADE-9FF405D1298F</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="34EA0FB2-D618-C041-0BB1-BA76CEC14EAE">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>6481BA02-BC42-CEE7-6068-1EC5559586A0</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>INSCRICAO_STATUS_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>7</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="id_vaga" id="F1C73C74-2737-4862-665E-933CA7E2FFCA">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>F646204A-C1C9-3968-6FB1-CFFECAFE7EC4</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ED591985-077A-6A20-E564-B39B6448F069" referredColumn="B2A862F3-E05C-961A-A4C6-EC21DEE6F47D"/>
+</associations>
+</Column>
+<Column name="id_candidato" id="F6C32A0F-E9D1-C93D-43B7-CC36CA456EBB">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>507D5E8E-520E-5AFD-F21D-EB8A2205286E</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C881301C-ECA3-87F7-68E2-0C0CD2B3C22A" referredColumn="47A0263B-BEF1-492F-41A0-90D362A9EB84"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A055F526-4F51-34E4-3D15-74A03A55A706" name="INSCRICAO_PK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>8CA0CFE4-8DF8-C53D-BDAE-361FBD44C1BC</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6C32A0F-E9D1-C93D-43B7-CC36CA456EBB"/>
+<colUsage columnID="F1C73C74-2737-4862-665E-933CA7E2FFCA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E36BEA5C-CCF3-A832-3691-702FC23CCD75" name="candidato_inscricao_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>059B6CC7-7417-4DE6-F4CD-AC302023CEAC</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6C32A0F-E9D1-C93D-43B7-CC36CA456EBB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E418166C-16D0-D68E-13B8-7560FFBEFA7C" name="vaga_inscricao_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>625DB398-F1C0-B9D3-B43A-5EBADB96EEC2</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F1C73C74-2737-4862-665E-933CA7E2FFCA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

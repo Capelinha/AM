@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_6" directorySegmentName="seg_0" id="E606637F-8287-493A-8351-89152AE01C08">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="candidato_arquivo_FK" directorySegmentName="seg_0" id="E606637F-8287-493A-8351-89152AE01C08">
 <createdBy>mateu</createdBy>
 <createdTime>2018-08-22 22:50:37 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
@@ -7,6 +7,7 @@
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
 <sourcePk>4943EB0B-8B60-3F0E-C8FE-2FAE55A4B4C7</sourcePk>
+<targetPk>C6BDA74F-CFD8-7E2A-4324-22E3BDC1D450</targetPk>
 <identifying>false</identifying>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>

@@ -1,0 +1,171 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="767B4B62-409E-E0C9-FEF9-CCA61DFA8CF8" name="TENTATIVA">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>BD0DE6F0-5916-A489-ACCF-DC044ED31EB6</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tentativa" id="A5FF82D1-4D16-2A4F-D42D-6265CDA4C952">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>9AD9F52E-1924-322F-A486-D03A4487905A</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nota" id="9E332283-29EB-43DF-4FAA-7B6C8165F6E2">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>EEE2ABFE-A1A7-5090-E921-B3E22589FE88</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="inicio" id="8C80A33F-C3E8-951A-06D2-EC5734B7F2F3">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>28CC1AAC-26CC-EF37-86D9-F9CC93816231</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fim" id="57788464-805C-2622-9E9A-04D3BE923C9F">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>1E0EA602-1684-5DCC-A70D-156233A01BED</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="n_logins" id="58F129A7-8974-CB00-4DC8-2134A59B9E71">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>35767CD8-5575-2553-A9DB-BC738FF5564F</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="72078336-A972-4B0C-1401-0617D5988E49">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>E6A35D55-CC69-77C4-DA45-93EF4FA3BF6E</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>TENTATIVA_STATUS_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_vaga" id="91CE9A05-5306-7181-C14B-1F01B8199C53">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>64596DB7-C5AD-9109-377F-08AA515479FD</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BA64AB07-3288-FF61-9875-0A68E51E708B" referredColumn="2434CA8D-EB46-55EA-5630-354FD1814070"/>
+</associations>
+</Column>
+<Column name="id_prova" id="E82C881E-B642-921E-31DB-A04C8EDA21F1">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>DB144698-397E-7F9A-8247-B29759913A30</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BA64AB07-3288-FF61-9875-0A68E51E708B" referredColumn="B080CBCD-29A8-997F-0918-752F304ECD20"/>
+</associations>
+</Column>
+<Column name="id_candidato" id="1B893EF1-2338-EA40-053F-4EACC6D3072C">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>4371B0D0-44DB-1773-6C81-A5C4CAE5851F</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DDD4CD26-0540-933C-6839-0B11B3C7284A" referredColumn="47A0263B-BEF1-492F-41A0-90D362A9EB84"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D4E97BA4-2C15-BE4D-020D-C1D886136FBF" name="TENTATIVA_PK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>438633B9-5CB6-B391-0500-7E0F81220679</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A5FF82D1-4D16-2A4F-D42D-6265CDA4C952"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="67B0D925-4336-5047-2E5A-2373CB8BEA6C" name="candidato_tentativa_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>90954917-1F9C-DEC2-19AD-F3399E9EA480</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1B893EF1-2338-EA40-053F-4EACC6D3072C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2C026027-C7D6-88A8-3903-53FA5603799D" name="vaga_prova_tentativa_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>38EA5ACA-7E25-DEEC-C9E6-A96D97486A40</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="91CE9A05-5306-7181-C14B-1F01B8199C53"/>
+<colUsage columnID="E82C881E-B642-921E-31DB-A04C8EDA21F1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -22,8 +22,11 @@
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="nome" id="CA4AEC98-77E5-60CC-5AA0-08814CD72228">
 <createdBy>mateu</createdBy>
@@ -32,31 +35,24 @@
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id_responsavel" id="D9394842-9E2A-9DA3-027F-CCE98EECD0F2">
-<createdBy>mateu</createdBy>
-<createdTime>2018-08-22 22:50:19 UTC</createdTime>
-<generatorID>54ACA262-4172-68AC-70C9-65BD7A23460C</generatorID>
-<ownerDesignName>BD</ownerDesignName>
-<engineerTo>
-<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
-</engineerTo>
-<referedAttribute>0B97D392-FE9B-86ED-DBF3-26F488823CF2</referedAttribute>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="560338E0-A735-E3BE-4F4D-3DEC07B5C618" name="DEPARTAMENTO PK">
+<identifier id="560338E0-A735-E3BE-4F4D-3DEC07B5C618" name="DEPARTAMENTO_PK">
 <createdBy>mateu</createdBy>
 <createdTime>2018-08-22 21:58:04 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="false"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>C460E2A5-04F8-B73C-9739-913947A8E08C</newElementsIDs>
 <usedAttributes>
 <attributeRef>C460E2A5-04F8-B73C-9739-913947A8E08C</attributeRef>
 </usedAttributes>

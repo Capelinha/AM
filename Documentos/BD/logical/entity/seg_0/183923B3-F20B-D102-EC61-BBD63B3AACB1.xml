@@ -22,8 +22,11 @@
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="tag" id="41D070FC-10F2-E81C-33B5-7C42867903E0">
 <createdBy>mateu</createdBy>
@@ -32,19 +35,24 @@
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="F2915157-0959-5C90-31ED-2C7C7E66258D" name="TAG_VAGA PK">
+<identifier id="F2915157-0959-5C90-31ED-2C7C7E66258D" name="TAG_PK">
 <createdBy>mateu</createdBy>
 <createdTime>2018-08-25 21:20:55 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="false"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>9842D0AB-99C5-5A00-CE3B-693CB4211152</newElementsIDs>
 <usedAttributes>
 <attributeRef>9842D0AB-99C5-5A00-CE3B-693CB4211152</attributeRef>
 </usedAttributes>

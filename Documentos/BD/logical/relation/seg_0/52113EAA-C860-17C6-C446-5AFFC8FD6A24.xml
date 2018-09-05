@@ -1,12 +1,13 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_25" directorySegmentName="seg_0" id="C6631FE2-2875-FEAB-7255-243B77D3A290">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="tentativa_resposta_questao_FK" directorySegmentName="seg_0" id="52113EAA-C860-17C6-C446-5AFFC8FD6A24">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-25 12:24:51 UTC</createdTime>
+<createdTime>2018-08-30 20:23:03 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
 <sourcePk>438633B9-5CB6-B391-0500-7E0F81220679</sourcePk>
+<targetPk>3A188D45-346B-04D6-A941-6231F9A26C67</targetPk>
 <identifying>true</identifying>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CE42A6DD-3C6F-6F2B-D276-94AE2F1FD897" containerWithKeyObject="DC6C982B-40D7-1863-1313-E4D3138B7580" localFKIndex="B0E04EFE-F4D4-B135-AE44-5F105B1CD50F" name="inscricao_entrevista_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>6ADB1976-9D3D-6698-A2B2-AB647B7D72F2</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<referredTableLongName>INSCRICAO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>010C9796-ACD6-A387-6A30-106BC8B2F91B</referredTableID>
+<keyObject>A055F526-4F51-34E4-3D15-74A03A55A706</keyObject>
+<referredKeyID>A055F526-4F51-34E4-3D15-74A03A55A706</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_candidato,id_vaga</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
