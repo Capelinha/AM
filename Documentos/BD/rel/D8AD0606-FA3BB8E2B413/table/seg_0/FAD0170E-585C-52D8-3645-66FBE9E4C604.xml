@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FAD0170E-585C-52D8-3645-66FBE9E4C604" name="ARQUIVO">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:26 UTC</createdTime>
+<generatorID>CD8F2368-ADAA-2859-E6D5-39B87C0DCE46</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_arquivo" id="56EEC5B1-4B2C-1EE5-A673-DCFE243BB288">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:26 UTC</createdTime>
+<generatorID>4416BD63-20B2-200A-1530-04D0E394A084</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="arquivo" id="9C7E41DC-E42A-D94D-A6A5-997092650BF8">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>F36DDED7-9D03-432C-1727-7692CACF48A5</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="89B24EB7-8BD7-9BB3-FD88-CCFE3704D192">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>AA1E0B75-B6BD-AE52-904A-E161255B6D6F</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="extensao" id="65D6C0E4-679A-555A-DCA5-512B25D38FB6">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>1F72F1BC-D300-9AE9-04BA-17C0FCA89DE3</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_candidato" id="CD8697EA-193F-AD05-E792-AA18B76D85D6">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>7459B203-60BD-53A9-2120-053BD07AEA89</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="75878E3B-C214-D362-9DDB-8D549A918379" referredColumn="47A0263B-BEF1-492F-41A0-90D362A9EB84"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="67114C84-CFCB-3325-BB41-55E89D950653" name="ARQUIVO_PK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>C6BDA74F-CFD8-7E2A-4324-22E3BDC1D450</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="56EEC5B1-4B2C-1EE5-A673-DCFE243BB288"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2F1C9147-307C-F178-4A4D-357EE18AFD5E" name="candidato_arquivo_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 14:26:27 UTC</createdTime>
+<generatorID>E606637F-8287-493A-8351-89152AE01C08</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD8697EA-193F-AD05-E792-AA18B76D85D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

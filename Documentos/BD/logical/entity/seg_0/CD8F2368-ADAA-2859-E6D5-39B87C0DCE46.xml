@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CD8F2368-ADAA-2859-E6D5-39B87C0DCE46" name="ARQUIVO">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 22:47:26 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_arquivo" id="4416BD63-20B2-200A-1530-04D0E394A084">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 22:47:32 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="arquivo" id="F36DDED7-9D03-432C-1727-7692CACF48A5">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 22:47:37 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome" id="AA1E0B75-B6BD-AE52-904A-E161255B6D6F">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 22:47:40 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="extensao" id="1F72F1BC-D300-9AE9-04BA-17C0FCA89DE3">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 22:47:44 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_candidato" id="7459B203-60BD-53A9-2120-053BD07AEA89">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-31 13:53:20 UTC</createdTime>
+<generatorID>E606637F-8287-493A-8351-89152AE01C08</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<referedAttribute>8E3661F7-4F65-46EB-F46B-B8A318925349</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C6BDA74F-CFD8-7E2A-4324-22E3BDC1D450" name="ARQUIVO_PK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-22 22:48:04 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>4416BD63-20B2-200A-1530-04D0E394A084</newElementsIDs>
+<usedAttributes>
+<attributeRef>4416BD63-20B2-200A-1530-04D0E394A084</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

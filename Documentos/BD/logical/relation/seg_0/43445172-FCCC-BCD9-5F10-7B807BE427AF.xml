@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="questao_resosta_questao_FK" directorySegmentName="seg_0" id="43445172-FCCC-BCD9-5F10-7B807BE427AF">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-30 20:22:59 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<sourcePk>193954D8-FCD4-9C0A-FE10-89BE5F0E712F</sourcePk>
+<targetPk>3A188D45-346B-04D6-A941-6231F9A26C67</targetPk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C79A6849-18B8-D1DC-7E6F-3FD78ABCC12A</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>78E4656D-CF0D-D727-2853-76B16248EF69</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

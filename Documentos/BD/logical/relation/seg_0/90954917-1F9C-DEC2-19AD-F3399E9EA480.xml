@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="candidato_tentativa_FK" directorySegmentName="seg_0" id="90954917-1F9C-DEC2-19AD-F3399E9EA480">
+<createdBy>mateu</createdBy>
+<createdTime>2018-08-25 12:21:15 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<sourcePk>4943EB0B-8B60-3F0E-C8FE-2FAE55A4B4C7</sourcePk>
+<targetPk>438633B9-5CB6-B391-0500-7E0F81220679</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>22E9A768-8507-9F77-357E-D7B8784A81D7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BD0DE6F0-5916-A489-ACCF-DC044ED31EB6</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
