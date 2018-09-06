@@ -29,7 +29,7 @@
 	                    <div class="box-body">
 	                    
 	                    	<!-- Dialogo de cadastro -->
-	                    	<dialog open id="dialogo-departamentos">
+	                    	<dialog id="dialogo-departamentos">
 								<div class="box box-warning">
 						            <div class="box-header with-border">
 						              <h3 class="box-title">Novo departamento</h3>
@@ -104,7 +104,24 @@
 	            'info': true,
 	            'autoWidth': false
 	        })
+	        
+	        $('.botao-cadastrar').click(function(){
+	        	$('#dialogo-departamentos').attr("open", true);
+	        	
+	        });
+	        
+	        $('#dialogo-departamentos .btn-default').click(function(){
+	        	$('#dialogo-departamentos').attr("open", false);
+	        	
+	        });
+	        
+	        $('#dialogo-departamentos .btn-info').click(function(){
+	        	$('#dialogo-departamentos').attr("open", false);
+	        	
+	        });
 	    })
+	    
+	    
 	</script>
 
 </body>
