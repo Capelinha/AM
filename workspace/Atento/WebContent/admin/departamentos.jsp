@@ -93,7 +93,7 @@
 	</div>
 	<!-- /.content-wrapper -->
 	<%@ include file="footer.jsp" %>
-	
+	<script src="js/dialog-polyfill.js"></script>
 	<script>
 	    $(function() {
 	        $('#tabela').DataTable({
@@ -105,18 +105,21 @@
 	            'autoWidth': false
 	        })
 	        
+	        var dialog = document.getElementById("dialogo-departamentos");
+	        dialogPolyfill.registerDialog(dialog);
+	        
 	        $('.botao-cadastrar').click(function(){
-	        	$('#dialogo-departamentos').attr("open", true);
+	        	 dialog.showModal();
 	        	
 	        });
 	        
 	        $('#dialogo-departamentos .btn-default').click(function(){
-	        	$('#dialogo-departamentos').attr("open", false);
+	        	document.getElementById("dialogo-departamentos").close();
 	        	
 	        });
 	        
 	        $('#dialogo-departamentos .btn-info').click(function(){
-	        	$('#dialogo-departamentos').attr("open", false);
+	        	document.getElementById("dialogo-departamentos").close();
 	        	
 	        });
 	    })
