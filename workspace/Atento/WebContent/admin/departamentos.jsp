@@ -27,6 +27,8 @@
 	                    </div>
 	                    <!-- /.box-header -->
 	                    <div class="box-body">
+	                    
+	                    	<!-- Dialogo de cadastro -->
 	                    	<dialog open id="dialogo-departamentos">
 								<div class="box box-warning">
 						            <div class="box-header with-border">
@@ -34,7 +36,7 @@
 						            </div>
 						            <!-- /.box-header -->
 						            <div class="box-body">
-						              <form role="form">
+					              <form role="form">
 						                <!-- text input -->
 						                <div class="form-group">
 						                  <label>Nome</label>
@@ -47,9 +49,9 @@
 						                <button type="submit" class="btn btn-default">Cancelar</button>
 						                <button type="submit" class="btn btn-info pull-right">Cadastrar</button>
 						              </div>
-						            </div>
 						          </div>
 							</dialog>
+							
 	                        <table id="tabela" class="table table-bordered table-hover">
 	                            <thead>
 	                                <tr>
@@ -91,6 +93,19 @@
 	</div>
 	<!-- /.content-wrapper -->
 	<%@ include file="footer.jsp" %>
+	
+	<script>
+	    $(function() {
+	        $('#tabela').DataTable({
+	            'paging': true,
+	            'lengthChange': false,
+	            'searching': false,
+	            'ordering': true,
+	            'info': true,
+	            'autoWidth': false
+	        })
+	    })
+	</script>
 
 </body>
 

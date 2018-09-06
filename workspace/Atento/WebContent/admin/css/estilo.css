@@ -59,7 +59,7 @@
 dialog{
 	background: none;
 	border: 0px solid #d0d0d0;
-	
+	z-index:30;
 }
 
 #dialogo-departamentos{
@@ -68,5 +68,6 @@ dialog{
 
 #dialogo-departamentos .box{
 	box-shadow:0px 0px 2px 2px #D0D0D0;	
+	background-color: #FFFFFF;
 }
 
