@@ -56,4 +56,17 @@
 	text-align:left;
 }
 
+dialog{
+	background: none;
+	border: 0px solid #d0d0d0;
+	
+}
+
+#dialogo-departamentos{
+	min-width:30%;
+}
+
+#dialogo-departamentos .box{
+	box-shadow:0px 0px 2px 2px #D0D0D0;	
+}
 

@@ -27,6 +27,29 @@
 	                    </div>
 	                    <!-- /.box-header -->
 	                    <div class="box-body">
+	                    	<dialog open id="dialogo-departamentos">
+								<div class="box box-warning">
+						            <div class="box-header with-border">
+						              <h3 class="box-title">Novo departamento</h3>
+						            </div>
+						            <!-- /.box-header -->
+						            <div class="box-body">
+						              <form role="form">
+						                <!-- text input -->
+						                <div class="form-group">
+						                  <label>Nome</label>
+						                  <input type="text" class="form-control" placeholder="Nome ...">
+						                </div>
+						              </form>
+						            </div>
+						            <!-- /.box-body -->
+						            <div class="box-footer">
+						                <button type="submit" class="btn btn-default">Cancelar</button>
+						                <button type="submit" class="btn btn-info pull-right">Cadastrar</button>
+						              </div>
+						            </div>
+						          </div>
+							</dialog>
 	                        <table id="tabela" class="table table-bordered table-hover">
 	                            <thead>
 	                                <tr>
