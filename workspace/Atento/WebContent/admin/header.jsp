@@ -92,7 +92,7 @@
 
                         <li class="header">Analista RH</li>
 
-                        <li class="treeview<% if(pageName.contains("vagas")) out.print(" active"); %>">
+                        <li class="treeview<% if(pageName.contains("vagas") || pageName.contains("nova-vaga")) out.print(" active"); %>">
                             <a href="">
                                 <i class="fa fa-font-awesome"></i>
                                 <span>Vagas</span>
@@ -102,7 +102,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li <% if(pageName.contains("vagas")) out.print( "class='active'"); %>><a href="vagas.jsp"><i class="fa fa-th-list"></i> Listar vagas</a></li>
-                                <li><a href="#"><i class="fa fa-plus"></i> Cadastrar vaga</a></li>
+                                <li <% if(pageName.contains("nova-vaga")) out.print( "class='active'"); %>><a href="nova-vaga.jsp"><i class="fa fa-plus"></i> Cadastrar vaga</a></li>
                             </ul>
                         </li>
 

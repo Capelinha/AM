@@ -32,7 +32,7 @@
 	              		<form role="form">
 			                <div class="form-group">
 				                <label>Título da vaga</label>
-				                <select class="form-control select2" style="width: 100%;">
+				                <select class="form-control " style="width: 100%;">
 				                  <option selected="selected">Nenhuma</option>
 				                  <option>Analista de RH</option>
 				                  <option>Consultor de marketing</option>
@@ -81,10 +81,12 @@
 	                                <label>Area de atuação*</label>
 	                                <input type="text" class="form-control" placeholder="Area ...">
 	                            </div>
-	                            <div class="form-group">
-	                                <label>Salário</label>
-	                                <input type="number" class="form-control" placeholder="Salário ...">
-	                            </div>
+	                            <label>Salário</label>
+	                            <div class="input-group">
+					                <span class="input-group-addon"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">R$</font></font></span>
+					                <input type="number" class="form-control" step="1">
+					                <span class="input-group-addon"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.00</font></font></span>
+					            </div>
 	                            <div class="form-group">
 	                                <label>Departamento*</label>
 	                                <input type="text" class="form-control" placeholder="Departamento ...">
@@ -189,7 +191,7 @@
 					              		<form role="form">
 							                <div class="form-group">
 								                <label>Título da prova</label>
-								                <select class="form-control select2" style="width: 100%;">
+								                <select class="form-control" style="width: 100%;">
 								                  <option selected="selected">Nenhuma</option>
 								                  <option>Geral</option>
 								                  <option>Storytelling</option>
@@ -328,6 +330,7 @@
 	        });
 	        
 	        $('.select2').select2();
+	        
 	                
 	      	//Date picker
 	        $('#datepicker').datepicker({
