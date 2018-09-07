@@ -130,7 +130,7 @@
                             </ul>
                         </li>
 
-                        <li <% if(pageName.contains("candidatos")) out.print( "class='active'"); %>>
+                        <li <% if(pageName.contains("candidatos") || pageName.contains("exibir-candidato")) out.print( "class='active'"); %>>
                             <a href="candidatos.jsp">
                                 <i class="fa fa-user"></i> <span>Listar candidatos</span>
                                 <span class="pull-right-container">
