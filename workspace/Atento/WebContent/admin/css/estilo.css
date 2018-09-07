@@ -1,5 +1,6 @@
 .tabela-icone{
   color: #337ab7;
+  margin: 0px 5px 0px 5px;
 }
 
 .tabela-opcoes{
@@ -61,6 +62,8 @@ dialog{
 	border: 0px solid #d0d0d0;
 	z-index:5;
 	padding:0;
+	overflow: auto;
+	max-height:90%;
 }
 
 #dialogo-departamentos{
@@ -85,4 +88,9 @@ dialog{
 
 #dialogo-vaga-add-prova .box{
 	margin:0;
+}
+
+#dialogo-vaga-add-prova textarea{
+	height:0;
+	min-height: 50px;
 }

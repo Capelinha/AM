@@ -116,7 +116,7 @@
 
                         <li class="header">Recrutador</li>
 
-                        <li class="treeview<% if(pageName.contains("provas")) out.print(" active"); %>">
+                        <li class="treeview<% if(pageName.contains("provas") | pageName.contains("nova-prova")) out.print(" active"); %>">
                             <a href="#">
                                 <i class="fa fa-question-circle"></i>
                                 <span>Provas</span>
@@ -126,7 +126,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li <% if(pageName.contains("provas")) out.print("class='active'"); %>><a href="provas.jsp"><i class="fa fa-th-list"></i> Editar prova</a></li>
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-plus"></i> Cadastrar prova</a></li>
+                                <li <% if(pageName.contains("nova-prova")) out.print("class='active'"); %>><a href="nova-prova.jsp"><i class="fa fa-plus"></i> Cadastrar prova</a></li>
                             </ul>
                         </li>
 
