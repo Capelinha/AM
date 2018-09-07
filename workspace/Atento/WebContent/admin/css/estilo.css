@@ -29,7 +29,7 @@
 .botao-cadastrar{
 	font-size: 23px;
 	margin-left:20px;
-	padding: 0px 10px 0px 10px;
+	padding: 5px 10px 5px 10px;
 	display:inline-block;
 	border: 2px solid #3c8dbc;
 	
@@ -59,7 +59,8 @@
 dialog{
 	background: none;
 	border: 0px solid #d0d0d0;
-	z-index:30;
+	z-index:5;
+	padding:0;
 }
 
 #dialogo-departamentos{
@@ -71,3 +72,12 @@ dialog{
 	background-color: #FFFFFF;
 }
 
+#dialogo-vaga-add-prova{
+	min-width:50%;
+	box-shadow:0px 0px 2px 2px #D0D0D0;	
+	background-color: #FFFFFF;
+}
+
+#dialogo-vaga-add-prova .box{
+	margin:0;
+}

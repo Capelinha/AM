@@ -122,6 +122,13 @@
 	        	document.getElementById("dialogo-departamentos").close();
 	        	
 	        });
+	        
+	        $('.tabela-opcoes a').click(function(){
+	        	 dialog.showModal();
+	        	
+	        });
+	        
+	        
 	    })
 	    
 	    
