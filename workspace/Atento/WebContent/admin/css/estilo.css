@@ -101,14 +101,46 @@ table{
     white-space: nowrap;
 }
 
+#exibir-candidato-arquivos{
+	display:flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+#exibir-candidato-arquivos :hover{
+	background-color: #f1f1f1;
+}
+
+.exibir-candidato-arquivo i{
+	font-size:60px;
+	color: #3c8dbc; 
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.exibir-candidato-arquivo p{
+	color: #383838;
+}
+
+.exibir-candidato-arquivo{
+	text-align:center;
+	margin: 0px 10px 0px 10px;
+}
+
 #exibir-candidato-social{
 	display:flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	width:100%;
+	padding:0px 20px 0px 20px;
 }
 
 #exibir-candidato-social i{
 	font-size:50px;
+}
+
+.exibir-candidato-social-unlinked{
+	color: #ff445e;
+	cursor: default;
 }

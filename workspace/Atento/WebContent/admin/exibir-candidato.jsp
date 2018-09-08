@@ -5,7 +5,7 @@
 	    <!-- Content Header (Page header) -->
 	    <section class="content-header">
 	        <h1>
-	        Candidatos
+	        Candidato
 	        <small></small>
 	      </h1>
 	        <ol class="breadcrumb">
@@ -101,7 +101,7 @@
 			        
 			        <div class="box box-primary">
 			            <div class="box-header with-border">
-			              <h3 class="box-title">Moraadia</h3>
+			              <h3 class="box-title">Moradia</h3>
 			            </div>
 			            <!-- /.box-header -->
 			            <div class="box-body">
@@ -129,9 +129,9 @@
 			            <!-- /.box-header -->
 			            <div class="box-body" >
 			            	<div id="exibir-candidato-social">
-				                <a href="#"></a><i class="fa fa-facebook-square"></i></a>
-							    <a href="#"></a><i class="fa fa-twitter-square" id="exibir-candidato-social-meio"></i></a>
-								<a href="#"></a><i class="fa fa-linkedin-square"></i></a>
+				                <a href="#"><i class="fa fa-facebook-square exibir-candidato-social-unlinked"></i></a>
+							    <a href="#"><i class="fa fa-twitter-square" id="exibir-candidato-social-meio"></i></a>
+								<a href="#"><i class="fa fa-linkedin-square"></i></a>
 							</div>
 			           </div>
 			            <!-- /.box-body -->
@@ -145,12 +145,21 @@
 			              <h3 class="box-title">Arquivos</h3>
 			            </div>
 			            <!-- /.box-header -->
-			            <div class="box-body">
-			              <strong><i class="fa fa-home margin-r-5"></i> Arquivo</strong>
-			              <p class="text-muted"> Rua x, 2</p>		
-			              <hr>
-
-			           </div>
+			            <div class="box-body" id="exibir-candidato-arquivos">
+			              <a href="#">
+				              <div class="exibir-candidato-arquivo">
+				              	<i class="fa fa-file-text"></i>
+				              	<p>Curriculo.pdf</p>
+				              </div>
+			              </a>
+			              
+			              <a href="#">
+				              <div class="exibir-candidato-arquivo">
+				              	<i class="fa fa-file-text"></i>
+				              	<p>Curriculo.pdf</p>
+				              </div>
+						  </a>
+			            </div>
 			            <!-- /.box-body -->
 			        </div>
 			        
