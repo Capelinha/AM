@@ -144,3 +144,27 @@ table{
 	color: #ff445e;
 	cursor: default;
 }
+
+#dialogo-exibir-vaga-status{
+	min-width:20%;
+}
+
+#exibir-vaga-candidatos a :hover{
+	background-color: #f1f1f1;
+}
+
+.exibir-vaga-candidato{
+	margin:10px;
+	padding:5px 10px 5px 10px;
+	border: 2px solid #cecece;
+	box-shadow: 0px 0px 1px 1px #f7f7f7
+}
+
+.exibir-vaga-candidato strong{
+	color: #000000;
+}
+
+
+.exibir-vaga-candidato hr{
+	margin:5px;
+}
