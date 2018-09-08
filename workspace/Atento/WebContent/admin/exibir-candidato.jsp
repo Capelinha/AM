@@ -18,7 +18,7 @@
 	    <!-- Main content -->
 	    <section class="content">
 	        <div class="row">
-	            <div class="col-md-6">
+	            <div class="col-md-4">
 	            
 	            	<div class="box box-primary">
 			            <div class="box-header with-border">
@@ -74,7 +74,7 @@
 			        </div>
 	            </div>
 	           		
-	          	<div class="col-md-6">
+	          	<div class="col-md-4">
 	            	
 	            	<div class="box box-primary">
 			            <div class="box-header with-border">
@@ -98,7 +98,120 @@
 			           </div>
 			            <!-- /.box-body -->
 			        </div>
+			        
+			        <div class="box box-primary">
+			            <div class="box-header with-border">
+			              <h3 class="box-title">Moraadia</h3>
+			            </div>
+			            <!-- /.box-header -->
+			            <div class="box-body">
+			              <strong><i class="fa fa-home margin-r-5"></i> Endereço</strong>
+			              <p class="text-muted"> Rua x, 2</p>
+			
+			              <hr>
+			
+			              <strong><i class="fa fa-map-signs margin-r-5"></i> Cidade</strong>
+			              <p class="text-muted"> São Paulo</p>
+			
+			              <hr>
+			
+			              <strong><i class="fa  fa-map-pin margin-r-5"></i> Estado</strong>
+			              <p class="text-muted"> São Paulo</p>
+
+			           </div>
+			            <!-- /.box-body -->
+			        </div>
+			        
+			        <div class="box box-primary">
+			            <div class="box-header with-border">
+			              <h3 class="box-title">Social</h3>
+			            </div>
+			            <!-- /.box-header -->
+			            <div class="box-body" >
+			            	<div id="exibir-candidato-social">
+				                <a href="#"></a><i class="fa fa-facebook-square"></i></a>
+							    <a href="#"></a><i class="fa fa-twitter-square" id="exibir-candidato-social-meio"></i></a>
+								<a href="#"></a><i class="fa fa-linkedin-square"></i></a>
+							</div>
+			           </div>
+			            <!-- /.box-body -->
+			        </div>
 	            	
+	            </div>
+	            
+	            <div class="col-md-4">
+	            	<div class="box box-primary">
+			            <div class="box-header with-border">
+			              <h3 class="box-title">Arquivos</h3>
+			            </div>
+			            <!-- /.box-header -->
+			            <div class="box-body">
+			              <strong><i class="fa fa-home margin-r-5"></i> Arquivo</strong>
+			              <p class="text-muted"> Rua x, 2</p>		
+			              <hr>
+
+			           </div>
+			            <!-- /.box-body -->
+			        </div>
+			        
+			        <div class="box box-primary">
+			            <div class="box-header with-border">
+			              <h3 class="box-title">Provas</h3>
+			            </div>
+			            <!-- /.box-header -->
+			            <div class="box-body">
+			              <table id="tabela" class="table table-bordered table-hover">
+	                            <thead>
+	                                <tr>
+	                                    <th>Título</th>
+	                                    <th>Nota</th>
+	                                    <th>Inicio</th>
+	                                    <th>Fim</th>
+	                                    <th>Tentativas</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+	                                <tr>
+	                                    <td>Storytelling</td>
+	                                    <td>10</td>
+	                                    <td>07/09 20:34</td>
+	                                    <td>08/09 10:51</td>
+	                                    <td>3</td>
+	                                    
+	                                </tr>
+	                            </tbody>
+	                            <tfoot>
+	                                <tr>
+	                                    <th>Título</th>
+	                                    <th>Nota</th>
+	                                    <th>Inicio</th>
+	                                    <th>Fim</th>
+	                                    <th>Tentativas</th>
+	                                </tr>
+	                            </tfoot>
+	                        </table>
+
+			           </div>
+			            <!-- /.box-body -->
+			        </div>
+			        
+			        <div class="box box-primary">
+			            <div class="box-header with-border">
+			              <h3 class="box-title">Status</h3>
+			            </div>
+			            <!-- /.box-header -->
+			            <div class="box-body">
+			              <strong><i class="fa fa-info-circle margin-r-5"></i> Status atual</strong>
+			              <p class="text-muted"> Aprovado nas provas</p>		
+			              
+			              <div class="box-footer">
+				              <button type="button" class="btn btn-success pull-right">Aprovar na seleção manual</button>
+				          </div>
+
+			           </div>
+			            <!-- /.box-body -->
+			        </div>
+			        
 	            </div>
 	        </div>
 	        <!-- /.row -->
