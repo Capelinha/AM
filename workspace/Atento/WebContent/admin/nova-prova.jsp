@@ -37,7 +37,7 @@
 		
 		                <div class="form-group">
 		                    <label>Alternativa correta</label>
-		                    <select class="form-control" style="width: 100%;">
+		                    <select class="form-control" name="alt-correta" style="width: 100%;">
 		                        <option selected="selected">A</option>
 		                        <option>B</option>
 		                        <option>C</option>
@@ -49,31 +49,31 @@
 		                <!-- textarea -->
 		                <div class="form-group">
 		                    <label>Alternativa A*</label>
-		                    <textarea class="form-control" rows="3" placeholder="Descrição ..."></textarea>
+		                    <textarea class="form-control" name="alt-A" rows="3" placeholder="Descrição ..."></textarea>
 		                </div>
 		
 		                <!-- textarea -->
 		                <div class="form-group">
 		                    <label>Alternativa B*</label>
-		                    <textarea class="form-control" rows="3" placeholder="Descrição ..."></textarea>
+		                    <textarea class="form-control" name="alt-B" rows="3" placeholder="Descrição ..."></textarea>
 		                </div>
 		
 		                <!-- textarea -->
 		                <div class="form-group">
 		                    <label>Alternativa C*</label>
-		                    <textarea class="form-control" rows="3" placeholder="Descrição ..."></textarea>
+		                    <textarea class="form-control" name="alt-C" rows="3" placeholder="Descrição ..."></textarea>
 		                </div>
 		
 		                <!-- textarea -->
 		                <div class="form-group">
 		                    <label>Alternativa D*</label>
-		                    <textarea class="form-control" rows="3" placeholder="Descrição ..."></textarea>
+		                    <textarea class="form-control" name="alt-D" rows="3" placeholder="Descrição ..."></textarea>
 		                </div>
 		
 		                <!-- textarea -->
 		                <div class="form-group">
 		                    <label>Alternativa E*</label>
-		                    <textarea class="form-control" rows="3" placeholder="Descrição ..."></textarea>
+		                    <textarea class="form-control" name="alt-E" rows="3" placeholder="Descrição ..."></textarea>
 		                </div>
 		            </form>
 		        </div>
@@ -131,19 +131,21 @@
 		                                </tr>
 		                            </thead>
 		                            <tbody>
-		                                <tr>
-		                                	<th class="tabla-id">2</th>
-		                                    <td>Storytelling</td>
-		                                    <td class="tabela-opcoes">
-		                                        <a href="#">
-		                                            <i class="fa fa-trash-o tabela-icone"></i>
-		                                        </a>
-		                                        
-		                                        <a href="#">
-		                                            <i class="fa fa-pencil tabela-icone"></i>
-		                                        </a>
-		                                    </td>
-		                                </tr>
+		                            	  <!--
+			                                <tr>
+			                                	<th class="tabla-id">2</th>
+			                                    <td>Storytelling</td>
+			                                    <td class="tabela-opcoes">
+			                                        <a href="#">
+			                                            <i class="fa fa-trash-o tabela-icone"></i>
+			                                        </a>
+			                                        
+			                                        <a href="#">
+			                                            <i class="fa fa-pencil tabela-icone"></i>
+			                                        </a>
+			                                    </td>
+			                                </tr>
+		                                 -->
 		                            </tbody>
 		                            <tfoot>
 		                                <tr>
@@ -200,6 +202,7 @@
 		
 	    $(function() {
 	    	
+	    	//Define a tabela de questões
 	    	var tabelaQuestoes = $('#tabela').DataTable({
 	            'paging': true,
 	            'lengthChange': false,
@@ -208,38 +211,114 @@
 	            'info': true,
 	            'autoWidth': false,
 	             createdRow: function (row, data, index) {
+	            	//Quando estiver criando uma linha execute isso
+	                 //Adiciona as classes de estilo
 	                 $("td:first-child", row).addClass('tabla-id');           
 	                 $("td:last-child", row).addClass('tabela-opcoes');
 	                 
+	                //Adiciona o evnto ao clicar em exluir linha
 	                 $('.fa-trash-o', row).click(function(){
-	     	        	tabelaQuestoes.row().remove(row).draw();
-	     	        });
+	     	        	tabelaQuestoes.row(row).remove().draw();
+	     	         });
+	                  
+	                 //Adiciona o evnto ao clicar em editar linha
+	                 $('.fa-pencil', row).click(function(){
+	                	 //Preencher formulario de questão
+	                	 $('.questao-tabela-dados', row).filter(':input').each(function(i, e){
+	                		 $('#dialogo-vaga-add-prova *').filter(':input').each(function(j, a){
+	                		 	if($(e).attr("name").includes($(a).attr("name"))){
+	                		 		$(a).val($(e).val());
+	                		 	}
+	                		 });
+	                	 });
+	                	 
+	                	 //Abrir dialogo
+	                	 dialogProva.showModal();
+	                	 
+	                	 //Remover linha velha na hora de salvar
+	                	 $("#dialogo-vaga-add-prova .btn-info").one("click", function(){
+	                		 tabelaQuestoes.row(row).remove().draw(); 
+	                	 });
+		     	     });
 	             }
 	        })
 	        
+	        //Polyfill para dialogo funcionar no edge
 	        var dialogProva = document.getElementById("dialogo-vaga-add-prova");
 	        dialogPolyfill.registerDialog(dialogProva);
 	        
+	        //Evento de click no botão de adicionar prova
 	        $('#botao-adicionar-prova-vaga').click(function(){
 	        	 dialogProva.showModal();
-	        	 
-	        	
 	        });
 	        
+	        //Evento de click no cancelar do dialogo
 	        $('#dialogo-vaga-add-prova .btn-default').click(function(){
+	        	//Fechar dialogo
 	        	document.getElementById("dialogo-vaga-add-prova").close();
+	        	//Resetar formulario
 	        	$('#dialogo-vaga-add-prova form').trigger("reset");
-	        	
+	        	//Para cada input remover classes de erro e sucesso de formulario
+	        	$('#dialogo-vaga-add-prova *').filter(':input').each(function(){
+	        		if (typeof $(this).attr("name") != "undefined") {
+	        			$(this).parent().removeClass("has-error");
+	        			$(this).parent().removeClass("has-success");
+	        		}		
+	        	});
 	        });
 	        
+	        //Evento de adicionar questão
 	        $('#dialogo-vaga-add-prova .btn-info').click(function(){
-	        	document.getElementById("dialogo-vaga-add-prova").close();
+	        	//Adquirir titulo da questão nova
 	        	var titulo = $('#dialogo-vaga-add-prova input[name="titulo-questao"]').val();
 	        	
+	        	//Criar coluna de opções da tabela
 	        	var opcoes = '<a href="#"> <i class="fa fa-trash-o tabela-icone"></i> </a> <a href="#"> <i class="fa fa-pencil tabela-icone"></i> </a>';
-	        	tabelaQuestoes.row.add(['-', titulo, opcoes]).draw( true );
 	        	
-	        	$('#dialogo-vaga-add-prova form').trigger("reset");	        	
+	        	//Criar variavel para dados da questão
+	        	var dados = "";
+	        	
+	        	//Armazenar de há algum erro de campo vazio na tabela do dialogo
+	        	var erro = false;
+	        	
+	        	//Para cada input dentro do dialogo de questao
+	        	$('#dialogo-vaga-add-prova *').filter(':input').each(function(){
+	        		//Verificar de o campo está vazio
+	        		if (typeof $(this).attr("name") != "undefined") {
+	        			//Se não estiver vazio criar um input escondido para cada dado da alternativa.
+	        			dados += '<input type="hidden" class="questao-tabela-dados" name="questoes[' + $(this).attr("name") + '][]" value="' + $(this).val() + '" required>';
+	        			
+	        			//Remover classes de erro e sucesso de formulario para remerifica-lo
+	        			$(this).parent().removeClass("has-error");
+	        			$(this).parent().removeClass("has-success");
+	        			
+	        			//Se um input estiver vazio colocar classe de erro senao colocar classe de sucesso
+	        			if($(this).val() === ""){
+	        				$(this).parent().addClass("has-error");
+	        				erro = true;
+	        			}else{
+	        				$(this).parent().addClass("has-success");
+	        			}
+	        		}
+	        	});
+	        	
+	        	//Se não existir um erro no formulario
+	        	if(!erro){
+	        		//Adiciona uma linha na tabela de quetões e adicionar os campos invisiveis junto com o titulo
+	        		tabelaQuestoes.row.add(['-', titulo + dados, opcoes]).draw( true );
+	        		//Resetar o formulario e fechar o dialogo
+		        	$('#dialogo-vaga-add-prova form').trigger("reset");
+		        	document.getElementById("dialogo-vaga-add-prova").close();
+		        	
+		        	//Remover todos os indicativos de input correto e incorreto 
+		        	$('#dialogo-vaga-add-prova *').filter(':input').each(function(){
+		        		if (typeof $(this).attr("name") != "undefined") {
+		        			$(this).parent().removeClass("has-error");
+		        			$(this).parent().removeClass("has-success");
+		        		}		
+		        	});
+	        	}
+	        	
 	        });
 	        
 	        $('.select2').select2();
