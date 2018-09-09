@@ -11,6 +11,7 @@
 .tabla-id{
   width: 50px;
   text-align: right;
+  font-weight: bold;
 }
 
 .navbar-nav li a i{
@@ -95,7 +96,7 @@ dialog{
 	min-height: 50px;
 }
 
-table{
+.table-resposiva{
 	display: block;
     overflow-x: auto;
     white-space: nowrap;
