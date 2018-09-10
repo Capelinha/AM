@@ -35,21 +35,23 @@
 						              <h3 class="box-title">Novo departamento</h3>
 						            </div>
 						            <!-- /.box-header -->
-						            <div class="box-body">
-					              <form role="form">
-						                <!-- text input -->
-						                <div class="form-group">
-						                  <label>Nome</label>
-						                  <input type="text" class="form-control" placeholder="Nome ...">
+						            <form role="form">
+							            <div class="box-body">
+							                <!-- text input -->
+							                <div class="form-group">
+							                  <label>Nome</label>
+							                  <input type="hidden" name="id-dept" id="dialogo-departamento-id">
+							                  <input type="text" name="nome-dept" id="dialogo-departamento-nome" class="form-control" placeholder="Nome ..." requerid>
+							                </div>
+							              
+							            </div>
+						            	<!-- /.box-body -->
+						                <div class="box-footer">
+						                    <button type="button" class="btn btn-default">Cancelar</button>
+						                    <button type="submit" class="btn btn-info pull-right">Cadastrar</button>
 						                </div>
-						              </form>
-						            </div>
-						            <!-- /.box-body -->
-						            <div class="box-footer">
-						                <button type="submit" class="btn btn-default">Cancelar</button>
-						                <button type="submit" class="btn btn-info pull-right">Cadastrar</button>
-						              </div>
-						          </div>
+						           </form>
+						       </div>
 							</dialog>
 							
 	                        <table id="tabela" class="table table-bordered table-hover">
@@ -95,6 +97,10 @@
 	<%@ include file="footer.jsp" %>
 	<script src="js/dialog-polyfill.js"></script>
 	<script>
+	
+		var dialog = document.getElementById("dialogo-departamentos");
+	    dialogPolyfill.registerDialog(dialog);
+    
 	    $(function() {
 	        $('#tabela').DataTable({
 	            'paging': true,
@@ -102,11 +108,15 @@
 	            'searching': false,
 	            'ordering': true,
 	            'info': true,
-	            'autoWidth': false
+	            'autoWidth': false,
+	            createdRow: function (row, data, index) {
+	            	$('.fa-pencil-square-o', row).click(function(){
+	            		dialog.showModal();
+	            		$('#dialogo-departamento-id').val(data[0]);
+	            		$('#dialogo-departamento-nome').val(data[1]);
+	            	}); 
+	            }
 	        })
-	        
-	        var dialog = document.getElementById("dialogo-departamentos");
-	        dialogPolyfill.registerDialog(dialog);
 	        
 	        $('.botao-cadastrar').click(function(){
 	        	 dialog.showModal();
@@ -115,19 +125,26 @@
 	        
 	        $('#dialogo-departamentos .btn-default').click(function(){
 	        	document.getElementById("dialogo-departamentos").close();
+	        	$('#dialogo-departamentos form').trigger("reset");
 	        	
 	        });
 	        
 	        $('#dialogo-departamentos .btn-info').click(function(){
-	        	document.getElementById("dialogo-departamentos").close();
+	        	var valido = true;
 	        	
-	        });
-	        
-	        $('.tabela-opcoes a').click(function(){
-	        	 dialog.showModal();
+	        	if ($('#dialogo-departamento-nome').val() === "") {
+        			$('#dialogo-departamento-nome').parent().addClass("has-error");
+        			valido = false;
+        		}	
 	        	
-	        });
-	        
+	        	setTimeout(function(){
+	        		$('#dialogo-departamento-nome').parent().removeClass("has-error");
+        		}, 1000);
+	        	
+	        	if(valido){
+	        		document.getElementById("dialogo-departamentos").close();
+	        	}
+	        });       
 	        
 	    })
 	    
