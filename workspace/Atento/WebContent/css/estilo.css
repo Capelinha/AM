@@ -650,13 +650,13 @@
 	position: relative;
 }
 
-#form-cadastro .form-campo {
+#form-cadastro .form-campo{
 	width: 100%;
 	text-align: left;
 	margin: 0 auto;
 }
 
-#form-cadastro .form-campo label {
+#form-cadastro .form-campo label{
 	font-size: 15px;
 	font-weight: bold;
 	color: #313131;
@@ -671,6 +671,23 @@
 	padding: 5px;
 	color: #2e2e2e;
 	margin: 0px 0px 20px 0px;
+}
+
+.form-campo-select2 {
+	margin: 0px 0px 20px 0px;
+}
+
+.form-campo-select2 label {
+	font-size: 15px;
+	font-weight: bold;
+	color: #313131;
+}
+
+.form-campo-select2 .select2-container--default .select2-selection--multiple, .form-campo-select2 .select2-container--default.select2-container--focus .select2-selection--multiple {
+	color: #2e2e2e;
+	border: 2.3px solid #FF7900;
+	font-weight: bold;
+	border-radius:0;
 }
 
 #form-cadastro table {
@@ -692,7 +709,7 @@
 	}
 }
 
-#form-cadastro input {
+#form-cadastro input :not(.form-campo-select2){
 	margin: 10px;
 	margin-top: 0px;
 }

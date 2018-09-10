@@ -152,7 +152,7 @@
 	                            </div>
 	                            <div class="form-group">
 					                <label>Tags de habilidades</label>
-					                <select class="form-control select2" name="tags" multiple="multiple" data-placeholder="Selecione as tags"
+					                <select class="form-control" id="form-tags-select" name="tags" multiple="multiple" data-placeholder="Selecione as tags"
 					                        style="width: 100%;">
 					                  <option>Alabama</option>
 					                  <option>Alaska</option>
@@ -268,11 +268,7 @@
 	<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
 	<script>
-		
-		function adicionarProva(){
-			
-		}	
-	
+
 	    $(function() {
 	    	
 	    	
@@ -336,6 +332,19 @@
 	        
 	        $('.select2').select2();
 	        
+	        $('#form-tags-select').select2({
+	        	tags:true,
+	        	insertTag: function (data, tag) {
+	        		data.push(tag);
+	        	},
+	        	createTag: function (params) {
+
+	        	    return {
+	        	      id: "-",
+	        	      text: params.term
+	        	    }
+	        	  }
+	    	});
 	                
 	      	//Date picker
 	        $('#datepicker').datepicker({

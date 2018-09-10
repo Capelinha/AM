@@ -27,6 +27,8 @@ reabilitados da Previdência Social.">
             <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     <!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+    <!-- Select2 -->
+    <link rel="stylesheet" href="css/select2.min.css">
 </head>
 
 <body class="">
