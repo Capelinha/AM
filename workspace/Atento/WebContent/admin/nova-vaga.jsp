@@ -48,23 +48,23 @@
 		          </div>
 			</dialog>
 			
-	        <div class="row">	
-	            <div class="col-md-6">
-	                <div class="box box-primary">
-	                    <div class="box-header with-border">
-	                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Geral</font></font></h3>
-	                    </div>
-	                    <!-- /.box-header -->
-	                    <div class="box-body">
-	                        <form role="form">
+	        <div class="row">
+	        	<form role="form">	
+		            <div class="col-md-6">
+		                <div class="box box-primary">
+		                    <div class="box-header with-border">
+		                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Geral</font></font></h3>
+		                    </div>
+		                    <!-- /.box-header -->
+		                    <div class="box-body">
 	                            <!-- text input -->
 	                            <div class="form-group">
 	                                <label>Título*</label>
-	                                <input type="text" class="form-control" placeholder="Título ...">
+	                                <input type="text" name="titulo" class="form-control" placeholder="Título ...">
 	                            </div>
 	                            <div class="form-group">
 	                                <label>Qtde vagas*</label>
-	                                <input type="number" class="form-control" placeholder="Qtde vagas ...">
+	                                <input type="number" class="form-control" name="qtde-vagas" placeholder="Qtde vagas ...">
 	                            </div>
 	                            <div class="form-group">
 					                <label>Data desejada</label>
@@ -73,90 +73,86 @@
 					                  <div class="input-group-addon">
 					                    <i class="fa fa-calendar"></i>
 					                  </div>
-					                  <input type="text" class="form-control pull-right" id="datepicker">
+					                  <input type="text" name="data-desejada" class="form-control pull-right" id="datepicker">
 					                </div>
 					                <!-- /.input group -->
 					            </div>
 	                            <div class="form-group">
 	                                <label>Area de atuação*</label>
-	                                <input type="text" class="form-control" placeholder="Area ...">
+	                                <input type="text" name="area-atuacao" class="form-control" placeholder="Area ...">
 	                            </div>
 	                            <label>Salário</label>
 	                            <div class="input-group">
 					                <span class="input-group-addon"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">R$</font></font></span>
-					                <input type="number" class="form-control" step="1">
+					                <input type="number" name="salario" class="form-control" step="1">
 					                <span class="input-group-addon"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.00</font></font></span>
 					            </div>
 	                            <div class="form-group">
 	                                <label>Departamento*</label>
-	                                <input type="text" class="form-control" placeholder="Departamento ...">
+	                                <input type="text" name="departamento" class="form-control" placeholder="Departamento ...">
 	                            </div>
-	                            
-	                        </form>
-	                    </div>
-	                    <!-- /.box-body -->
-	                </div>
-	                
-	                <div class="box box-info">
-	                    <div class="box-header with-border">
-	                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Local</font></font></h3>
-	                    </div>
-	                    <!-- /.box-header -->
-	                    <div class="box-body">
-	                        <form role="form">
+		                            
+		                    </div>
+		                    <!-- /.box-body -->
+		                </div>
+		                
+		                <div class="box box-info">
+		                    <div class="box-header with-border">
+		                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Local</font></font></h3>
+		                    </div>
+		                    <!-- /.box-header -->
+		                    <div class="box-body">
 	                        	<div class="form-group">
 	                                <label>Endereço*</label>
-	                                <input type="text" class="form-control" placeholder="Endereço ...">
+	                                <input type="text" name="endereco" class="form-control" placeholder="Endereço ...">
 	                            </div>
 	                            <div class="form-group">
 	                                <label>Cidade*</label>
-	                                <input type="text" class="form-control" placeholder="Cidade ...">
+	                                <input type="text" name="cidade" class="form-control" placeholder="Cidade ...">
 	                            </div>
 	                            <div class="form-group">
 	                                <label>Estado*</label>
-	                                <input type="text" class="form-control" placeholder="Estado ...">
+	                                <input type="text" name="estado" class="form-control" placeholder="Estado ...">
 	                            </div>
 	                            <div class="form-group">
 	                                <label>País*</label>
-	                                <input type="text" class="form-control" placeholder="País ...">
+	                                <input type="text" name="pais" class="form-control" placeholder="País ...">
 	                            </div>
-	                        </form>
-	                    </div>
-	                    <!-- /.box-body -->
-	                </div>
-	            </div>
-	
-	            <div class="col-md-6">
-	            	<div class="box box-success">
-	                    <div class="box-header with-border">
-	                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Detalhes</font></font></h3>
-	                    </div>
-	                    <!-- /.box-header -->
-	                    <div class="box-body">
-	                        <form role="form">
+		                    </div>
+		                    <!-- /.box-body -->
+		                </div>
+		            </div>
+		
+		            <div class="col-md-6">
+		            	<div class="box box-success">
+		                    <div class="box-header with-border">
+		                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Detalhes</font></font></h3>
+		                    </div>
+		                    <!-- /.box-header -->
+		                    <div class="box-body">
 	                        	<div class="form-group">
 	                                <label>Anos Exp profissional</label>
-	                                <input type="number" class="form-control" placeholder="Anos ...">
+	                                <input type="number" name="anos-exp" class="form-control" placeholder="Anos ...">
 	                            </div>
 	
 	                            <!-- textarea -->
 	                            <div class="form-group">
 	                                <label>Descrição*</label>
-	                                <textarea class="form-control" rows="3" placeholder="Descrição ..."></textarea>
+	                                <textarea class="form-control" name="descricao" rows="3" placeholder="Descrição ..."></textarea>
 	                            </div>
 	                            <!-- textarea -->
 	                            <div class="form-group">
 	                                <label>Benefícios*</label>
-	                                <textarea class="form-control" rows="3" placeholder="Benefícios ..."></textarea>
+	                                <textarea class="form-control" name="beneficios" rows="3" placeholder="Benefícios ..."></textarea>
 	                            </div>
 	                            <!-- textarea -->
 	                            <div class="form-group">
 	                                <label>Requisitos*</label>
-	                                <textarea class="form-control" rows="3" placeholder="Requisitos ..."></textarea>
+	                                <textarea class="form-control" name="requisitos" rows="3" placeholder="Requisitos ..."></textarea>
 	                            </div>
 	                            <div class="form-group">
 					                <label>Tags de habilidades</label>
-					                <select class="form-control select2" multiple="multiple" data-placeholder="Selecione as tags"
+					                <select class="form-control select2" name="tags" multiple="multiple" data-placeholder="Selecione as tags"
 					                        style="width: 100%;">
 					                  <option>Alabama</option>
 					                  <option>Alaska</option>
@@ -167,96 +163,93 @@
 					                  <option>Washington</option>
 					                </select>
 					             </div>
-	                        	
-	                        </form>
-	                    </div>
-	                    <!-- /.box-body -->
-	                </div>
-	                
-	                <div class="box box-success">
-	                    <div class="box-header with-border">
-	                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Provas</font></font></h3>
-	                    </div>
-	                    <!-- /.box-header -->
-	                    <div class="box-body">
-	                    
-	                    	<!-- Dialogo de adicionar prova -->
-				            <dialog id="dialogo-vaga-add-prova">
-								<div class="box box-warning">
-						            <div class="box-header with-border">
-						              <h3 class="box-title">Adicionar prova</h3>
-						            </div>
-						            <!-- /.box-header -->
-						            <div class="box-body">
-					              		<form role="form">
+		                    </div>
+		                    <!-- /.box-body -->
+		                </div>
+		                
+		                <div class="box box-success">
+		                    <div class="box-header with-border">
+		                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Provas</font></font></h3>
+		                    </div>
+		                    <!-- /.box-header -->
+		                    <div class="box-body">
+		                    
+		                    	<!-- Dialogo de adicionar prova -->
+					            <dialog id="dialogo-vaga-add-prova">
+									<div class="box box-warning">
+							            <div class="box-header with-border">
+							              <h3 class="box-title">Adicionar prova</h3>
+							            </div>
+							            <!-- /.box-header -->
+							            <div class="box-body">
+						              		
 							                <div class="form-group">
 								                <label>Título da prova</label>
-								                <select class="form-control" style="width: 100%;">
-								                  <option selected="selected">Nenhuma</option>
-								                  <option>Geral</option>
+								                <select class="form-control" id="titulo-prova-dialogo" style="width: 100%;">
+								                  <option selected="selected">Geral</option>
 								                  <option>Storytelling</option>
 								                </select>
 								           </div>
-						              	</form>
-						            </div>
-						            <!-- /.box-body -->
-						            <div class="box-footer">
-						                <button type="submit" class="btn btn-default">Cancelar</button>
-						                <button type="submit" class="btn btn-info pull-right">Adicionar</button>
-						              </div>
-						          </div>
-							</dialog>
-							
-	                        <table id="tabela" class="table table-bordered table-hover">
-	                            <thead>
-	                                <tr>
-	                                    <th>Título</th>
-	                                    <th>Opções</th>
-	                                </tr>
-	                            </thead>
-	                            <tbody>
-	                                <tr>
-	                                    <td>Storytelling</td>
-	                                    <td class="tabela-opcoes">
-	                                        <a href="#">
-	                                            <i class="fa fa-trash-o tabela-icone"></i>
-	                                        </a>
-	                                    </td>
-	                                </tr>
-	                            </tbody>
-	                            <tfoot>
-	                                <tr>
-	                                    <th>Título</th>
-	                                    <th>Opções</th>
-	                                </tr>
-	                            </tfoot>
-	                        </table>
-	                        
-	                        <div class="box-footer">
-				                <button type="button" action="adocionarProva();" id="botao-adicionar-prova-vaga"class="btn btn-success pull-right">Adicionar</button>
-				            </div>
-	                    </div>
-	                    <!-- /.box-body -->
-	                </div>
-	                
-	                <div class="box box-danger">
-	                    <div class="box-header with-border">
-	                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Opções</font></font></h3>
-	                    </div>
-	                    <!-- /.box-header -->
-	                    <div class="box-body">
-	                        <div class="box-footer">
-				                <button type="submit" class="btn btn-default">Cancelar</button>
-				                <button type="submit" class="btn btn-danger pull-right" style="margin-left: 10px">Salvar como rascunho  </button>
-				                <button type="submit" class="btn btn-danger pull-right">Salvar</button>
-				            </div>
-	                    </div>
-	                    <!-- /.box-body -->
-	                </div>
-	                        
-	            </div>
-	
-	        </div>
+							              	
+							            </div>
+							            <!-- /.box-body -->
+							            <div class="box-footer">
+							                <button type="button" class="btn btn-default">Cancelar</button>
+							                <button type="button" class="btn btn-info pull-right">Adicionar</button>
+							            </div>
+							          </div>
+								</dialog>
+								
+		                        <table id="tabela" class="table table-bordered table-hover">
+		                            <thead>
+		                                <tr>
+		                                    <th>Título</th>
+		                                    <th>Opções</th>
+		                                </tr>
+		                            </thead>
+		                            <tbody>
+		                                <!-- <tr>
+		                                    <td>Storytelling</td>
+		                                    <td class="tabela-opcoes">
+		                                        <a href="#">
+		                                            <i class="fa fa-trash-o tabela-icone"></i>
+		                                        </a>
+		                                    </td>
+		                                </tr> -->
+		                            </tbody>
+		                            <tfoot>
+		                                <tr>
+		                                    <th>Título</th>
+		                                    <th>Opções</th>
+		                                </tr>
+		                            </tfoot>
+		                        </table>
+		                        
+		                        <div class="box-footer">
+					                <button type="button" id="botao-adicionar-prova-vaga" class="btn btn-success pull-right">Adicionar</button>
+					            </div>
+		                    </div>
+		                    <!-- /.box-body -->
+		                </div>
+		                
+		                <div class="box box-danger">
+		                    <div class="box-header with-border">
+		                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Opções</font></font></h3>
+		                    </div>
+		                    <!-- /.box-header -->
+		                    <div class="box-body">
+		                        <div class="box-footer">
+					                <button type="submit" class="btn btn-default">Cancelar</button>
+					                <button type="submit" class="btn btn-danger pull-right" style="margin-left: 10px">Salvar como rascunho  </button>
+					                <button type="submit" class="btn btn-danger pull-right">Salvar</button>
+					            </div>
+		                    </div>
+		                    <!-- /.box-body -->
+		                </div>
+		                        
+		            </div>
+				</form>
+		    </div>
 	        <!-- /.row -->
 	
 	    </section>
@@ -283,13 +276,24 @@
 	    $(function() {
 	    	
 	    	
-	        $('#tabela').DataTable({
+	        var tabelaProvas = $('#tabela').DataTable({
 	            'paging': true,
 	            'lengthChange': false,
 	            'searching': false,
 	            'ordering': true,
 	            'info': true,
-	            'autoWidth': false
+	            'autoWidth': false,
+	           	 createdRow: function (row, data, index) {
+	            	 //Quando estiver criando uma linha execute isso
+	                 //Adiciona as classes de estilo        
+	                 $("td:last-child", row).addClass('tabela-opcoes');
+	                 
+	                //Adiciona o evnto ao clicar em exluir linha
+	                 $('.fa-trash-o', row).click(function(){
+	                	 tabelaProvas.row(row).remove().draw();
+	     	         });
+	                  
+	             }
 	        })
 	        
 	        var dialogProva = document.getElementById("dialogo-vaga-add-prova");
@@ -307,7 +311,8 @@
 	        
 	        $('#dialogo-vaga-add-prova .btn-info').click(function(){
 	        	document.getElementById("dialogo-vaga-add-prova").close();
-	        	
+	        	var opcoes = '<i class="fa fa-trash-o tabela-icone"></i>';
+	        	tabelaProvas.row.add([$("#titulo-prova-dialogo").val(), opcoes]).draw( true );   	
 	        });
 	        
 
