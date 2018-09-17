@@ -1,3 +1,15 @@
+/** Header **/
+
+#menu-nosso{
+	position:fixed;
+	display: none;	
+	margin-left: -0.25em;
+}
+
+#menu-nosso div{
+	border: 1px solid #ffffff;
+}
+
 /** Cruzes das bordas dos blocos */
 .bloco-cruz {
 	position: absolute;

@@ -13,7 +13,7 @@
             <h3>Provas pendentes</h3>
         </header>
         <!--Provas-->
-        <a href="">
+        <a href="questao.jsp">
             <article class="bloco-int-prova">
                 <h4>Conhecimentos gerais</h4>
                 <h5>Prova geral</h5>
@@ -41,7 +41,7 @@
             <h3>Provas realizadas</h3>
         </header>
         <!--Provas-->
-        <a href="">
+        <a href="questao.jsp">
             <article class="bloco-int-prova">
                 <h4>Storytelling</h4>
                 <h5>Marketing</h5>

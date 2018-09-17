@@ -28,7 +28,7 @@
                 <input type="password" class="form-campo" name="senha" value="" placeholder="" required>
             </fieldset>
             <fieldset id="form-acoes">
-                <input type="button" class="form-botao" value="CADASTRO" name="btn-cadastrar">
+                <input type="button" onclick="window.location.href='cadastro-1.jsp'" class="form-botao" value="CADASTRO" name="btn-cadastrar">
                 <input type="submit" class="form-botao" value="LOGIN" name="btn-login">
             </fieldset>
         </form>

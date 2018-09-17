@@ -21,6 +21,7 @@ reabilitados da Previdência Social.">
     <link href="css/estilo.css" media="screen" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>na
             <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -148,23 +149,43 @@ reabilitados da Previdência Social.">
         <!-- SUBMENU Join Us -->
         <nav class="menu-orange second-level menu-no-icons hidden-sm hidden-xs">
             <div class="container container-menu">
-                <div class="row text-right">
+                <div class="row text-right" style="float:right">
                     <ul class="text-right">
                         <li class="">
                             <a href="/pt/trabalhe-conosco/atento-great-place-to-work/" class="">
-                                <span class="text">
-                            Atento: Great Place To Work                        </span>
+                                <span class="text">Atento: Great Place To Work</span>
                             </a>
                         </li>
                         <li class="active">
-                            <a href="/pt/trabalhe-conosco/faca-parte-da-nossa-equipe/" class="active">
-                                <span class="text">
-                            Fa�a parte da Nossa Equipe                        </span>
+                            <a href="painel-vagas.jsp" class="active">
+                                <span class="text">Faça parte da Nossa Equipe</span>
                             </a>
                         </li>
                         <li class="initial-cross"></li>
                     </ul>
                 </div>
+                
+                <div class="row text-right"  style="float:left">
+                    <ul class="text-right">
+                        <li class="">
+                            <a href="#" class="" id="botao-menu-nosso">
+                                <span class="text">Login</span>
+	                            <div id="menu-nosso">
+		                           	<div>Perfil</div>
+		                           	<div>Provas</div>
+		                           	<div>Painel de vagas</div>
+		                           	<div>Logout</div>
+		                        </div>
+                            </a>
+                        </li>
+                        
+
+	                        
+
+                        <li class="initial-cross"></li>
+                    </ul>
+                </div>
+                
                 <!--        <img src="-->
                 <!--images/white-cross.png" alt="" class="cross-top-left">-->
                 <!--        <img src="-->

@@ -6,7 +6,7 @@
         <h2>Painel de vagas</h2>
     </div>
 
-    <a href="#">
+    <a href="detalhes-vaga.jsp">
         <article class="bloco-vaga">
             <!--Dados principais da vaga-->
             <h4 class="bloco-vaga-titulo">Analista de RH</h4>

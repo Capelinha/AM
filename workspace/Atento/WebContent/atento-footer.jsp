@@ -480,6 +480,16 @@
         </li>
     </ul>
 </nav>
+<script>
+	$('#botao-menu-nosso').click(function(){
+		console.log("aiai");
+		$('#menu-nosso').slideToggle( "slow", function() {
+		    console.log("oi");
+		});
+	});
+	
+
+</script>
 </body>
 
 </html>

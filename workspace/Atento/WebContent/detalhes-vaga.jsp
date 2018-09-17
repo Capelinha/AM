@@ -13,7 +13,7 @@
             <h2>Consultor de negócios</h2>
             <h4>Auxiliar/operacional</h4>
         </section>
-        <a href="#" id="cabecalho-detvaga-link">
+        <a href="login.jsp" id="cabecalho-detvaga-link">
             <div id="cabecalho-detvaga-botao">CANDIDATAR-SE</div>
         </a>
     </header>
