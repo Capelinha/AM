@@ -99,7 +99,7 @@
             </fieldset>
 
             <fieldset id="form-acoes">
-                <input type="submit" class="form-botao" value="AVANÇAR" name="btn-proximo">
+                <input type="submit" onclick="window.location.href='cadastro-2.jsp'" class="form-botao" value="AVANÇAR" name="btn-proximo">
             </fieldset>
         </form>
 

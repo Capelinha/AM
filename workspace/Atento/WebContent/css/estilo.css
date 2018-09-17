@@ -1,13 +1,9 @@
 /** Header **/
-
-#menu-nosso{
-	position:fixed;
-	display: none;	
-	margin-left: -0.25em;
+#botao-menu-nosso{
+	backgound: #FFFFFF;
 }
 
-#menu-nosso div{
-	border: 1px solid #ffffff;
+#botao-menu-nosso :hover{
 }
 
 /** Cruzes das bordas dos blocos */

@@ -217,7 +217,7 @@
             </table>
 
             <fieldset id="form-acoes">
-                <input type="submit" class="form-botao" value="AVANÇAR" name="btn-proximo">
+                <input type="submit" class="form-botao" value="AVANÇAR" onclick="window.location.href='cadastro-3.jsp'" name="btn-proximo">
             </fieldset>
 
             <!--Cantos com cruz-->

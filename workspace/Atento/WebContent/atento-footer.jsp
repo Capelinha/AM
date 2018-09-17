@@ -482,10 +482,7 @@
 </nav>
 <script>
 	$('#botao-menu-nosso').click(function(){
-		console.log("aiai");
-		$('#menu-nosso').slideToggle( "slow", function() {
-		    console.log("oi");
-		});
+		$('.logado').toggle("slide");
 	});
 	
 

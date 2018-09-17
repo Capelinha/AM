@@ -22,7 +22,7 @@
             <input type="file" id="form-arquivo-input" name="arquivo" value="" placeholder="" required>
             <h4> Qualquer arquivo PDF ou WORD <br>No maximo 5MB </h4>
             <fieldset id="form-acoes">
-                <input type="submit" class="form-botao" value="ENVIAR" name="btn-enviar">
+                <input type="submit" class="form-botao" onclick="window.location.href='perfil.jsp'" value="ENVIAR" name="btn-enviar">
             </fieldset>
         </form>
 

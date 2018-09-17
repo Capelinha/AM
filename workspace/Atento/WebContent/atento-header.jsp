@@ -167,20 +167,37 @@ reabilitados da Previdência Social.">
                 
                 <div class="row text-right"  style="float:left">
                     <ul class="text-right">
-                        <li class="">
-                            <a href="#" class="" id="botao-menu-nosso">
-                                <span class="text">Login</span>
-	                            <div id="menu-nosso">
-		                           	<div>Perfil</div>
-		                           	<div>Provas</div>
-		                           	<div>Painel de vagas</div>
-		                           	<div>Logout</div>
-		                        </div>
+                    
+                    	<li class="">
+                            <a href="#" class="painel-vagas.jsp">
+                                <span class="text">Painel de vagas</span>
                             </a>
                         </li>
                         
-
-	                        
+                        <li class="active">
+                            <a href="#" class="active" id="botao-menu-nosso">
+                                <span class="text">Minha conta</span>
+                            </a>
+                        </li>
+                        
+                        <li class="logado">
+                            <a href="perfil.jsp" class="">
+                                <span class="text">Perfil</span>
+                            </a>
+                        </li>
+                        
+                        <li class="logado">
+                            <a href="escolha-provas.jsp" class="">
+                                <span class="text">Provas</span>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="logado">
+                            <a href="#" class="">
+                                <span class="text">Logout</span>
+                            </a>
+                        </li>	                        
 
                         <li class="initial-cross"></li>
                     </ul>

@@ -275,7 +275,7 @@
         </section>
 
         <section id="perfil-bloco-botao">
-            <a href="#" class="perfil-link">
+            <a href="cadastro-1.jsp" class="perfil-link">
                 <div class="perfil-botao">EDITAR</div>
             </a>
             <a href="#" class="perfil-link">
