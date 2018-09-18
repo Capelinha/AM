@@ -15,9 +15,9 @@
         <!--Provas-->
         <a href="questao.jsp">
             <article class="bloco-int-prova">
-                <h4>Conhecimentos gerais</h4>
-                <h5>Prova geral</h5>
-                <p>Vaga atrelada: Analista de RH</p>
+                <h4>Analista de RH</h4>
+                <h5>Multipla escolha</h5>
+                <p>Conteúdos: Conhecimentos geral</p>
                 <div class="bloco-int-prova-nota">
                     <h4>NOTA<br>--</h4></div>
             </article>
@@ -43,9 +43,9 @@
         <!--Provas-->
         <a href="questao.jsp">
             <article class="bloco-int-prova">
-                <h4>Storytelling</h4>
-                <h5>Marketing</h5>
-                <p>Vaga atrelada: Consultor de marketing</p>
+                <h4>Consultor de marketing</h4>
+                <h5>Multipla escolha</h5>
+                <p>Conteúdos: Storytelling e Conhecimentos geral</p>
                 <div class="bloco-int-prova-nota">
                     <h4>NOTA<br>10<h4>
                 </div>
