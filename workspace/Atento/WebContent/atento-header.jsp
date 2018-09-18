@@ -169,7 +169,7 @@ reabilitados da Previdência Social.">
                     <ul class="text-right">
                     
                     	<li class="">
-                            <a href="#" class="painel-vagas.jsp">
+                            <a href="painel-vagas.jsp" class="painel-vagas.jsp">
                                 <span class="text">Painel de vagas</span>
                             </a>
                         </li>
@@ -177,6 +177,12 @@ reabilitados da Previdência Social.">
                         <li class="active">
                             <a href="#" class="active" id="botao-menu-nosso">
                                 <span class="text">Minha conta</span>
+                            </a>
+                        </li>
+                        
+                        <li class="logado">
+                            <a href="login.jsp" class="">
+                                <span class="text">Login</span>
                             </a>
                         </li>
                         

@@ -206,6 +206,15 @@
 	background-color: #FFFFFF;
 }
 
+.bloco-titulo-right {
+	right: 20px;
+}
+
+.bloco-titulo-right h3 {
+	margin-right: 10px;
+	margin-left: 0px;
+}
+
 .bloco-titulo i {
 	color: #FF7900;
 	font-size: 40px;
@@ -658,6 +667,15 @@
 	position: relative;
 }
 
+.bloco-form-cadastro h4{
+	color:#FF7900;
+	text-align:center;
+}
+
+.bloco-form-cadastro p{
+	text-align:justify;
+}
+
 #form-cadastro .form-campo{
 	width: 100%;
 	text-align: left;
@@ -670,7 +688,7 @@
 	color: #313131;
 }
 
-#form-cadastro .form-campo input {
+#form-cadastro .form-campo input, #form-cadastro .form-campo select {
 	min-width: 100%;
 	border: 2.3px solid #FF7900;
 	height: 30px;
@@ -679,6 +697,10 @@
 	padding: 5px;
 	color: #2e2e2e;
 	margin: 0px 0px 20px 0px;
+}
+
+#form-cadastro .form-campo select {
+ 	padding: 0px;
 }
 
 .form-campo-select2 {
@@ -756,6 +778,11 @@
 
 /* cadastro-2.html*/
 #form-cad-bloco {
+	border-bottom: 0px;
+	padding-bottom: 30px;
+}
+
+.form-cad-bloco {
 	border-bottom: 0px;
 	padding-bottom: 30px;
 }
