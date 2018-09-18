@@ -255,7 +255,7 @@
                         <fieldset class="form-campo">
                             <label for="facebook-n-amigos"><b>Número de amigos</b></label>
                             <br>
-                            <input type="number" name="facebook-n-amigos" value="" placeholder="" min="0">
+                            <input type="number" name="facebook-n-amigos" value="0" placeholder="" min="0">
                             <br>
                         </fieldset>
                     </td>
@@ -315,7 +315,7 @@
                         <fieldset class="form-campo">
                             <label for="twitter-n-seguidores"><b>Número de seguidores</b></label>
                             <br>
-                            <input type="number" name="twitter-n-seguidores" value="" placeholder="" min="0">
+                            <input type="number" name="twitter-n-seguidores" value="0" placeholder="" min="0">
                             <br>
                         </fieldset>
                     </td>
@@ -374,7 +374,7 @@
                         <fieldset class="form-campo">
                             <label for="linkdin-n-conexoes"><b>Número de conexões</b></label>
                             <br>
-                            <input type="number" name="linkdin-n-conexoes" value="" placeholder="" min="0">
+                            <input type="number" name="linkdin-n-conexoes" value="0" placeholder="" min="0">
                             <br>
                         </fieldset>
                     </td>

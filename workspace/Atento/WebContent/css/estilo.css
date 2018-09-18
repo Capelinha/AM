@@ -387,6 +387,20 @@
 	vertical-align: middle;
 }
 
+#bloco-perfil-social p{
+	margin: 0px;
+}
+
+
+#bloco-perfil-social :hover{
+	background-color: #FFe0c5;
+	transition: 0.2s;
+}
+
+#bloco-perfil-social h6{
+	margin: 3px 0px 10px 0px;
+}
+
 #bloco-perfil-social td i {
 	font-size: 50px;
 	color: #FF7900;

@@ -116,6 +116,7 @@
                         <div>
                             <i class="fab fa-facebook"></i>
                             <p>Facebook</p>
+                            <h6>10 amigos</h6>
                         </div>
                     </a>
                 </td>
@@ -124,6 +125,7 @@
                         <div>
                             <i class="fab fa-twitter"></i>
                             <p>Twitter</p>
+                            <h6>30 seguidores</h6>
                         </div>
                     </a>
                 </td>
@@ -132,6 +134,16 @@
                         <div>
                             <i class="fab fa-linkedin"></i>
                             <p>Linkedin</p>
+                            <h6>50 conexões</h6>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a href="#">
+                        <div>
+                            <i class="fab fa-youtube"></i>
+                            <p>Vídeo</p>
+                            <h6>Apresntação</h6>
                         </div>
                     </a>
                 </td>
@@ -188,16 +200,16 @@
         <!-- Texto do bloco -->
         <table id="perfil-tabela">
             <tr>
-                <th>Título</th>
+            	<th># Vaga</th>
+                <th>Título da vaga</th>
                 <th>Data</th>
-                <th># Vaga</th>
                 <th>Nota</th>
             </tr>
 
             <tr>
-                <td>Storytelling</td>
+            	<td>1</td>
+                <td>Analista de RH</td>
                 <td>01/09</td>
-                <td>1</td>
                 <td>10</td>
             </tr>
         </table>
@@ -276,7 +288,7 @@
 
         <section id="perfil-bloco-botao">
             <a href="cadastro-1.jsp" class="perfil-link">
-                <div class="perfil-botao">EDITAR</div>
+                <div class="perfil-botao">EDITAR PERFIL</div>
             </a>
             <a href="#" class="perfil-link">
                 <div class="perfil-botao">DESTRUIR CONTA</div>
