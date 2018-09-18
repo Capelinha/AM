@@ -95,7 +95,7 @@
                     <div class="g-recaptcha scrollable" data-sitekey="6LeJIG4UAAAAAJSGCbcB8b8-2uGYxRy8E5QpfeiB"></div>
                 </div>
                 <input type="checkbox" name="termos" value="aceito" required/>
-                <label for="termos"><a href="#"><b><u>Eu li e aceito a politica de provacidade </u></b></a></label>
+                <label for="termos"><a href="#"><b>Eu li e aceito a politica de provacidade</b></a></label>
             </fieldset>
 
             <fieldset id="form-acoes">
