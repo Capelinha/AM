@@ -1,3 +1,10 @@
+-- Gerado por Oracle SQL Developer Data Modeler 18.2.0.179.0756
+--   em:        2018-09-17 15:12:50 BRT
+--   site:      Oracle Database 11g
+--   tipo:      Oracle Database 11g
+
+
+
 CREATE TABLE arquivo (
     id_arquivo     NUMBER(5) NOT NULL,
     arquivo        VARCHAR2(200) NOT NULL,
@@ -26,14 +33,30 @@ CREATE TABLE candidato (
     cargo_atual     VARCHAR2(50),
     pret_salarial   NUMBER(6,2),
     facebook        VARCHAR2(50),
-    twiter          VARCHAR2(30),
+    twitter         VARCHAR2(30),
     linkdin         VARCHAR2(50),
     notas           VARCHAR2(1000),
-    status          NUMBER(1) NOT NULL
+    status          NUMBER(1) NOT NULL,
+    n_amigos        NUMBER(5),
+    fb_frequencia   NUMBER(1),
+    n_seguidores    NUMBER(5),
+    tw_frequencia   NUMBER(1),
+    ld_frequencia   NUMBER(1),
+    n_conexoes      NUMBER(5),
+    youtube         VARCHAR2(50)
 );
 
 ALTER TABLE candidato
-    ADD CONSTRAINT candidato_status_chk CHECK ( status BETWEEN 1 AND 2 );
+    ADD CONSTRAINT candidato_status_chk CHECK ( status BETWEEN 1 AND 3 );
+
+ALTER TABLE candidato
+    ADD CONSTRAINT candidato_fb_frequencia_chk CHECK ( fb_frequencia BETWEEN 1 AND 3 );
+
+ALTER TABLE candidato
+    ADD CONSTRAINT candidato_tw_frequencia_chk CHECK ( tw_frequencia BETWEEN 1 AND 3 );
+
+ALTER TABLE candidato
+    ADD CONSTRAINT candidato_lk_frequencia_chk CHECK ( ld_frequencia BETWEEN 1 AND 3 );
 
 ALTER TABLE candidato ADD CONSTRAINT candidato_pk PRIMARY KEY ( id_candidato );
 
@@ -74,7 +97,8 @@ CREATE TABLE inscricao (
     nota_compatibilidade   NUMBER(3),
     status                 NUMBER(1) NOT NULL,
     id_vaga                NUMBER(5) NOT NULL,
-    id_candidato           NUMBER(5) NOT NULL
+    id_candidato           NUMBER(5) NOT NULL,
+    score                  NUMBER(5) NOT NULL
 );
 
 ALTER TABLE inscricao
@@ -82,6 +106,43 @@ ALTER TABLE inscricao
 
 ALTER TABLE inscricao ADD CONSTRAINT inscricao_pk PRIMARY KEY ( id_candidato,
                                                                 id_vaga );
+
+CREATE TABLE peso (
+    id_peso        NUMBER(5) NOT NULL,
+    facebook       NUMBER(5) NOT NULL,
+    n_amigos       NUMBER(5) NOT NULL,
+    twitter        NUMBER(5) NOT NULL,
+    n_seguidores   NUMBER(5) NOT NULL,
+    linkedin       NUMBER(5) NOT NULL,
+    n_conexoes     NUMBER(5) NOT NULL,
+    youtube        NUMBER(5) NOT NULL,
+    id_vaga        NUMBER(5) NOT NULL
+);
+
+ALTER TABLE peso
+    ADD CONSTRAINT peso_facebook_chk CHECK ( facebook BETWEEN 1 AND 5 );
+
+ALTER TABLE peso
+    ADD CONSTRAINT peso_n_amigos_chk CHECK ( n_amigos BETWEEN 1 AND 5 );
+
+ALTER TABLE peso
+    ADD CONSTRAINT peso_twitter_chk CHECK ( twitter BETWEEN 1 AND 5 );
+
+ALTER TABLE peso
+    ADD CONSTRAINT peso_n_seguidores_chk CHECK ( n_seguidores BETWEEN 1 AND 5 );
+
+ALTER TABLE peso
+    ADD CONSTRAINT peso_linkdin_chk CHECK ( linkedin BETWEEN 1 AND 5 );
+
+ALTER TABLE peso
+    ADD CONSTRAINT peso_youtube_chk CHECK ( youtube BETWEEN 1 AND 5 );
+
+CREATE UNIQUE INDEX peso__idx ON
+    peso (
+        id_vaga
+    ASC );
+
+ALTER TABLE peso ADD CONSTRAINT pesos_pk PRIMARY KEY ( id_peso );
 
 CREATE TABLE prova (
     id_prova            NUMBER(5) NOT NULL,
@@ -133,8 +194,12 @@ ALTER TABLE tag_candidato ADD CONSTRAINT tag_candidato_pk PRIMARY KEY ( id_candi
 
 CREATE TABLE tag_vaga (
     id_tag    NUMBER(5) NOT NULL,
-    id_vaga   NUMBER(5) NOT NULL
+    id_vaga   NUMBER(5) NOT NULL,
+    peso      NUMBER(5) NOT NULL
 );
+
+ALTER TABLE tag_vaga
+    ADD CONSTRAINT tag_vaga_peso_chk CHECK ( peso BETWEEN 1 AND 5 );
 
 ALTER TABLE tag_vaga ADD CONSTRAINT tag_vaga_pk PRIMARY KEY ( id_tag,
                                                               id_vaga );
@@ -150,6 +215,9 @@ CREATE TABLE tentativa (
     id_prova       NUMBER(5) NOT NULL,
     id_candidato   NUMBER(5) NOT NULL
 );
+
+ALTER TABLE tentativa
+    ADD CONSTRAINT tentativa_status_chk CHECK ( status BETWEEN 1 AND 3 );
 
 ALTER TABLE tentativa ADD CONSTRAINT tentativa_pk PRIMARY KEY ( id_tentativa );
 
@@ -179,9 +247,14 @@ ALTER TABLE vaga
 ALTER TABLE vaga ADD CONSTRAINT vaga_pk PRIMARY KEY ( id_vaga );
 
 CREATE TABLE vaga_prova (
-    id_prova   NUMBER(5) NOT NULL,
-    id_vaga    NUMBER(5) NOT NULL
+    id_prova     NUMBER(5) NOT NULL,
+    id_vaga      NUMBER(5) NOT NULL,
+    n_questoes   NUMBER(5) NOT NULL,
+    peso         NUMBER(5) NOT NULL
 );
+
+ALTER TABLE vaga_prova
+    ADD CONSTRAINT vaga_prova_peos_chk CHECK ( peso BETWEEN 1 AND 5 );
 
 ALTER TABLE vaga_prova ADD CONSTRAINT vagas_provas_pk PRIMARY KEY ( id_vaga,
                                                                     id_prova );
@@ -244,6 +317,10 @@ ALTER TABLE inscricao
     ADD CONSTRAINT vaga_inscricao_fk FOREIGN KEY ( id_vaga )
         REFERENCES vaga ( id_vaga );
 
+ALTER TABLE peso
+    ADD CONSTRAINT vaga_peso_fk FOREIGN KEY ( id_vaga )
+        REFERENCES vaga ( id_vaga );
+
 ALTER TABLE tentativa
     ADD CONSTRAINT vaga_prova_tentativa_fk FOREIGN KEY ( id_vaga,
                                                          id_prova )
@@ -254,3 +331,47 @@ ALTER TABLE vaga_prova
     ADD CONSTRAINT vaga_vaga_prova_fk FOREIGN KEY ( id_vaga )
         REFERENCES vaga ( id_vaga );
 
+
+
+-- Relatório do Resumo do Oracle SQL Developer Data Modeler: 
+-- 
+-- CREATE TABLE                            16
+-- CREATE INDEX                             1
+-- ALTER TABLE                             49
+-- CREATE VIEW                              0
+-- ALTER VIEW                               0
+-- CREATE PACKAGE                           0
+-- CREATE PACKAGE BODY                      0
+-- CREATE PROCEDURE                         0
+-- CREATE FUNCTION                          0
+-- CREATE TRIGGER                           0
+-- ALTER TRIGGER                            0
+-- CREATE COLLECTION TYPE                   0
+-- CREATE STRUCTURED TYPE                   0
+-- CREATE STRUCTURED TYPE BODY              0
+-- CREATE CLUSTER                           0
+-- CREATE CONTEXT                           0
+-- CREATE DATABASE                          0
+-- CREATE DIMENSION                         0
+-- CREATE DIRECTORY                         0
+-- CREATE DISK GROUP                        0
+-- CREATE ROLE                              0
+-- CREATE ROLLBACK SEGMENT                  0
+-- CREATE SEQUENCE                          0
+-- CREATE MATERIALIZED VIEW                 0
+-- CREATE MATERIALIZED VIEW LOG             0
+-- CREATE SYNONYM                           0
+-- CREATE TABLESPACE                        0
+-- CREATE USER                              0
+-- 
+-- DROP TABLESPACE                          0
+-- DROP DATABASE                            0
+-- 
+-- REDACTION POLICY                         0
+-- 
+-- ORDS DROP SCHEMA                         0
+-- ORDS ENABLE SCHEMA                       0
+-- ORDS ENABLE OBJECT                       0
+-- 
+-- ERRORS                                   0
+-- WARNINGS                                 0

@@ -17,7 +17,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -33,12 +33,43 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="9772D164-41D8-63DC-1C0F-36C957995707" referredColumn="B2A862F3-E05C-961A-A4C6-EC21DEE6F47D"/>
 </associations>
+</Column>
+<Column name="n_questoes" id="FA99C1D0-75D6-2E02-39B2-1C88A314371D">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>601334C7-4113-3CB4-F078-8CE6636CB3E8</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="peso" id="91EDB5AA-72B3-115B-7927-C6BA0E08FA23">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>0BC49698-F2CE-F22F-CD8A-3DF92D1C3A87</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>VAGA_PROVA_PEOS_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

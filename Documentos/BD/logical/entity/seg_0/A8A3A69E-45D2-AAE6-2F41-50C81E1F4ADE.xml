@@ -15,20 +15,6 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="nota_compatibilidade" id="CAF14506-2BD5-EAC4-EADE-9FF405D1298F">
-<createdBy>mateu</createdBy>
-<createdTime>2018-08-30 22:12:36 UTC</createdTime>
-<ownerDesignName>BD</ownerDesignName>
-<engineerTo>
-<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
-<ownDataTypeParameters>,3,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="status" id="6481BA02-BC42-CEE7-6068-1EC5559586A0">
 <createdBy>mateu</createdBy>
 <createdTime>2018-08-25 11:42:51 UTC</createdTime>
@@ -48,6 +34,19 @@
 <endValue>7</endValue>
 </rangeDef>
 </listOfRanges>
+</Attribute>
+<Attribute name="score" id="5E6273E3-B02C-8E2B-619D-B130F965CB1E">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:03:00 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id_vaga" id="F646204A-C1C9-3968-6FB1-CFFECAFE7EC4">
 <createdBy>mateu</createdBy>

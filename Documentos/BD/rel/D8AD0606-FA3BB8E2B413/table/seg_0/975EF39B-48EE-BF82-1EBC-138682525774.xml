@@ -224,7 +224,7 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="twiter" id="CA9A2544-C06A-6928-6C91-8B62233F696D">
+<Column name="twitter" id="CA9A2544-C06A-6928-6C91-8B62233F696D">
 <createdBy>mateu</createdBy>
 <createdTime>2018-08-31 14:26:27 UTC</createdTime>
 <generatorID>E42A88B6-57B2-AEE3-770B-0F220008DF28</generatorID>
@@ -278,9 +278,121 @@
 <listOfRanges>
 <rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
 <beginValue>1</beginValue>
-<endValue>2</endValue>
+<endValue>3</endValue>
 </rangeDef>
 </listOfRanges>
+</Column>
+<Column name="n_amigos" id="F0D581B7-DADC-8258-5C1A-B518640F0C9A">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:35 UTC</createdTime>
+<generatorID>50B4C360-B62B-853A-7F2E-360A526E3BE3</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fb_frequencia" id="17E6A3FA-E6A0-FDF3-3A92-D9D06DD2538C">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:35 UTC</createdTime>
+<generatorID>9AC1B3F3-A23D-5C46-2F53-22EB80EDC525</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>CANDIDATO_FB_FREQUENCIA_CHK</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>3</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="n_seguidores" id="87D3FFF8-43B6-3AA3-0D1C-878CE2D0FD47">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:35 UTC</createdTime>
+<generatorID>77E2DCAD-F6AF-A25E-5DC6-1026B19B4123</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tw_frequencia" id="8B297F22-CFAF-CB15-4711-478F67FB9E03">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:35 UTC</createdTime>
+<generatorID>EC60DDEB-6340-952D-6C9A-87A0EF00A1BE</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>CANDIDATO_TW_FREQUENCIA_CHK</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>3</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="ld_frequencia" id="5C641509-9464-EC16-84EF-BDA9AEDF24C5">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:35 UTC</createdTime>
+<generatorID>5AF7F1B4-A44E-CE93-E0EA-E782C1BAEF42</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>CANDIDATO_LK_FREQUENCIA_CHK</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>3</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="n_conexoes" id="6DB11FF8-2AA2-56AE-12EC-E0D6C476FED9">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:35 UTC</createdTime>
+<generatorID>6B943BD4-CE51-C5D6-7CAF-4D72153AD681</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="youtube" id="EFF87635-43A4-CE49-D91F-4618B714F83D">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:35 UTC</createdTime>
+<generatorID>A5982435-49A0-A125-11C2-61B08410BA05</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

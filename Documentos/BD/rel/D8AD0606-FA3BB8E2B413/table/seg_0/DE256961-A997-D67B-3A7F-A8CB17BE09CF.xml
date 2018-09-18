@@ -1,0 +1,203 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DE256961-A997-D67B-3A7F-A8CB17BE09CF" name="PESO">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>FA213FE4-309B-CB53-36BB-B91777841CC0</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_peso" id="6514DBE8-D7EC-679E-9BA3-1DD5AD09A102">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>C8FDFE07-3EB6-9A1F-2DAE-28559E735E7A</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="facebook" id="A0966DC6-CB0D-05BD-D0B3-EBFC263D84BF">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>78D76AD2-9A47-D7CB-032B-8E4B3E99A76F</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>PESO_FACEBOOK_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="n_amigos" id="AA85C432-435A-D839-0313-BBE4B40264FC">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>E64D1E1C-9CE4-EB5D-EE94-5EEA57A1F72E</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>PESO_N_AMIGOS_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="twitter" id="8A25F87C-4245-6C91-EE91-5D178FEBA354">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>07BF4DCD-DCFA-7D94-DE9D-E1B39B6566CD</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>PESO_TWITTER_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="n_seguidores" id="FCB0B8ED-96A9-D00E-6115-8956226C754C">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>E369F5EA-BEA9-49F4-2055-53D0AFF66BFA</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>PESO_N_SEGUIDORES_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="linkedin" id="7A08F6A4-FACC-240E-221F-EE7DCA7AB204">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>69AA9AB4-1BDC-0CC0-744D-65CC41276FBF</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>PESO_LINKDIN_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="n_conexoes" id="CD4EB6BA-0FD4-A6B5-83D5-C3F7540758FD">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>81F101C5-E97E-216B-EDDF-8FDD73CD654B</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>PESO_N_CONEXOES_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="youtube" id="EDEF54BC-FAAD-3361-1BE7-1C5172D391D2">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>755EF7DB-9A8D-ABD4-5850-9581DCD7E629</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<constraintName>PESO_YOUTUBE_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="id_vaga" id="DA0425CE-EC0F-D77C-6912-DFD9B60895F1">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>DC108990-7F4A-B320-84E5-BC0E2EBBEB7E</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8FC7D0FA-447C-0266-157C-DEFC1DD749B8" referredColumn="B2A862F3-E05C-961A-A4C6-EC21DEE6F47D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="23C0E4A6-BB8D-C8DD-3759-6470C273EAB5" name="PESOS_PK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>E41FB6EE-622F-50BF-9CEB-443357C7C7F4</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6514DBE8-D7EC-679E-9BA3-1DD5AD09A102"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F5B654D3-8376-C9A8-F818-7DA6587F6AD7" name="PESO__IDX">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:12:06 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>F26BD452-BEE7-D547-1101-01287E7D210A</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="DA0425CE-EC0F-D77C-6912-DFD9B60895F1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="084A040D-EC64-127D-48EF-DA0775DA8931" name="vaga_peso_FK">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 18:08:36 UTC</createdTime>
+<generatorID>F26BD452-BEE7-D547-1101-01287E7D210A</generatorID>
+<ownerDesignName>BD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DA0425CE-EC0F-D77C-6912-DFD9B60895F1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

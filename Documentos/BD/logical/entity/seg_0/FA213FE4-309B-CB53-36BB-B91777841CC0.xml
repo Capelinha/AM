@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BD0DE6F0-5916-A489-ACCF-DC044ED31EB6" name="TENTATIVA">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FA213FE4-309B-CB53-36BB-B91777841CC0" name="PESO">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-25 12:11:35 UTC</createdTime>
+<createdTime>2018-09-17 17:46:21 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_tentativa" id="9AD9F52E-1924-322F-A486-D03A4487905A">
+<Attribute name="id_peso" id="C8FDFE07-3EB6-9A1F-2DAE-28559E735E7A">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-25 12:22:30 UTC</createdTime>
+<createdTime>2018-09-17 17:46:27 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
@@ -28,138 +28,169 @@
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nota" id="EEE2ABFE-A1A7-5090-E921-B3E22589FE88">
+<Attribute name="facebook" id="78D76AD2-9A47-D7CB-032B-8E4B3E99A76F">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-25 12:13:32 UTC</createdTime>
+<createdTime>2018-09-17 17:46:31 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>2</dataTypePrecision>
-<ownDataTypeParameters>,2,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="inicio" id="28CC1AAC-26CC-EF37-86D9-F9CC93816231">
-<createdBy>mateu</createdBy>
-<createdTime>2018-08-25 12:21:31 UTC</createdTime>
-<ownerDesignName>BD</ownerDesignName>
-<engineerTo>
-<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="fim" id="1E0EA602-1684-5DCC-A70D-156233A01BED">
-<createdBy>mateu</createdBy>
-<createdTime>2018-08-25 12:21:58 UTC</createdTime>
-<ownerDesignName>BD</ownerDesignName>
-<engineerTo>
-<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="n_logins" id="35767CD8-5575-2553-A9DB-BC738FF5564F">
-<createdBy>mateu</createdBy>
-<createdTime>2018-08-25 12:21:39 UTC</createdTime>
-<ownerDesignName>BD</ownerDesignName>
-<engineerTo>
-<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
-</engineerTo>
+<constraintName>PESO_FACEBOOK_CHK</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="status" id="E6A35D55-CC69-77C4-DA45-93EF4FA3BF6E">
-<createdBy>mateu</createdBy>
-<createdTime>2018-08-29 17:28:19 UTC</createdTime>
-<ownerDesignName>BD</ownerDesignName>
-<engineerTo>
-<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
-</engineerTo>
-<constraintName>TENTATIVA_STATUS_CHK</constraintName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>1</dataTypePrecision>
-<ownDataTypeParameters>,1,</ownDataTypeParameters>
 <listOfRanges>
 <rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
 <beginValue>1</beginValue>
-<endValue>3</endValue>
+<endValue>5</endValue>
 </rangeDef>
 </listOfRanges>
 </Attribute>
-<Attribute name="id_vaga" id="64596DB7-C5AD-9109-377F-08AA515479FD">
+<Attribute name="n_amigos" id="E64D1E1C-9CE4-EB5D-EE94-5EEA57A1F72E">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-31 12:44:10 UTC</createdTime>
-<generatorID>38EA5ACA-7E25-DEEC-C9E6-A96D97486A40</generatorID>
+<createdTime>2018-09-17 17:46:47 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
-<referedAttribute>23076EF9-2DF7-5720-BE2A-BFD699C9E02D</referedAttribute>
+<constraintName>PESO_N_AMIGOS_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+<Attribute name="twitter" id="07BF4DCD-DCFA-7D94-DE9D-E1B39B6566CD">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 17:46:59 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<constraintName>PESO_TWITTER_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+<Attribute name="n_seguidores" id="E369F5EA-BEA9-49F4-2055-53D0AFF66BFA">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 17:47:07 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<constraintName>PESO_N_SEGUIDORES_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+<Attribute name="linkedin" id="69AA9AB4-1BDC-0CC0-744D-65CC41276FBF">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 17:47:22 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<constraintName>PESO_LINKDIN_CHK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+<Attribute name="n_conexoes" id="81F101C5-E97E-216B-EDDF-8FDD73CD654B">
+<createdBy>mateu</createdBy>
+<createdTime>2018-09-17 17:47:28 UTC</createdTime>
+<ownerDesignName>BD</ownerDesignName>
+<engineerTo>
+<item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
+</engineerTo>
+<constraintName>PESO_N_CONEXOES_CHK</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_prova" id="DB144698-397E-7F9A-8247-B29759913A30">
+<Attribute name="youtube" id="755EF7DB-9A8D-ABD4-5850-9581DCD7E629">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-25 12:22:20 UTC</createdTime>
-<generatorID>38EA5ACA-7E25-DEEC-C9E6-A96D97486A40</generatorID>
+<createdTime>2018-09-17 17:47:34 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
-<referedAttribute>3662F230-B242-92EA-0873-DDA574BC4F55</referedAttribute>
+<constraintName>PESO_YOUTUBE_CHK</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
 </Attribute>
-<Attribute name="id_candidato" id="4371B0D0-44DB-1773-6C81-A5C4CAE5851F">
+<Attribute name="id_vaga" id="DC108990-7F4A-B320-84E5-BC0E2EBBEB7E">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-31 13:53:20 UTC</createdTime>
-<generatorID>90954917-1F9C-DEC2-19AD-F3399E9EA480</generatorID>
+<createdTime>2018-09-17 17:49:58 UTC</createdTime>
+<generatorID>F26BD452-BEE7-D547-1101-01287E7D210A</generatorID>
 <ownerDesignName>BD</ownerDesignName>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="true"/>
 </engineerTo>
-<referedAttribute>8E3661F7-4F65-46EB-F46B-B8A318925349</referedAttribute>
+<referedAttribute>E2E22B09-A5F4-963D-61E5-8B58B47B0CD2</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="438633B9-5CB6-B391-0500-7E0F81220679" name="TENTATIVA_PK">
+<identifier id="E41FB6EE-622F-50BF-9CEB-443357C7C7F4" name="PESOS_PK">
 <createdBy>mateu</createdBy>
-<createdTime>2018-08-25 12:22:39 UTC</createdTime>
+<createdTime>2018-09-17 17:46:33 UTC</createdTime>
 <ownerDesignName>BD</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
 <item key="D8AD0606-197C-1E73-485B-FA3BB8E2B413" value="false"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>9AD9F52E-1924-322F-A486-D03A4487905A</newElementsIDs>
+<newElementsIDs>C8FDFE07-3EB6-9A1F-2DAE-28559E735E7A</newElementsIDs>
 <usedAttributes>
-<attributeRef>9AD9F52E-1924-322F-A486-D03A4487905A</attributeRef>
+<attributeRef>C8FDFE07-3EB6-9A1F-2DAE-28559E735E7A</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

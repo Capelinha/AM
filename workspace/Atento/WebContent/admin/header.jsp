@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Atento RH | Candidatos</title>
+    
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -21,27 +22,26 @@
     <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-    
+    <!-- AdminLTE Skins-->
+    <link rel="stylesheet" href="dist/css/skins/skin-yellow.min.css">
+    <!-- Polyfill para Edge-->
     <link rel="stylesheet" type="text/css" href="css/dialog-polyfill.css" />
-
     <!--CSS-->
     <link rel="stylesheet" href="css/estilo.css">
-
+	 <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+	    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-yellow sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
@@ -78,89 +78,86 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">PRINCIPAL</li>
 
-                    <% String uri = request.getRequestURI();
-					   String pageName = uri.substring(uri.lastIndexOf("/")+1);
-					%>
+	                    <% String uri = request.getRequestURI();
+						   String pageName = uri.substring(uri.lastIndexOf("/")+1);
+						%>
 
-                        <li <% if(pageName.contains("index")) out.print("class='active'"); %>>
-                            <a href="index.jsp">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                                <span class="pull-right-container">
-              					</span>
-                            </a>
-                        </li>
+                    <li <% if(pageName.contains("index")) out.print("class='active'"); %>>
+                        <a href="index.jsp">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            <span class="pull-right-container"></span>
+                        </a>
+                    </li>
 
-                        <li class="header">Analista RH</li>
+                    <li class="header">Analista RH</li>
 
-                        <li class="treeview<% if(pageName.contains("vagas") || pageName.contains("nova-vaga")) out.print(" active"); %>">
-                            <a href="">
-                                <i class="fa fa-font-awesome"></i>
-                                <span>Vagas</span>
-                                <span class="pull-right-container">
-                					<i class="fa fa-angle-left pull-right"></i>
-              					</span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li <% if(pageName.contains("vagas")) out.print( "class='active'"); %>><a href="vagas.jsp"><i class="fa fa-th-list"></i> Listar vagas</a></li>
-                                <li <% if(pageName.contains("nova-vaga")) out.print( "class='active'"); %>><a href="nova-vaga.jsp"><i class="fa fa-plus"></i> Cadastrar vaga</a></li>
-                            </ul>
-                        </li>
+                    <li class="treeview<% if(pageName.contains("vagas") || pageName.contains("nova-vaga")) out.print(" active"); %>">
+                        <a href="">
+                            <i class="fa fa-font-awesome"></i>
+                            <span>Vagas</span>
+                            <span class="pull-right-container">
+            					<i class="fa fa-angle-left pull-right"></i>
+          					</span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li <% if(pageName.contains("vagas")) out.print( "class='active'"); %>><a href="vagas.jsp"><i class="fa fa-th-list"></i> Listar vagas</a></li>
+                            <li <% if(pageName.contains("nova-vaga")) out.print( "class='active'"); %>><a href="nova-vaga.jsp"><i class="fa fa-plus"></i> Cadastrar vaga</a></li>
+                        </ul>
+                    </li>
 
-                        <li <% if(pageName.contains("departamentos")) out.print("class='active'"); %>>
-                            <a href="departamentos.jsp">
-                                <i class="fa fa-user"></i> <span>Listar departamentos</span>
-                                <span class="pull-right-container">
-              					</span>
-                            </a>
-                        </li>
+                    <li <% if(pageName.contains("departamentos")) out.print("class='active'"); %>>
+                        <a href="departamentos.jsp">
+                            <i class="fa fa-user"></i> <span>Listar departamentos</span>
+                            <span class="pull-right-container"></span>
+                        </a>
+                    </li>
 
-                        <li class="header">Recrutador</li>
+                    <li class="header">Recrutador</li>
 
-                        <li class="treeview<% if(pageName.contains("provas") | pageName.contains("nova-prova")) out.print(" active"); %>">
-                            <a href="#">
-                                <i class="fa fa-question-circle"></i>
-                                <span>Provas</span>
-                                <span class="pull-right-container">
-                				<i class="fa fa-angle-left pull-right"></i>
-             				 </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li <% if(pageName.contains("provas")) out.print("class='active'"); %>><a href="provas.jsp"><i class="fa fa-th-list"></i> Editar prova</a></li>
-                                <li <% if(pageName.contains("nova-prova")) out.print("class='active'"); %>><a href="nova-prova.jsp"><i class="fa fa-plus"></i> Cadastrar prova</a></li>
-                            </ul>
-                        </li>
+                    <li class="treeview<% if(pageName.contains("provas") | pageName.contains("nova-prova")) out.print(" active"); %>">
+                        <a href="#">
+                            <i class="fa fa-question-circle"></i>
+                            <span>Provas</span>
+                            <span class="pull-right-container">
+            					<i class="fa fa-angle-left pull-right"></i>
+         				 	</span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li <% if(pageName.contains("provas")) out.print("class='active'"); %>><a href="provas.jsp"><i class="fa fa-th-list"></i> Editar prova</a></li>
+                            <li <% if(pageName.contains("nova-prova")) out.print("class='active'"); %>><a href="nova-prova.jsp"><i class="fa fa-plus"></i> Cadastrar prova</a></li>
+                        </ul>
+                    </li>
 
-                        <li <% if(pageName.contains("candidatos") || pageName.contains("exibir-candidato")) out.print( "class='active'"); %>>
-                            <a href="candidatos.jsp">
-                                <i class="fa fa-user"></i> <span>Listar candidatos</span>
-                                <span class="pull-right-container">
-             					</span>
-                            </a>
-                        </li>
+                    <li <% if(pageName.contains("candidatos") || pageName.contains("exibir-candidato")) out.print( "class='active'"); %>>
+                        <a href="candidatos.jsp">
+                            <i class="fa fa-user"></i> <span>Listar candidatos</span>
+                            <span class="pull-right-container">
+         					</span>
+                        </a>
+                    </li>
 
-                        <li <% if(pageName.contains("vagas")) out.print("class='active'"); %>>
-                            <a href="vagas.jsp">
-                                <i class="fa fa-font-awesome"></i> <span>Listar vagas</span>
-                                <span class="pull-right-container">
-              					</span>
-                            </a>
-                        </li>
+                    <li <% if(pageName.contains("vagas")) out.print("class='active'"); %>>
+                        <a href="vagas.jsp">
+                            <i class="fa fa-font-awesome"></i> <span>Listar vagas</span>
+                            <span class="pull-right-container"></span>
+                        </a>
+                    </li>
 
-                        <li class="header">Relatórios</li>
+                    <li class="header">Relatórios</li>
 
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-pie-chart"></i>
-                                <span>Relatórios</span>
-                                <span class="pull-right-container">
-                					<i class="fa fa-angle-left pull-right"></i>
-              					</span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> A</a></li>
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> B</a></li>
-                            </ul>
-                        </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Relatórios</span>
+                            <span class="pull-right-container">
+            					<i class="fa fa-angle-left pull-right"></i>
+          					</span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> A</a></li>
+                            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> B</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <!-- /.sidebar -->
