@@ -2,6 +2,7 @@ package com.atento.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,14 +35,14 @@ public class servletLogar extends HttpServlet {
 		RequestDispatcher dispatcher;
 		int id = dao.logar(email, senha);
 		if (id != 0) {
-			session.setAttribute("id",id);
+			request.getSession().setAttribute("id",id);
 			if (email.contains("atento.com")) {
-				//dispatcher = request.getRequestDispatcher("indexAdmin");
+				dispatcher = request.getRequestDispatcher("indexAdmin");
 			} else {
-				//dispatcher = request.getRequestDispatcher("indexCand");
+				dispatcher = request.getRequestDispatcher("indexCand");
 			}
 		} else {
-			//dispatcher = request.getRequestDispatcher("msgErro");
+			dispatcher = request.getRequestDispatcher("msgErro");
 		}
 		dispatcher.forward(request,response);
 	}

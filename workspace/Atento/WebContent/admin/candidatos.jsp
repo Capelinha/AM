@@ -161,7 +161,12 @@
 	          'searching': false,
 	          'ordering': true,
 	          'info': true,
-	          'autoWidth': false
+	          'autoWidth': false,
+	           	 createdRow: function (row, data, index) {
+	                 $(row).click(function(){
+	                	 window.location.href='exibir-candidato.jsp'
+	                 });
+	             }
 	      });
 	  });
 	 </script>

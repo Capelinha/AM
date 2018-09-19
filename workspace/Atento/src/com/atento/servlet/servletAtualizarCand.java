@@ -21,45 +21,49 @@ import com.atento.entidade.Candidato;
 public class servletAtualizarCand extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
     public servletAtualizarCand() {
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = session.getAtribute("id");
+		int id = Integer.parseInt(request.getParameter("id"));
+		String nome = request.getParameter("nome");
+		String sobrenome = request.getParameter("sobrenome");
+		String email = request.getParameter("email");
+		String senha = request.getParameter("senha");
+		String telefone = request.getParameter("telefone");
+		String celular = request.getParameter("celular");
 		String endereco = request.getParameter("endereco");
-		String cep = request.getparameter("cep");
-		String cidade = request.getparameter("cidade");
-		String estado = request.getparameter("estado");
-		String pais = request.getparameter("pais");
-		String cargo = request.getparameter("cargo-atual");
-		int anos = request.getparameter("anos");
-		double pretensao = request.getparameter("pretensao");
-		String nascString = request.getparameter("nasc");
+		String cep = request.getParameter("cep");
+		String cidade = request.getParameter("cidade");
+		String estado = request.getParameter("estado");
+		String pais = request.getParameter("pais");
+		String cargo = request.getParameter("cargo-atual");
+		int anos = Integer.parseInt(request.getParameter("anos"));
+		double pretensao = Double.parseDouble(request.getParameter("pretensao"));
+		String nascString = request.getParameter("nasc");
 		//String tags = request.getparameter("tags");
-		String facebook = request.getparameter("facebook");
-		int nFace = request.getparameter("nFace");
-		String twitter = request.getparameter("twitter");
-		int nTwit = request.getparameter("nTwit");
-		String linkedin = request.getparameter("linkedin");
-		int nLink = request.getparameter("nLink");
-		String youtube = request.getparameter("youtube");
+		String facebook = request.getParameter("facebook");
+		int nFace = Integer.parseInt(request.getParameter("nFace"));
+		String twitter = request.getParameter("twitter");
+		int nTwit = Integer.parseInt(request.getParameter("nTwit"));
+		String linkedin = request.getParameter("linkedin");
+		int nLink = Integer.parseInt(request.getParameter("nLink"));
+		String youtube = request.getParameter("youtube");
 		
 		CandidatoDAO dao = new CandidatoDAO();
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		
 		try {			
 			Date data = new Date(format.parse(nascString).getTime());
-			Candidato candidato = new Candidato(id, endereco, 
-					cep, cidade, estado, pais, cargo,
-					anos, pretensao, data, facebook, nFace, 0, twitter, nTwit,
-					0, linkedin, nLink, 0, youtube, 2);
+			Candidato candidato = new Candidato(id, nome, sobrenome, email, senha, telefone, celular, 
+					endereco, cidade, estado, pais, cep, data, anos, 
+					cargo, pretensao, facebook,	nFace, 0, twitter, 
+					nTwit, 0, linkedin, nLink, 0, youtube, "", 2);
 			dao.atualizaCandidato(candidato);
 		} catch(ParseException e) {
 			e.printStackTrace();

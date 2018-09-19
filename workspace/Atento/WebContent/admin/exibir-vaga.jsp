@@ -191,7 +191,7 @@
 			              <a href="#">
 				              <div class="exibir-vaga-candidato">
 				              	<strong> Mateus Igreja</strong>
-				              	<p class="text-muted"> 60% de compatibilidade</p>	
+				              	<p class="text-muted"> Score: 700</p>	
 				              	
 				              	<hr>
 				              	
@@ -219,7 +219,7 @@
 			              <a href="#">
 				              <div class="exibir-vaga-candidato">
 				              	<strong> Mateus Igreja</strong>
-				              	<p class="text-muted"> 60% de compatibilidade</p>	
+				              	<p class="text-muted"> Score: 1000</p>	
 				              	
 				              	<hr>
 				              	
@@ -233,7 +233,7 @@
 			              <a href="#">
 				              <div class="exibir-vaga-candidato">
 				              	<strong> Mateus Igreja</strong>
-				              	<p class="text-muted"> 60% de compatibilidade</p>	
+				              	<p class="text-muted"> Score: 100</p>	
 				              	
 				              	<hr>
 				              	
@@ -290,6 +290,10 @@
 	        	document.getElementById("dialogo-exibir-vaga-status").close();
 	        	
 	        });
+	        
+	        $('.exibir-vaga-candidato').click(function () {
+               	 window.location.href='exibir-candidato.jsp'
+            });
 	    })
 	</script>
 </body>

@@ -136,6 +136,8 @@ public class Candidato {
 
 
 
+
+
 	public int getId() {
 		return id;
 	}
