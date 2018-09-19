@@ -34,6 +34,10 @@ public class CandidatoDAO {
 		}
 	}
 	
+	public void atualizaCandidato(Candidato c) {
+		
+	}
+	
 	public int logar(String email, String senha) {
 		if (email.contains("atento.com")) {
 			sql = "select id_funcionario from funcionario where email = ? and senha = ?";
