@@ -87,16 +87,105 @@
 					                <input type="number" name="salario" class="form-control" step="1">
 					                <span class="input-group-addon"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.00</font></font></span>
 					            </div>
-	                            <div class="form-group">
-	                                <label>Departamento*</label>
-	                                <input type="text" name="departamento" class="form-control" placeholder="Departamento ...">
-	                            </div>
+					            <br>
+	                            <fieldset class="form-campo-select2">
+		                            <label for="tags"><b>Departamento*</b></label>
+		                            <br>
+		                            <select class="form-control" id="form-tags-select" name="deartamento" data-placeholder="Selecione um departamento" style="width: 100%;">
+					                    <option>Alabama</option>
+					                    <option>Alaska</option>
+					                    <option>California</option>
+					                    <option>Delaware</option>
+					                    <option>Tennessee</option>
+					                    <option>Texas</option>
+					                    <option>Washington</option>
+							        </select>
+		                            <br>
+		                        </fieldset>
 		                            
 		                    </div>
 		                    <!-- /.box-body -->
 		                </div>
 		                
-		                <div class="box box-info">
+		                <div class="box box-success">
+		                    <div class="box-header with-border">
+		                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tags</font></font></h3>
+		                    </div>
+		                    <!-- /.box-header -->
+		                    <div class="box-body">
+		                    			                    	
+		                        <table id="tabela-tags" class="table table-bordered table-hover">
+		                            <thead>
+		                                <tr>
+		                                    <th>Tag</th>
+		                                    <th>Peso</th>
+		                                    <th>Opções</th>
+		                                </tr>
+		                            </thead>
+		                            <tbody>
+		                                <!-- <tr>
+		                                    <td>Storytelling</td>
+		                                    <td class="tabela-opcoes">
+		                                        <a href="#">
+		                                            <i class="fa fa-trash-o tabela-icone"></i>
+		                                        </a>
+		                                    </td>
+		                                </tr> -->
+		                            </tbody>
+		                            <tfoot>
+		                                <tr>
+		                                    <th>Tag</th>
+		                                    <th>Peso</th>
+		                                    <th>Opções</th>
+		                                </tr>
+		                            </tfoot>
+		                        </table>
+		                     
+		                        
+	                       		<hr style="border: 1px solid #00a65a; margin-bottom: 8px">
+	                        	<h4 class="box-title" style="margin: 4px">Adicionar tag</h4>
+	                        	<hr style="margin-top: 7px">
+	                    		
+	                       
+		                        <fieldset class="form-campo-select2">
+		                            <label for="tags"><b>Tags de habilidade</b></label>
+		                            <br>
+		                            <select class="form-control" id="form-tags-select" name="tags-add" data-placeholder="Selecione as tags" style="width: 100%;">
+					                    <option>Alabama</option>
+					                    <option>Alaska</option>
+					                    <option>California</option>
+					                    <option>Delaware</option>
+					                    <option>Tennessee</option>
+					                    <option>Texas</option>
+					                    <option>Washington</option>
+							        </select>
+		                            <br>
+		                        </fieldset>
+		                        <br>
+		                        
+		                        <div class="form-group">
+					                <label>Peso</label>
+					                <select class="form-control" id="form-tags-peso" name="tags-pesos" style="width: 100%;">
+						                <option selected="selected" value="1">1 - 50 prontos</option>
+						                <option value="2">2 - 40 prontos</option>
+						                <option value="3">3 - 30 prontos</option>
+						                <option value="4">4 - 20 prontos</option>
+						                <option value="5">5 - 10 prontos</option>
+					                </select>
+				           		</div>
+					           	
+		                        
+		                        <div class="box-footer">
+					                <button type="button" id="botao-adicionar-tag" class="btn btn-success pull-right">Adicionar</button>
+					            </div>
+		                    </div>
+		                    <!-- /.box-body -->
+		                </div>
+		                
+		            </div>
+		
+		            <div class="col-md-6">
+		            	<div class="box box-info">
 		                    <div class="box-header with-border">
 		                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Local</font></font></h3>
 		                    </div>
@@ -121,9 +210,7 @@
 		                    </div>
 		                    <!-- /.box-body -->
 		                </div>
-		            </div>
-		
-		            <div class="col-md-6">
+		                
 		            	<div class="box box-success">
 		                    <div class="box-header with-border">
 		                        <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Detalhes</font></font></h3>
@@ -150,19 +237,7 @@
 	                                <label>Requisitos*</label>
 	                                <textarea class="form-control" name="requisitos" rows="3" placeholder="Requisitos ..."></textarea>
 	                            </div>
-	                            <div class="form-group">
-					                <label>Tags de habilidades</label>
-					                <select class="form-control" id="form-tags-select" name="tags" multiple="multiple" data-placeholder="Selecione as tags"
-					                        style="width: 100%;">
-					                  <option>Alabama</option>
-					                  <option>Alaska</option>
-					                  <option>California</option>
-					                  <option>Delaware</option>
-					                  <option>Tennessee</option>
-					                  <option>Texas</option>
-					                  <option>Washington</option>
-					                </select>
-					             </div>
+	                           
 		                    </div>
 		                    <!-- /.box-body -->
 		                </div>
@@ -190,6 +265,17 @@
 								                  <option>Storytelling</option>
 								                </select>
 								           </div>
+								           
+								           <div class="form-group">
+								                <label>Peso</label>
+								                <select class="form-control" id="peso-prova-dialog" style="width: 100%;">
+									                <option selected="selected" value="1">1 - 50 prontos</option>
+									                <option value="2">2 - 40 prontos</option>
+									                <option value="3">3 - 30 prontos</option>
+									                <option value="4">4 - 20 prontos</option>
+									                <option value="5">5 - 10 prontos</option>
+								                </select>
+					           			   </div>
 							              	
 							            </div>
 							            <!-- /.box-body -->
@@ -204,6 +290,7 @@
 		                            <thead>
 		                                <tr>
 		                                    <th>Título</th>
+		                                    <th>Peso</th>
 		                                    <th>Opções</th>
 		                                </tr>
 		                            </thead>
@@ -220,6 +307,7 @@
 		                            <tfoot>
 		                                <tr>
 		                                    <th>Título</th>
+		                                    <th>Peso</th>
 		                                    <th>Opções</th>
 		                                </tr>
 		                            </tfoot>
@@ -238,10 +326,105 @@
 		                    </div>
 		                    <!-- /.box-header -->
 		                    <div class="box-body">
+		                    	<!-- Dialogo de pesos -->
+					            <dialog id="dialogo-vaga-pesos">
+									<div class="box box-warning">
+							            <div class="box-header with-border">
+							              <h3 class="box-title">Pesos</h3>
+							            </div>
+							            <!-- /.box-header -->
+							            <div class="box-body">
+						              		
+								           <div class="form-group">
+								                <label>Link do Facebook</label>
+								                <select class="form-control" id="peso-facebook" style="width: 100%;">
+									                <option selected="selected" value="1">1 - 50 prontos</option>
+									                <option value="2">2 - 40 prontos</option>
+									                <option value="3">3 - 30 prontos</option>
+									                <option value="4">4 - 20 prontos</option>
+									                <option value="5">5 - 10 prontos</option>
+								                </select>
+					           			   </div>
+					           			   
+					           			   <div class="form-group">
+								                <label>Peso para 50 amigos</label>
+								                <select class="form-control" id="peso-amigos" style="width: 100%;">
+									                <option selected="selected" value="1">1 - 50 prontos</option>
+									                <option value="2">2 - 40 prontos</option>
+									                <option value="3">3 - 30 prontos</option>
+									                <option value="4">4 - 20 prontos</option>
+									                <option value="5">5 - 10 prontos</option>
+								                </select>
+					           			   </div>
+					           			   
+					           			   <div class="form-group">
+								                <label>Twitter</label>
+								                <select class="form-control" id="peso-twitter" style="width: 100%;">
+									                <option selected="selected" value="1">1 - 50 prontos</option>
+									                <option value="2">2 - 40 prontos</option>
+									                <option value="3">3 - 30 prontos</option>
+									                <option value="4">4 - 20 prontos</option>
+									                <option value="5">5 - 10 prontos</option>
+								                </select>
+					           			   </div>
+					           			   
+					           			   <div class="form-group">
+								                <label>Peso para 50 seguidores</label>
+								                <select class="form-control" id="peso-seguidores" style="width: 100%;">
+									                <option selected="selected" value="1">1 - 50 prontos</option>
+									                <option value="2">2 - 40 prontos</option>
+									                <option value="3">3 - 30 prontos</option>
+									                <option value="4">4 - 20 prontos</option>
+									                <option value="5">5 - 10 prontos</option>
+								                </select>
+					           			   </div>
+					           			   
+					           			   <div class="form-group">
+								                <label>Linkedin</label>
+								                <select class="form-control" id="peso-linkedin" style="width: 100%;">
+									                <option selected="selected" value="1">1 - 50 prontos</option>
+									                <option value="2">2 - 40 prontos</option>
+									                <option value="3">3 - 30 prontos</option>
+									                <option value="4">4 - 20 prontos</option>
+									                <option value="5">5 - 10 prontos</option>
+								                </select>
+					           			   </div>
+					           			   
+					           			   <div class="form-group">
+								                <label>Peso para 50 conexões</label>
+								                <select class="form-control" id="peso-conexoes" style="width: 100%;">
+									                <option selected="selected" value="1">1 - 50 prontos</option>
+									                <option value="2">2 - 40 prontos</option>
+									                <option value="3">3 - 30 prontos</option>
+									                <option value="4">4 - 20 prontos</option>
+									                <option value="5">5 - 10 prontos</option>
+								                </select>
+					           			   </div>
+							              	
+							              	<div class="form-group">
+								                <label>Video youtube</label>
+								                <select class="form-control" id="peso-youtube" style="width: 100%;">
+									                <option selected="selected" value="1">1 - 50 prontos</option>
+									                <option value="2">2 - 40 prontos</option>
+									                <option value="3">3 - 30 prontos</option>
+									                <option value="4">4 - 20 prontos</option>
+									                <option value="5">5 - 10 prontos</option>
+								                </select>
+					           			   </div>
+							            </div>
+							            <!-- /.box-body -->
+							            <div class="box-footer">
+							                <button type="button" class="btn btn-info pull-right">Salvar</button>
+							            </div>
+							          </div>
+								</dialog>
 		                        <div class="box-footer">
-					                <button type="submit" class="btn btn-default">Cancelar</button>
-					                <button type="submit" class="btn btn-danger pull-right" style="margin-left: 10px">Salvar como rascunho  </button>
-					                <button type="submit" class="btn btn-danger pull-right">Salvar</button>
+					                <button type="button" class="btn btn-default" onclick="window.location.href='vagas.jsp'" style="margin-top: 10px">Cancelar</button>
+					                
+					                <button type="submit" name="salvar-rascunho" class="btn btn-danger pull-right" style="margin-left: 10px; margin-top: 10px">Rascunho</button>
+					                <button type="submit" name="salvar" class="btn btn-danger pull-right" style="margin-left: 10px; margin-top: 10px ">Publicar</button>
+					                <button type="button" class="btn btn-info pull-right" id="botao-editar-pesos" style="margin-top: 10px">Editar pesos</button>
+					                
 					            </div>
 		                    </div>
 		                    <!-- /.box-body -->
@@ -271,6 +454,45 @@
 
 	    $(function() {
 	    	
+	    	var tabelaTags = $('#tabela-tags').DataTable({
+	            'paging': true,
+	            'lengthChange': false,
+	            'searching': false,
+	            'ordering': true,
+	            'info': true,
+	            'autoWidth': false,
+	           	 createdRow: function (row, data, index) {
+	            	 //Quando estiver criando uma linha execute isso
+	                 //Adiciona as classes de estilo        
+	                 $("td:last-child", row).addClass('tabela-opcoes');
+	                 
+	                //Adiciona o evnto ao clicar em exluir linha
+	                 $('.fa-trash-o', row).click(function(){
+	                	 tabelaTags.row(row).remove().draw();
+	     	         });
+	                  
+	             }
+	        })
+	        
+	        $('#botao-adicionar-tag').click(function(){
+	        	var opcoes = '<i class="fa fa-trash-o tabela-icone"></i>';
+	        	var dados = '<input type="hidden" class="tags-tabela-dados" name="tags[0][]" value="' + $("#form-tags-select").val() + '" required>';
+	        	dados += '<input type="hidden" class="tags-tabela-dados" name="tags[1][]" value="' + $("#form-tags-peso").val() + '" required>';
+	        	tabelaTags.row.add([$("#form-tags-select").val() + dados, $("#form-tags-peso").val(), opcoes]).draw( true );   
+	        	
+	        });
+	    	
+	    	var dialogPesos = document.getElementById("dialogo-vaga-pesos");
+	        dialogPolyfill.registerDialog(dialogPesos);
+	        
+	        $('#botao-editar-pesos').click(function(){
+	        	dialogPesos.showModal();
+	        	
+	        });
+	        
+	        $('#dialogo-vaga-pesos .btn-info').click(function(){
+	        	document.getElementById("dialogo-vaga-pesos").close();
+	        });
 	    	
 	        var tabelaProvas = $('#tabela').DataTable({
 	            'paging': true,
@@ -290,7 +512,7 @@
 	     	         });
 	                  
 	             }
-	        })
+	        });
 	        
 	        var dialogProva = document.getElementById("dialogo-vaga-add-prova");
 	        dialogPolyfill.registerDialog(dialogProva);
@@ -308,7 +530,9 @@
 	        $('#dialogo-vaga-add-prova .btn-info').click(function(){
 	        	document.getElementById("dialogo-vaga-add-prova").close();
 	        	var opcoes = '<i class="fa fa-trash-o tabela-icone"></i>';
-	        	tabelaProvas.row.add([$("#titulo-prova-dialogo").val(), opcoes]).draw( true );   	
+	        	var dados = '<input type="hidden" class="provas-tabela-dados" name="provas[0][]" value="' + $("#titulo-prova-dialogo").val() + '" required>';
+	        	dados += '<input type="hidden" class="provas-tabela-dados" name="provas[1][]" value="' + $("#peso-prova-dialog").val() + '" required>';
+	        	tabelaProvas.row.add([$("#titulo-prova-dialogo").val() + dados, $("#peso-prova-dialog").val(), opcoes]).draw( true );   	
 	        });
 	        
 
