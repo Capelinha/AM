@@ -66,6 +66,20 @@
 					                <td class=criterios-pesquisa-chk>
 				              			<div class="checkbox">
 					                      <label>
+					                        <input type="checkbox"> Score mínimo
+					                      </label>
+					                    </div>
+					                </td>
+					                
+					                <td>
+				              			<input type="text" class="form-control" placeholder="Score ...">
+					                </td>
+			              		</tr>
+			              		
+			              		<tr>
+					                <td class=criterios-pesquisa-chk>
+				              			<div class="checkbox">
+					                      <label>
 					                        <input type="checkbox"> Id da vaga
 					                      </label>
 					                    </div>
@@ -97,6 +111,7 @@
 	                                    <th>E-mail</th>
 	                                    <th>Notas</th>
 	                                    <th>Título vaga</th>
+	                                    <th>Score</th>
 	                                </tr>
 	                            </thead>
 	                            <tbody>
@@ -107,6 +122,7 @@
 	                                    <td>m.ijubawf@gmail.com</td>
 	                                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing...</td>
 	                                    <td>Analista de RH</td>
+	                                    <td>1000</td>
 	                                </tr>
 	
 	                            </tbody>
@@ -117,6 +133,7 @@
 	                                    <th>E-mail</th>
 	                                    <th>Notas</th>
 	                                    <th>Título vaga</th>
+	                                    <th>Score</th>
 	                                </tr>
 	                            </tfoot>
 	                        </table>
