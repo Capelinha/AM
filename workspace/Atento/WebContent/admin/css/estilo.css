@@ -82,6 +82,12 @@ dialog{
 	background-color: #FFFFFF;
 }
 
+#dialogo-vaga-pesos{
+	min-width:50%;
+	box-shadow:0px 0px 2px 2px #D0D0D0;	
+	background-color: #FFFFFF; 
+}
+
 
 #dialogo-vaga-clonar{
 	min-width:40%;
