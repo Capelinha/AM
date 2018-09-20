@@ -137,7 +137,7 @@ dialog{
 #exibir-candidato-social{
 	display:flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	width:100%;
 	padding:0px 20px 0px 20px;
@@ -174,4 +174,14 @@ dialog{
 
 .exibir-vaga-candidato hr{
 	margin:5px;
+}
+
+#exibir-candidato-social a{
+	text-align:center; 
+	margin:6px 6px 6px 6px;
+	min-width:90px;
+}
+
+#exibir-candidato-social p{
+	margin:0;
 }

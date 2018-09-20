@@ -129,17 +129,56 @@
 			            <!-- /.box-header -->
 			            <div class="box-body" >
 			            	<div id="exibir-candidato-social">
-				                <a href="#"><i class="fa fa-facebook-square exibir-candidato-social-unlinked"></i></a>
-							    <a href="#"><i class="fa fa-twitter-square" id="exibir-candidato-social-meio"></i></a>
-								<a href="#"><i class="fa fa-linkedin-square"></i></a>
+				                <a href="#">
+				                	<i class="fa fa-facebook-square exibir-candidato-social-unlinked"></i>
+				                	<p>150 amigos</p>
+				                	<p>Muito uso</p>
+				                </a>
+							    <a href="#">
+							    	<i class="fa fa-twitter-square" id="exibir-candidato-social-meio"></i>
+							    	<p>150 seguidores</p>
+				                	<p>Uso médio</p>
+							    </a>
+								<a href="#">
+									<i class="fa fa-linkedin-square"></i>
+									<p>150 conexões</p>
+				                	<p>Pouco uso</p>
+								</a>
 							</div>
 			           </div>
 			            <!-- /.box-body -->
 			        </div>
-	            	
-	            </div>
-	            
+	             </div>
+	             
 	            <div class="col-md-4">
+		            	<div class="box box-primary">
+				            <div class="box-header with-border">
+				              <h3 class="box-title">Social</h3>
+				            </div>
+				            <!-- /.box-header -->
+				            <div class="box-body" >
+				            	<div id="exibir-candidato-social">
+					                <a href="#">
+					                	<i class="fa fa-facebook-square exibir-candidato-social-unlinked"></i>
+					                	<p>150 amigos</p>
+					                	<p>Muito uso</p>
+					                </a>
+								    <a href="#">
+								    	<i class="fa fa-twitter-square" id="exibir-candidato-social-meio"></i>
+								    	<p>150 seguidores</p>
+					                	<p>Uso médio</p>
+								    </a>
+									<a href="#">
+										<i class="fa fa-linkedin-square"></i>
+										<p>150 conexões</p>
+					                	<p>Pouco uso</p>
+									</a>
+								</div>
+				           </div>
+				            <!-- /.box-body -->
+				        </div>
+		             </div>
+	             
 	            	<div class="box box-primary">
 			            <div class="box-header with-border">
 			              <h3 class="box-title">Arquivos</h3>

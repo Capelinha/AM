@@ -19,6 +19,33 @@
 	        <div class="row">
 	            <div class="col-xs-12">
 	                <div class="box">
+	                	<!-- Dialogo de alterar status -->
+			            <dialog id="dialogo-exibir-vaga-status">
+							<div class="box box-warning">
+					            <div class="box-header with-border">
+					              <h3 class="box-title">Alterar status</h3>
+					            </div>
+					            <!-- /.box-header -->
+					            <div class="box-body">
+				              		<form role="form">
+						                <div class="form-group">
+							                <label>Novo status</label>
+							                <select class="form-control" style="width: 100%;">
+							                  <option selected="selected">Ativa</option>
+							                  <option>Concluida</option>
+							                  <option>Cancelada</option>
+							                </select>
+							           </div>
+					              	</form>
+					            </div>
+					            <!-- /.box-body -->
+					            <div class="box-footer">
+					                <button type="submit" class="btn btn-default">Cancelar</button>
+					                <button type="submit" class="btn btn-info pull-right">Alterar</button>
+					              </div>
+					          </div>
+						</dialog>
+							
 	                    <div class="box-header">
 	                        <h3 class="box-title">Lista de vagas</h3>
 	                    </div>

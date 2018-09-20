@@ -112,32 +112,7 @@
 			            <!-- /.box-header -->
 			            <div class="box-body" >
 			            
-			            	<!-- Dialogo de alterar status -->
-				            <dialog id="dialogo-exibir-vaga-status">
-								<div class="box box-warning">
-						            <div class="box-header with-border">
-						              <h3 class="box-title">Alterar status</h3>
-						            </div>
-						            <!-- /.box-header -->
-						            <div class="box-body">
-					              		<form role="form">
-							                <div class="form-group">
-								                <label>Novo status</label>
-								                <select class="form-control" style="width: 100%;">
-								                  <option selected="selected">Ativa</option>
-								                  <option>Concluida</option>
-								                  <option>Cancelada</option>
-								                </select>
-								           </div>
-						              	</form>
-						            </div>
-						            <!-- /.box-body -->
-						            <div class="box-footer">
-						                <button type="submit" class="btn btn-default">Cancelar</button>
-						                <button type="submit" class="btn btn-info pull-right">Alterar</button>
-						              </div>
-						          </div>
-							</dialog>
+			            	
 			              
 			            	<strong><i class="fa fa-hand-o-up margin-r-5"></i> Requisitos</strong>
 				            <p class="text-muted"> 
@@ -168,9 +143,6 @@
 			                <strong><i class="fa fa-info-circle margin-r-5"></i> Status</strong>
 			                <p class="text-muted"> Ativa</p>		
 			               
-			                <div class="box-footer">
-				                <button type="button" id="botao-alterar-status-vaga" class="btn btn-success pull-right">Alterar status</button>
-				            </div>
 			           </div>
 			            <!-- /.box-body -->
 			        </div>
