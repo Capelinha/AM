@@ -35,7 +35,38 @@ public class CandidatoDAO {
 	}
 	
 	public void atualizaCandidato(Candidato c) {
-		
+		sql = "Update candidato SET endereco = ?, cidade = ?, estado = ?, pais = ?, cep = ?,"+
+				"data_nasc = ?, anos_exp = ?, cargo_atual = ?, pret_salarial, facebook = ?,"
+				+ "twitter = ?, linkdin = ?, status = ?, n_amigos = ?, fb_frequencia = ?,"
+				+ "n_seguidores = ?, tw_frequencia = ?, ld_frequencia = ?, n_conexoes = ?, youtube = ?";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setString(1, c.getEndereco());
+			p.setString(2, c.getCidade());
+			p.setString(3, c.getEstado());
+			p.setString(4,c.getPais());
+			p.setString(5, c.getCep());
+			p.setDate(6, c.getData_nasc());
+			p.setInt(7, c.getAnos_exp());
+			p.setString(8, c.getCargo_atual());
+			p.setDouble(9, c.getPret_salarial());
+			p.setString(10, c.getFacebook());
+			p.setString(11, c.getTwiter());
+			p.setString(12, c.getLinkedin());
+			p.setInt(13, c.getStatus());
+			p.setInt(14, c.getFaceAmigos());
+			p.setInt(15, c.getFreqFace());
+			p.setInt(16, c.getTwitAmigos());
+			p.setInt(17, c.getFreqTwit());
+			p.setInt(18, c.getFreqLink());
+			p.setInt(19, c.getLinkAmigos());
+			p.setString(20, c.getYoutube());
+			p.execute();
+			//sql = "insert into tag_candidato values(?,?)";
+			//codigo para tag_candidato
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public int logar(String email, String senha) {
@@ -56,6 +87,22 @@ public class CandidatoDAO {
 			e.printStackTrace();
 		}
 		return 0;
+	}
+	
+	public Candidato perfil(int id) {
+		Candidato candidato = null;
+		sql = "select * from candidato where id_candidato = ?";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, id);
+			rs = p.executeQuery();
+			if (rs.next()) {
+				//candidato = new Candidato();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return candidato;
 	}
 
 }
