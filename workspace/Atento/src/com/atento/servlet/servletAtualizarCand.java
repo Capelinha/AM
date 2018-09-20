@@ -48,11 +48,14 @@ public class servletAtualizarCand extends HttpServlet {
 		String nascString = request.getParameter("nasc");
 		//String tags = request.getparameter("tags");
 		String facebook = request.getParameter("facebook");
-		int nFace = Integer.parseInt(request.getParameter("nFace"));
+		int nFace = Integer.parseInt(request.getParameter("facebook-n-amigos"));
+		int freqFace = Integer.parseInt(request.getParameter("facebook-freq"));
 		String twitter = request.getParameter("twitter");
-		int nTwit = Integer.parseInt(request.getParameter("nTwit"));
+		int nTwit = Integer.parseInt(request.getParameter("twitter-n-seguidores"));
+		int freqTwit = Integer.parseInt(request.getParameter("twitter-freq"));
 		String linkedin = request.getParameter("linkedin");
-		int nLink = Integer.parseInt(request.getParameter("nLink"));
+		int nLink = Integer.parseInt(request.getParameter("linkdin-n-conexoes"));
+		int freqLink = Integer.parseInt(request.getParameter("linkedin-freq"));
 		String youtube = request.getParameter("youtube");
 		
 		CandidatoDAO dao = new CandidatoDAO();
@@ -62,8 +65,8 @@ public class servletAtualizarCand extends HttpServlet {
 			Date data = new Date(format.parse(nascString).getTime());
 			Candidato candidato = new Candidato(id, nome, sobrenome, email, senha, telefone, celular, 
 					endereco, cidade, estado, pais, cep, data, anos, 
-					cargo, pretensao, facebook,	nFace, 0, twitter, 
-					nTwit, 0, linkedin, nLink, 0, youtube, "", 2);
+					cargo, pretensao, facebook,	nFace, freqFace, twitter, 
+					nTwit, freqTwit, linkedin, nLink, freqLink, youtube, "", 2);
 			dao.atualizaCandidato(candidato);
 		} catch(ParseException e) {
 			e.printStackTrace();
