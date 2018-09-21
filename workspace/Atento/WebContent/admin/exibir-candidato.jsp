@@ -72,11 +72,8 @@
 			           </div>
 			            <!-- /.box-body -->
 			        </div>
-	            </div>
-	           		
-	          	<div class="col-md-4">
-	            	
-	            	<div class="box box-primary">
+			        
+			        <div class="box box-primary">
 			            <div class="box-header with-border">
 			              <h3 class="box-title">Contato</h3>
 			            </div>
@@ -98,7 +95,9 @@
 			           </div>
 			            <!-- /.box-body -->
 			        </div>
-			        
+	            </div>
+	           		
+	          	<div class="col-md-4">
 			        <div class="box box-primary">
 			            <div class="box-header with-border">
 			              <h3 class="box-title">Moradia</h3>
@@ -144,41 +143,33 @@
 									<p>150 conexões</p>
 				                	<p>Pouco uso</p>
 								</a>
+								
+								<a href="#">
+									<i class="fa fa-youtube-square"></i>
+									<p>Vídeo</p>
+				                	<p>Apresentação</p>
+								</a>
 							</div>
-			           </div>
+			           </div> 
 			            <!-- /.box-body -->
 			        </div>
+			        
+			        <div class="box box-primary">
+			            <div class="box-header with-border">
+			              <h3 class="box-title">Vídeo</h3>
+			            </div>
+			            <!-- /.box-header -->
+			            <div class="box-body" >
+			            	<div class="videoWrapper">
+			            		<iframe width="100%" height="150%" src="https://www.youtube.com/embed/B0DGZntfMSM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			         		</div>
+			           </div> 
+			            <!-- /.box-body -->
+			        </div>
+			        
 	             </div>
 	             
 	            <div class="col-md-4">
-		            	<div class="box box-primary">
-				            <div class="box-header with-border">
-				              <h3 class="box-title">Social</h3>
-				            </div>
-				            <!-- /.box-header -->
-				            <div class="box-body" >
-				            	<div id="exibir-candidato-social">
-					                <a href="#">
-					                	<i class="fa fa-facebook-square exibir-candidato-social-unlinked"></i>
-					                	<p>150 amigos</p>
-					                	<p>Muito uso</p>
-					                </a>
-								    <a href="#">
-								    	<i class="fa fa-twitter-square" id="exibir-candidato-social-meio"></i>
-								    	<p>150 seguidores</p>
-					                	<p>Uso médio</p>
-								    </a>
-									<a href="#">
-										<i class="fa fa-linkedin-square"></i>
-										<p>150 conexões</p>
-					                	<p>Pouco uso</p>
-									</a>
-								</div>
-				           </div>
-				            <!-- /.box-body -->
-				        </div>
-		             </div>
-	             
 	            	<div class="box box-primary">
 			            <div class="box-header with-border">
 			              <h3 class="box-title">Arquivos</h3>
@@ -253,6 +244,7 @@
 			              <p class="text-muted"> Aprovado nas provas</p>		
 			              
 			              <div class="box-footer">
+			              	  <button type="button" class="btn btn-success pull-right" style="margin:0px 10px 0px 10px">Liberar entrevista</button>
 				              <button type="button" class="btn btn-success pull-right">Aprovar na seleção manual</button>
 				          </div>
 
