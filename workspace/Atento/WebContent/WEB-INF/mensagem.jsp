@@ -12,21 +12,13 @@
             <i class="fas fa-user-alt"></i>
             <h3>Info</h3>
         </header>
-        
-        <% 
-        	if (request.getAttribute("titulo") != null && request.getAttribute("mensagem") != null) {
-	    %>
-    
+
 	    <h4><%= request.getAttribute("titulo")%></h4>
 	    <p><%= request.getAttribute("mensagem")%></p>
-
-		<% 
-        	}
-	    %>
 	    
 		<section id="perfil-bloco-botao">
-            <a href="perfil.jsp" class="perfil-link">
-                <div class="perfil-botao">PERFIL</div>
+            <a href="<%= request.getAttribute("link-botao")%>" class="perfil-link">
+                <div class="perfil-botao"><%= request.getAttribute("texto-botao")%></div>
             </a>
         </section>
         

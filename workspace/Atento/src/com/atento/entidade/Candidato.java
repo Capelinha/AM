@@ -32,6 +32,7 @@ public class Candidato {
 	private String youtube;
 	private String notas;
 	private int status;
+	private String linkVerificacao;
 
 	public Candidato(String nome, String sobrenome, String email, String telefone, String celular, String senha) {
 		super();
@@ -133,9 +134,6 @@ public class Candidato {
 		this.notas = notas;
 		this.status = status;
 	}
-
-
-
 
 
 	public int getId() {
@@ -362,6 +360,12 @@ public class Candidato {
 		this.status = status;
 	}
 	
-	
+	public String getLinkVerificacao() {
+		return linkVerificacao;
+	}
+
+	public void setLinkVeriricacao(String linkVerificacao) {
+		this.linkVerificacao = linkVerificacao;
+	}
 
 }

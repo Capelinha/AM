@@ -18,7 +18,7 @@ public class TagDAO {
 	private ResultSet rs;
 	
 	public TagDAO() {
-		conexao = new Conexao().getConnection();
+		conexao = Conexao.getConnection();
 	}
 	
 	public List<Tag> listarTags(){

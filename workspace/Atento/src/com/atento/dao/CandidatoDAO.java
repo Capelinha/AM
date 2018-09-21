@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.atento.conexao.Conexao;
 import com.atento.entidade.Candidato;
+import com.atento.exception.dao.EmailDuplicadoException;
+import com.atento.exception.dao.InserirException;
 
 public class CandidatoDAO {
 	
@@ -18,8 +20,8 @@ public class CandidatoDAO {
 		conexao = Conexao.getConnection();
 	}
 	
-	public void registrar(Candidato c) {
-		sql = "insert into candidato(nome,sobrenome,email,telefone,celular,senha, status) values (?,?,?,?,?,?,?)";
+	public void registrar(Candidato c) throws EmailDuplicadoException, InserirException {
+		sql = "insert into candidato(nome,sobrenome,email,telefone,celular,senha, status, link_verificacao) values (?,?,?,?,?,?,?,?)";
 		try {
 			p = conexao.prepareStatement(sql);
 			p.setString(1, c.getNome());
@@ -29,10 +31,16 @@ public class CandidatoDAO {
 			p.setString(5, c.getCelular());
 			p.setString(6, c.getSenha());
 			p.setInt(7, c.getStatus());
+			p.setString(8, c.getLinkVerificacao());
 			p.execute();
-			
+			 
 		} catch (SQLException e) {
 			e.printStackTrace();
+			if(e.getSQLState().startsWith("23") && e.getMessage().contains("EMAIL_UQ")) {
+				throw new EmailDuplicadoException("Já existe uma conta com o endereço de email informado");
+			}else {
+				throw new InserirException(e.getMessage());
+			}
 		}
 	}
 	
