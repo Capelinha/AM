@@ -33,7 +33,7 @@ public class Candidato {
 	private String notas;
 	private int status;
 
-	public Candidato(String nome, String sobrenome, String email, String senha, String telefone, String celular) {
+	public Candidato(String nome, String sobrenome, String email, String telefone, String celular, String senha) {
 		super();
 		this.nome = nome;
 		this.sobrenome = sobrenome;

@@ -19,16 +19,18 @@ public class CandidatoDAO {
 	}
 	
 	public void registrar(Candidato c) {
-		sql = "insert into candidato(nome,sobrenome,email,telefone,celular,senha) values (?,?,?,?,?)";
+		sql = "insert into candidato(nome,sobrenome,email,telefone,celular,senha, status) values (?,?,?,?,?,?,?)";
 		try {
 			p = conexao.prepareStatement(sql);
 			p.setString(1, c.getNome());
 			p.setString(2, c.getSobrenome());
 			p.setString(3, c.getEmail());
-			p.setString(4,c.getTelefone());
+			p.setString(4, c.getTelefone());
 			p.setString(5, c.getCelular());
 			p.setString(6, c.getSenha());
+			p.setInt(7, c.getStatus());
 			p.execute();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

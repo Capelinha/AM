@@ -876,3 +876,9 @@
 	color: #FFFFFF;
 	transition: 0.2s;
 }
+
+/** mensagem.html **/
+
+.bloco-mensagem p {
+	text-align:center;
+}

@@ -7,6 +7,100 @@
     </header>
 
     <form name="cadastro" id="form-cadastro">
+    	<section class="bloco-form-cadastro form-cad-bloco">
+	        <header class="bloco-titulo">
+	            <i class="fas fa-user-alt"></i>
+	            <h3>Pessoal</h3>
+	        </header>
+	        <!--Campos-->
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <fieldset class="form-campo">
+                            <label for="nome"><b>Nome *</b></label>
+                            <br>
+                            <input type="text" name="nome" value="" placeholder="" required>
+                            <br>
+                        </fieldset>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <fieldset class="form-campo">
+                            <label for="sobrenome"><b>Sobrenome *</b></label>
+                            <br>
+                            <input type="text" name="sobrenome" value="" placeholder="" required>
+                            <br>
+                        </fieldset>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <fieldset class="form-campo">
+                            <label for="email"><b>E-mail *</b></label>
+                            <br>
+                            <input type="email" name="email" value="" placeholder="" required>
+                            <br>
+                        </fieldset>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <fieldset class="form-campo">
+                            <label for="telefone"><b>Telefone </b></label>
+                            <br>
+                            <input type="number" pattern="[1-9]{2}\-[2-9][0-9]{7,8}" name="telefone" value="" placeholder="">
+                            <br>
+                        </fieldset>
+                    </td>
+
+                    <td>
+                        <fieldset class="form-campo">
+                            <label for="celular"><b>Celular </b></label>
+                            <br>
+                            <input type="number" pattern="[1-9]{2}\-[2-9][0-9]{7,8}" name="celular" value="" placeholder="">
+                            <br>
+                        </fieldset>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <fieldset class="form-campo">
+                            <label for="senha"><b>Senha *</b></label>
+                            <br>
+                            <input type="password" name="senha" value="" placeholder="" required>
+                            <br>
+                        </fieldset>
+                    </td>
+
+                    <td>
+                        <fieldset class="form-campo">
+                            <label for="conformacao"><b>Confirmação *</b></label>
+                            <br>
+                            <input type="password" name="conformacao" value="" placeholder="" required>
+                            <br>
+                        </fieldset>
+                    </td>
+
+                </tr>
+            </table>
+	       
+	
+	        <!--Cantos com cruz-->
+	        <div class="bloco-cruz bloco-cruz-es bloco-cruz-v"> </div>
+	        <div class="bloco-cruz bloco-cruz-es"> </div>
+	        <div class="bloco-cruz bloco-cruz-ds bloco-cruz-v"> </div>
+	        <div class="bloco-cruz bloco-cruz-ds"> </div>
+	        <div class="bloco-cruz bloco-cruz-ei bloco-cruz-v"> </div>
+	        <div class="bloco-cruz bloco-cruz-ei"> </div>
+	        <div class="bloco-cruz bloco-cruz-di bloco-cruz-v"> </div>
+	        <div class="bloco-cruz bloco-cruz-di"> </div>
+	    </section>
+    
         <section class="bloco-form-cadastro form-cad-bloco">
             <header class="bloco-titulo">
                 <i class="fas fa-home"></i>
@@ -265,10 +359,10 @@
                             <label for="facebook-freq"><b>Frequência de uso</b></label>
                             <br>
                             <select name="facebook-freq">
-                            	<option value="nunca" selected>Não uso</option>
-							    <option value="muito">Uso muito</option>
-							    <option value="medio">Uso as vezes</option>
-							    <option value="pouco">Uso pouco</option>
+                            	<option value="0" selected>Não uso</option>
+							    <option value="3">Uso muito</option>
+							    <option value="2">Uso as vezes</option>
+							    <option value="1">Uso pouco</option>
 							</select>
                             <br>
                         </fieldset>
@@ -325,10 +419,10 @@
                             <label for="twitter-freq"><b>Frequência de uso</b></label>
                             <br>
                             <select name="twitter-freq">
-                           		<option value="nunca" selected>Não uso</option>
-							    <option value="muito">Uso muito</option>
-							    <option value="medio">Uso as vezes</option>
-							    <option value="pouco">Uso pouco</option>
+                           		<option value="0" selected>Não uso</option>
+							    <option value="3">Uso muito</option>
+							    <option value="2">Uso as vezes</option>
+							    <option value="1">Uso pouco</option>
 							</select>
                             <br>
                         </fieldset>
@@ -384,10 +478,10 @@
                             <label for="linkdin-freq"><b>Frequência de uso</b></label>
                             <br>
                             <select name="linkdin-freq">
-                            	<option value="nunca" selected>Não uso</option>
-							    <option value="muito">Uso muito</option>
-							    <option value="medio">Uso as vezes</option>
-							    <option value="pouco">Uso pouco</option>
+                            	<option value="3" selected>Não uso</option>
+							    <option value="2">Uso muito</option>
+							    <option value="1">Uso as vezes</option>
+							    <option value="0">Uso pouco</option>
 							</select>
                             <br>
                         </fieldset>

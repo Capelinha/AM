@@ -13,7 +13,7 @@
             <h3>Pessoal</h3>
         </header>
         <!--Campos-->
-        <form name="cadastro" id="form-cadastro">
+        <form name="cadastro" id="form-cadastro" action="servletCadastrarCand" method="POST">
             <table>
                 <tr>
                     <td colspan="2">
@@ -82,7 +82,7 @@
                         <fieldset class="form-campo">
                             <label for="conformacao"><b>Confirmação *</b></label>
                             <br>
-                            <input type="password" name="conformacao" value="" placeholder="" required>
+                            <input type="password" name="confirmacao" value="" placeholder="" required>
                             <br>
                         </fieldset>
                     </td>
@@ -99,7 +99,7 @@
             </fieldset>
 
             <fieldset id="form-acoes">
-                <input type="submit" onclick="window.location.href='cadastro-2.jsp'" class="form-botao" value="AVANÇAR" name="btn-proximo">
+                <input type="submit" class="form-botao" value="AVANÇAR" name="btn-proximo">
             </fieldset>
         </form>
 
