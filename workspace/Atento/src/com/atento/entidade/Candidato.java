@@ -364,7 +364,7 @@ public class Candidato {
 		return linkVerificacao;
 	}
 
-	public void setLinkVeriricacao(String linkVerificacao) {
+	public void setLinkVerificacao(String linkVerificacao) {
 		this.linkVerificacao = linkVerificacao;
 	}
 

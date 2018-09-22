@@ -13,7 +13,7 @@
             <h3>Pessoal</h3>
         </header>
         <!--Campos-->
-        <form name="cadastro" id="form-cadastro" action="servletCadastrarCand" method="POST">
+        <form name="cadastro" id="form-cadastro" action="CadastraCandidato" method="POST">
             <table>
                 <tr>
                     <td colspan="2">

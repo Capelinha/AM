@@ -6,8 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.atento.conexao.Conexao;
 import com.atento.entidade.Candidato;
-import com.atento.exception.dao.EmailDuplicadoException;
-import com.atento.exception.dao.InserirException;
+import com.atento.servlet.cadastro.AtivacaoException;
+import com.atento.servlet.cadastro.EmailDuplicadoException;
+import com.atento.servlet.cadastro.InserirException;
+import com.atento.servlet.cadastro.LinkExpiradoException;
 
 public class CandidatoDAO {
 	
@@ -41,6 +43,24 @@ public class CandidatoDAO {
 			}else {
 				throw new InserirException(e.getMessage());
 			}
+		}
+	}
+	
+	public void ativar(String email, String codigo) throws AtivacaoException, LinkExpiradoException {
+		sql = "UPDATE candidato SET status = ? WHERE link_verificacao = ? AND email = ?";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, 2);
+			p.setString(2, codigo);
+			p.setString(3, email);
+			if(p.executeUpdate() == 0) {
+				throw new LinkExpiradoException("Link expirado");
+			}
+			 
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AtivacaoException(e.getMessage());
+		
 		}
 	}
 	
