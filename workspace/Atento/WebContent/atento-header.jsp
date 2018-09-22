@@ -179,27 +179,41 @@ reabilitados da Previdência Social.">
                                 <span class="text">Minha conta</span>
                             </a>
                         </li>
-                        
-                        <li class="logado">
+                       
+                       <%
+                          Cookie[] cookies = request.getCookies();
+                       	  boolean achou = false;
+						  for (int i = 0; i < cookies.length; i++) {
+							  Cookie cookie = cookies[i];
+							  //String cookieName = cookie.getName();
+							  //String cookieValue = cookie.getValue();
+							  
+							  if(cookie.getName().equals("idSessao")){
+								  achou = true;
+							  }
+						  }
+					   %>
+					   
+					    <li class="<%if(achou){ out.print(" hidden");}%>">
                             <a href="login.jsp" class="">
                                 <span class="text">Login</span>
                             </a>
                         </li>
                         
-                        <li class="logado">
+                        <li class="logado <%if(!achou){ out.print(" hidden");}%>">
                             <a href="perfil.jsp" class="">
                                 <span class="text">Perfil</span>
                             </a>
                         </li>
                         
-                        <li class="logado">
+                        <li class="logado <%if(!achou){ out.print(" hidden");}%>">
                             <a href="escolha-provas.jsp" class="">
                                 <span class="text">Provas</span>
                             </a>
                         </li>
                         
                         
-                        <li class="logado">
+                        <li class="logado <%if(!achou){ out.print(" hidden");}%>">
                             <a href="#" class="">
                                 <span class="text">Logout</span>
                             </a>

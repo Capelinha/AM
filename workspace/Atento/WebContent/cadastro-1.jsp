@@ -119,11 +119,25 @@
 	function validarForm(){
 		var s1 = document.getElementById("senha");
 		var s2 = document.getElementById("conf-senha");
+		
 			
 		if(!/[a-zA-Z0-9@#$&_=+?!$%*\-+]{6,}/.test(s1.value)){
-			alert("Senha ou confimação incorretos. São necessarios no mínimo 6 caracteres.");
+			alert("Senha inválida. São necessarios no mínimo 6 caracteres.");
 			return false;
 		}
+		
+		if(s1.value != s2.value){
+			alert("Senha e confirmação não coencidem. ");
+			return false;
+		}
+		
+		var response = grecaptcha.getResponse();
+
+		if(response.length == 0){
+			alert("Captcha não respondido.");
+			return false;
+		}
+		
 		return true;
 	}
 </script>
