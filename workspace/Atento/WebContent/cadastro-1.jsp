@@ -13,7 +13,7 @@
             <h3>Pessoal</h3>
         </header>
         <!--Campos-->
-        <form name="cadastro" id="form-cadastro" action="CadastraCandidato" method="POST">
+        <form name="cadastro" id="form-cadastro" action="CadastraCandidato" onsubmit="return validarForm();" method="POST">
             <table>
                 <tr>
                     <td colspan="2">
@@ -73,7 +73,7 @@
                         <fieldset class="form-campo">
                             <label for="senha"><b>Senha *</b></label>
                             <br>
-                            <input type="password" name="senha" value="" placeholder="" required>
+                            <input id="senha" type="password" name="senha" value="" placeholder="" required>
                             <br>
                         </fieldset>
                     </td>
@@ -82,7 +82,7 @@
                         <fieldset class="form-campo">
                             <label for="conformacao"><b>Confirmação *</b></label>
                             <br>
-                            <input type="password" name="confirmacao" value="" placeholder="" required>
+                            <input id="conf-senha" type="password" name="confirmacao" value="" placeholder="" required>
                             <br>
                         </fieldset>
                     </td>
@@ -114,4 +114,17 @@
         <div class="bloco-cruz bloco-cruz-di"> </div>
     </section>
 </main>
+
+<script>
+	function validarForm(){
+		var s1 = document.getElementById("senha");
+		var s2 = document.getElementById("conf-senha");
+			
+		if(!/[a-zA-Z0-9@#$&_=+?!$%*\-+]{6,}/.test(s1.value)){
+			alert("Senha ou confimação incorretos. São necessarios no mínimo 6 caracteres.");
+			return false;
+		}
+		return true;
+	}
+</script>
 <%@ include file="atento-footer.jsp" %>

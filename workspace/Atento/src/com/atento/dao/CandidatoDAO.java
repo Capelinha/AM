@@ -6,9 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.atento.conexao.Conexao;
 import com.atento.entidade.Candidato;
-import com.atento.servlet.cadastro.AtivacaoException;
 import com.atento.servlet.cadastro.EmailDuplicadoException;
-import com.atento.servlet.cadastro.InserirException;
 import com.atento.servlet.cadastro.LinkExpiradoException;
 
 public class CandidatoDAO {
@@ -22,7 +20,7 @@ public class CandidatoDAO {
 		conexao = Conexao.getConnection();
 	}
 	
-	public void registrar(Candidato c) throws EmailDuplicadoException, InserirException {
+	public void registrar(Candidato c) throws EmailDuplicadoException, PersistenciaException {
 		sql = "insert into candidato(nome,sobrenome,email,telefone,celular,senha, status, link_verificacao) values (?,?,?,?,?,?,?,?)";
 		try {
 			p = conexao.prepareStatement(sql);
@@ -41,12 +39,12 @@ public class CandidatoDAO {
 			if(e.getSQLState().startsWith("23") && e.getMessage().contains("EMAIL_UQ")) {
 				throw new EmailDuplicadoException("Já existe uma conta com o endereço de email informado");
 			}else {
-				throw new InserirException(e.getMessage());
+				throw new PersistenciaException(e.getMessage(), e);
 			}
 		}
 	}
 	
-	public void ativar(String email, String codigo) throws AtivacaoException, LinkExpiradoException {
+	public void ativar(String email, String codigo) throws LinkExpiradoException, PersistenciaException {
 		sql = "UPDATE candidato SET status = ? WHERE link_verificacao = ? AND email = ?";
 		try {
 			p = conexao.prepareStatement(sql);
@@ -59,7 +57,7 @@ public class CandidatoDAO {
 			 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new AtivacaoException(e.getMessage());
+			throw new PersistenciaException(e.getMessage(), e);
 		
 		}
 	}

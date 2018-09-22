@@ -7,4 +7,8 @@ public class EmailDuplicadoException extends Exception{
 		super(msg);
 	}
 	
+	public EmailDuplicadoException(String msg, Throwable throwable) {
+		super(msg, throwable);
+	}
+	
 }

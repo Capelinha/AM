@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.atento.dao.CandidatoDAO;
+import com.atento.dao.PersistenciaException;
 
 @WebServlet("/ativaConta")
 public class AtivacaoContaServlet extends HttpServlet {
@@ -38,7 +39,7 @@ public class AtivacaoContaServlet extends HttpServlet {
 			request.setAttribute("texto-botao", "VOLTAR");
 			request.setAttribute("link-botao", "javascript:history.back()");
 			e.printStackTrace();
-		} catch (AtivacaoException e) {
+		} catch (PersistenciaException e) {
 			request.setAttribute("titulo", "Houve um problema ao ativar");
 			request.setAttribute("mensagem", "Infelizmente não conseguimos ativar sua conta.<b> Já estamos trabalhando para resolver esse problema.</b> Agradecemos a sua compreensão.");
 			request.setAttribute("texto-botao", "VOLTAR");

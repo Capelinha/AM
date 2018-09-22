@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.atento.dao.CandidatoDAO;
+import com.atento.dao.PersistenciaException;
 import com.atento.email.Email;
 import com.atento.entidade.Candidato;
 
@@ -22,6 +23,23 @@ public class CadCandidatoServlet extends HttpServlet {
     public CadCandidatoServlet() {
        
     }
+    
+    private String gerarMD5(String nome, String email, String senha) {
+    	try {
+			MessageDigest md;
+			String texto = email + nome + senha;
+			md = MessageDigest.getInstance("MD5");
+			byte[] messageDigest = md.digest(texto.getBytes());
+	        BigInteger number = new BigInteger(1, messageDigest);
+	        String hash = number.toString(16);
+	        return hash;
+	        
+		} catch (NoSuchAlgorithmException e1) {
+			e1.printStackTrace();
+		}
+    	
+    	return "OJBGfg8aIyy";
+    }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nome = request.getParameter("nome"); 
@@ -31,21 +49,8 @@ public class CadCandidatoServlet extends HttpServlet {
 		String celular = request.getParameter("celular");
 		String senha = request.getParameter("senha");
 		Candidato candidato = new Candidato(nome, sobrenome, email, telefone, celular, senha);
-		candidato.setStatus(1);
-		candidato.setLinkVerificacao(" ");
-		
-		try {
-			MessageDigest md;
-			String texto = email + nome + telefone + senha;
-			md = MessageDigest.getInstance("MD5");
-			byte[] messageDigest = md.digest(texto.getBytes());
-	        BigInteger number = new BigInteger(1, messageDigest);
-	        String hash = number.toString(16);
-	        candidato.setLinkVerificacao(hash);
-	        
-		} catch (NoSuchAlgorithmException e1) {
-			e1.printStackTrace();
-		}
+		candidato.setStatus(1);		
+		candidato.setLinkVerificacao(gerarMD5(nome, email, senha));
 				
 		CandidatoDAO dao = new CandidatoDAO();
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/mensagem.jsp");
@@ -57,7 +62,7 @@ public class CadCandidatoServlet extends HttpServlet {
 			request.setAttribute("texto-botao", "LOGIN");
 			request.setAttribute("link-botao", "login.jsp");
 			new Thread(() -> {
-				Email.enviar(email, "Ativação da conta Atento", "Ative sua conta: " + "http://localhost:8080/Atento/ativarConta?email=" + email + "&codigo=" + candidato.getLinkVerificacao());
+				Email.enviar(email, "Ativação da conta Atento", "http://localhost:8080/Atento/ativarConta?email=" + email + "&codigo=" + candidato.getLinkVerificacao());
 			}).start();
 		} catch (EmailDuplicadoException e) {
 			request.setAttribute("titulo", "Conta já existe");
@@ -65,7 +70,7 @@ public class CadCandidatoServlet extends HttpServlet {
 			request.setAttribute("texto-botao", "VOLTAR");
 			request.setAttribute("link-botao", "javascript:history.back()");
 			e.printStackTrace();
-		} catch (InserirException e) {
+		} catch (PersistenciaException e) {
 			request.setAttribute("titulo", "Houve um problema ao cadastrar");
 			request.setAttribute("mensagem", "Infelizmente não conseguimos concluir seu cadastro.<b> Já estamos trabalhando para resolver esse problema.</b> Agradecemos a sua compreensão.");
 			request.setAttribute("texto-botao", "VOLTAR");
