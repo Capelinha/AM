@@ -1,9 +1,6 @@
 package com.atento.servlet.candidato.perfil;
 
 import java.io.IOException;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -15,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.atento.dao.CandidatoDAO;
-import com.atento.dao.PersistenciaException;
 import com.atento.entidade.Candidato;
 
 @WebServlet("/perfil")
@@ -41,7 +37,6 @@ public class PerfilServlet extends HttpServlet {
 			
 			Candidato c = dao.get(Integer.parseInt(idCandidato));
 			request.setAttribute("candidato", c);
-			System.out.println(c.getEmail());
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/perfil.jsp");
 			
 			dispatcher.forward(request,response);

@@ -1,9 +1,15 @@
+<%@page import="java.util.Date"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.atento.entidade.*" %>
 <%@ include file="atento-header.jsp" %>
 <main class="contact-form">
+	<%! 
+   		public String validarStr(String p) { 
+      		return (p != null) ? p : "Não informado";
+   		} 
+	%>
     <!-- Nosso codigo -->
     <header id="titulo-pagina">
         <i class="far fa-newspaper" id="titulo-pagina-icone"></i>
@@ -29,12 +35,12 @@
             <tr>
                 <td><b>E-mail:</b> <%=c.getEmail() %></td>
                 <%SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");%>
-                <td><b>Nascimento: </b> <%=sdf.format(c.getDataNasc())%></td>
+                <td><b>Nascimento: </b> <% if(c.getDataNasc() != null) out.print(sdf.format(new Date(c.getDataNasc().getTime()))); else out.print("Não informado");%></td>
 
             </tr>
             <tr>
-                <td><b>Celular:</b> <%=c.getCelular()%></td>
-                <td><b>Telefone:</b> <%=c.getTelefone()%></td>
+                <td><b>Celular:</b> <%=validarStr(c.getCelular())%></td>
+                <td><b>Telefone:</b> <%=validarStr(c.getTelefone())%></td>
             </tr>
         </table>
         <!--Cantos com cruz-->
@@ -55,16 +61,16 @@
         <!-- Texto do bloco -->
         <table class="perfil-table-dados">
             <tr>
-                <td><b>Endereço: </b> <%=c.getEndereco().getEndereco() %></td>
+                <td><b>Endereço: </b> <%=validarStr(c.getEndereco().getEndereco()) %></td>
             </tr>
             <tr>
-                <td><b>CEP: </b> <%=c.getEndereco().getCep() %> </td>
-                <td><b>Cidade:</b> <%=c.getEndereco().getCidade() %> </td>
+                <td><b>CEP: </b> <%=validarStr(c.getEndereco().getCep())%> </td>
+                <td><b>Cidade:</b> <%=validarStr(c.getEndereco().getCidade()) %> </td>
 
             </tr>
             <tr>
-                <td><b>Estado:</b> <%=c.getEndereco().getEstado() %></td>
-                <td><b>País:</b> <%=c.getEndereco().getPais() %></td>
+                <td><b>Estado:</b> <%=validarStr(c.getEndereco().getEstado()) %></td>
+                <td><b>País:</b> <%=validarStr(c.getEndereco().getPais()) %></td>
             </tr>
         </table>
         <!--Cantos com cruz-->
@@ -86,7 +92,7 @@
 
         <table class="perfil-table-dados">
             <tr>
-                <td><b>Cargo atual:</b> <%=c.getCargoAtual() %></td>
+                <td><b>Cargo atual:</b> <%=validarStr(c.getCargoAtual()) %></td>
             </tr>
             <tr>
             	<% DecimalFormat df = new DecimalFormat("R$ 0.00");%>
@@ -121,36 +127,36 @@
         <table class="perfil-table-dados">
             <tr id="bloco-perfil-social">
                 <td>
-                    <a href="<%=c.getFacebook().getUrl()%>">
+                    <a href="<%=validarStr(c.getFacebook().getUrl())%>">
                         <div>
-                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-facebook" <%=(c.getFacebook().getUrl() != null) ? "style='color: #3b5998'" : "" %>></i>
                             <p>Facebook</p>
                             <h6><%= c.getFacebook().getNumAmigos()%> amigos</h6>
                         </div>
                     </a>
                 </td>
                 <td>
-                    <a href="<%=c.getTwitter().getUrl()%>">
+                    <a href="<%=validarStr(c.getTwitter().getUrl())%>">
                         <div>
-                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-twitter" <%=(c.getTwitter().getUrl() != null) ? "style='color: #33CCFF'" : "" %>></i>
                             <p>Twitter</p>
                             <h6><%=c.getTwitter().getNumAmigos()%> seguidores</h6>
                         </div>
                     </a>
                 </td>
                 <td>
-                    <a href="<%=c.getLinkedin().getUrl()%>">
+                    <a href="<%=validarStr(c.getLinkedin().getUrl())%>">
                         <div>
-                            <i class="fab fa-linkedin"></i>
+                            <i class="fab fa-linkedin" <%=(c.getLinkedin().getUrl() != null) ? "style='color: #4875B4'" : "" %>></i>
                             <p>Linkedin</p>
                             <h6><%=c.getLinkedin().getNumAmigos()%> conexões</h6>
                         </div>
                     </a>
                 </td>
                 <td>
-                    <a href="<%=c.getYoutube()%>">
+                    <a href="<%=validarStr(c.getYoutube())%>">
                         <div>
-                            <i class="fab fa-youtube"></i>
+                            <i class="fab fa-youtube" <%=(c.getYoutube() != null) ? "style='color: #FF3333'" : "" %>></i>
                             <p>Vídeo</p>
                             <h6>Apresntação</h6>
                         </div>

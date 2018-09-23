@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Conexao {
 	private static Connection connection;
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
-    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+    private static final String URL = "jdbc:oracle:thin:@10.68.99.11:1521:xe";
     private static final String USUARIO = "am";
     private static final String SENHA = "am";
 

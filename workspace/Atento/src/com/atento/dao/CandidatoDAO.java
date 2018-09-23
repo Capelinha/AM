@@ -16,7 +16,7 @@ import com.atento.servlet.candidato.cadastro.LinkExpiradoException;
 import com.atento.servlet.sessao.LoginInvalidoException;
 
 public class CandidatoDAO implements DAO<Candidato>{
-	
+
 	private Connection conexao;
 	private String sql;
 	private PreparedStatement p;
@@ -134,7 +134,6 @@ public class CandidatoDAO implements DAO<Candidato>{
 	}
 	
 	public Candidato get(int id) {
-		Candidato candidato = null;
 
 		sql = "SELECT id_candidato, nome, sobrenome, email, senha, telefone, celular, anos_exp, cargo_atual, pret_salarial, youtube, notas, status, link_verificacao, data_nasc, facebook, n_amigos, fb_frequencia, twitter, n_seguidores, tw_frequencia, linkdin, n_conexoes, ld_frequencia, endereco, cidade, estado, pais, cep FROM candidato WHERE id_candidato = ?";
 		try {
@@ -161,12 +160,13 @@ public class CandidatoDAO implements DAO<Candidato>{
 				 while(rsAux.next()) {
 					 c.addTag(new Tag(rsAux.getInt(1), rsAux.getString(2)));
 				 }
-				 rsAux.close();		
+				 rsAux.close();
+				 return c;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return candidato;
+		return null;
 	}
 
 
