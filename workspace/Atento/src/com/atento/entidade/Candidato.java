@@ -1,41 +1,29 @@
 package com.atento.entidade;
 
 import java.sql.Date;
+import java.util.Collection;
 
-public class Candidato {
-	
-	private int id;
-	private String nome;
-	private String sobrenome;
-	private String email;
-	private String senha;
+public class Candidato extends Pessoa {
+
 	private String telefone;
 	private String celular;
-	private String endereco;
-	private String cidade;
-	private String estado;
-	private String pais;
-	private String cep;
-	private Date data_nasc;
 	private int anos_exp;
 	private String cargo_atual;
 	private double pret_salarial;
-	private String facebook;
-	private int faceAmigos;
-	private int freqFace;
-	private String twiter;
-	private int twitAmigos;
-	private int freqTwit;
-	private String linkedin;
-	private int linkAmigos;
-	private int freqLink;
 	private String youtube;
 	private String notas;
 	private int status;
 	private String linkVerificacao;
-
+	private Date data_nasc;
+	private Inscricao inscricao;
+	private Collection<Arquivo> arquivo;
+	private Collection<Tag> tag;
+	private RedeSocial facebook;
+	private RedeSocial twitter;
+	private RedeSocial linkedin;
+	private Endereco endereco;
+	
 	public Candidato(String nome, String sobrenome, String email, String telefone, String celular, String senha) {
-		super();
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
@@ -46,191 +34,30 @@ public class Candidato {
 	
 	
 
-	public Candidato(int id, String endereco, String cidade, String estado, String pais, String cep, Date data_nasc,
-			int anos_exp, String cargo_atual, double pret_salarial, String facebook, int faceAmigos, int freqFace,
-			String twiter, int twitAmigos, int freqTwit, String linkedin, int linkAmigos, int freqLink, String youtube,
-			int status) {
+	public Candidato(String telefone, String celular, int anos_exp, String cargo_atual, double pret_salarial,
+			String youtube, String notas, int status, String linkVerificacao, Date data_nasc, Inscricao inscricao,
+			Collection<Arquivo> arquivo, Collection<Tag> tag, RedeSocial facebook, RedeSocial twitter,
+			RedeSocial linkedin, Endereco endereco) {
 		super();
-		this.id = id;
-		this.endereco = endereco;
-		this.cidade = cidade;
-		this.estado = estado;
-		this.pais = pais;
-		this.cep = cep;
-		this.data_nasc = data_nasc;
-		this.anos_exp = anos_exp;
-		this.cargo_atual = cargo_atual;
-		this.pret_salarial = pret_salarial;
-		this.facebook = facebook;
-		this.faceAmigos = faceAmigos;
-		this.freqFace = freqFace;
-		this.twiter = twiter;
-		this.twitAmigos = twitAmigos;
-		this.freqTwit = freqTwit;
-		this.linkedin = linkedin;
-		this.linkAmigos = linkAmigos;
-		this.freqLink = freqLink;
-		this.youtube = youtube;
-		this.status = status;
-	}
-	
-	public Candidato(int id, String nome, String sobrenome, String email, String telefone, String celular,
-			String endereco, String cidade, String estado, String pais, String cep, Date data_nasc, int anos_exp,
-			String cargo_atual, double pret_salarial, String facebook, String twiter, String linkedin, String youtube) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.sobrenome = sobrenome;
-		this.email = email;
 		this.telefone = telefone;
 		this.celular = celular;
-		this.endereco = endereco;
-		this.cidade = cidade;
-		this.estado = estado;
-		this.pais = pais;
-		this.cep = cep;
-		this.data_nasc = data_nasc;
 		this.anos_exp = anos_exp;
 		this.cargo_atual = cargo_atual;
 		this.pret_salarial = pret_salarial;
-		this.facebook = facebook;
-		this.twiter = twiter;
-		this.linkedin = linkedin;
-		this.youtube = youtube;
-	}
-
-	public Candidato(int id, String nome, String sobrenome, String email, String senha, String telefone, String celular,
-			String endereco, String cidade, String estado, String pais, String cep, Date data_nasc, int anos_exp,
-			String cargo_atual, double pret_salarial, String facebook, int faceAmigos, int freqFace, String twiter,
-			int twitAmigos, int freqTwit, String linkedin, int linkAmigos, int freqLink, String youtube, String notas,
-			int status) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.sobrenome = sobrenome;
-		this.email = email;
-		this.senha = senha;
-		this.telefone = telefone;
-		this.celular = celular;
-		this.endereco = endereco;
-		this.cidade = cidade;
-		this.estado = estado;
-		this.pais = pais;
-		this.cep = cep;
-		this.data_nasc = data_nasc;
-		this.anos_exp = anos_exp;
-		this.cargo_atual = cargo_atual;
-		this.pret_salarial = pret_salarial;
-		this.facebook = facebook;
-		this.faceAmigos = faceAmigos;
-		this.freqFace = freqFace;
-		this.twiter = twiter;
-		this.twitAmigos = twitAmigos;
-		this.freqTwit = freqTwit;
-		this.linkedin = linkedin;
-		this.linkAmigos = linkAmigos;
-		this.freqLink = freqLink;
 		this.youtube = youtube;
 		this.notas = notas;
 		this.status = status;
+		this.linkVerificacao = linkVerificacao;
+		this.data_nasc = data_nasc;
+		this.inscricao = inscricao;
+		this.arquivo = arquivo;
+		this.tag = tag;
+		this.facebook = facebook;
+		this.twitter = twitter;
+		this.linkedin = linkedin;
+		this.endereco = endereco;
 	}
 
-
-	public int getId() {
-		return id;
-	}
-
-	public int getFaceAmigos() {
-		return faceAmigos;
-	}
-
-	public void setFaceAmigos(int faceAmigos) {
-		this.faceAmigos = faceAmigos;
-	}
-
-	public int getFreqFace() {
-		return freqFace;
-	}
-
-	public void setFreqFace(int freqFace) {
-		this.freqFace = freqFace;
-	}
-
-	public int getTwitAmigos() {
-		return twitAmigos;
-	}
-
-	public void setTwitAmigos(int twitAmigos) {
-		this.twitAmigos = twitAmigos;
-	}
-
-	public int getFreqTwit() {
-		return freqTwit;
-	}
-
-	public void setFreqTwit(int freqTwit) {
-		this.freqTwit = freqTwit;
-	}
-
-	public int getLinkAmigos() {
-		return linkAmigos;
-	}
-
-	public void setLinkAmigos(int linkAmigos) {
-		this.linkAmigos = linkAmigos;
-	}
-
-	public int getFreqLink() {
-		return freqLink;
-	}
-
-	public void setFreqLink(int freqLink) {
-		this.freqLink = freqLink;
-	}
-
-	public String getYoutube() {
-		return youtube;
-	}
-
-	public void setYoutube(String youtube) {
-		this.youtube = youtube;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getSobrenome() {
-		return sobrenome;
-	}
-
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
 
 	public String getTelefone() {
 		return telefone;
@@ -246,54 +73,6 @@ public class Candidato {
 
 	public void setCelular(String celular) {
 		this.celular = celular;
-	}
-
-	public String getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
-	public String getPais() {
-		return pais;
-	}
-
-	public void setPais(String pais) {
-		this.pais = pais;
-	}
-
-	public String getCep() {
-		return cep;
-	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
-
-	public Date getData_nasc() {
-		return data_nasc;
-	}
-
-	public void setData_nasc(Date data_nasc) {
-		this.data_nasc = data_nasc;
 	}
 
 	public int getAnos_exp() {
@@ -320,28 +99,12 @@ public class Candidato {
 		this.pret_salarial = pret_salarial;
 	}
 
-	public String getFacebook() {
-		return facebook;
+	public String getYoutube() {
+		return youtube;
 	}
 
-	public void setFacebook(String facebook) {
-		this.facebook = facebook;
-	}
-
-	public String getTwiter() {
-		return twiter;
-	}
-
-	public void setTwiter(String twiter) {
-		this.twiter = twiter;
-	}
-
-	public String getLinkedin() {
-		return linkedin;
-	}
-
-	public void setLinkedin(String linkedin) {
-		this.linkedin = linkedin;
+	public void setYoutube(String youtube) {
+		this.youtube = youtube;
 	}
 
 	public String getNotas() {
@@ -359,7 +122,7 @@ public class Candidato {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	
+
 	public String getLinkVerificacao() {
 		return linkVerificacao;
 	}
@@ -367,5 +130,71 @@ public class Candidato {
 	public void setLinkVerificacao(String linkVerificacao) {
 		this.linkVerificacao = linkVerificacao;
 	}
+
+	public Date getData_nasc() {
+		return data_nasc;
+	}
+
+	public void setData_nasc(Date data_nasc) {
+		this.data_nasc = data_nasc;
+	}
+
+	public Inscricao getInscricao() {
+		return inscricao;
+	}
+
+	public void setInscricao(Inscricao inscricao) {
+		this.inscricao = inscricao;
+	}
+
+	public Collection<Arquivo> getArquivo() {
+		return arquivo;
+	}
+
+	public void setArquivo(Collection<Arquivo> arquivo) {
+		this.arquivo = arquivo;
+	}
+
+	public Collection<Tag> getTag() {
+		return tag;
+	}
+
+	public void setTag(Collection<Tag> tag) {
+		this.tag = tag;
+	}
+
+	public RedeSocial getFacebook() {
+		return facebook;
+	}
+
+	public void setFacebook(RedeSocial facebook) {
+		this.facebook = facebook;
+	}
+
+	public RedeSocial getTwitter() {
+		return twitter;
+	}
+
+	public void setTwitter(RedeSocial twitter) {
+		this.twitter = twitter;
+	}
+
+	public RedeSocial getLinkedin() {
+		return linkedin;
+	}
+
+	public void setLinkedin(RedeSocial linkedin) {
+		this.linkedin = linkedin;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	
+	
 
 }

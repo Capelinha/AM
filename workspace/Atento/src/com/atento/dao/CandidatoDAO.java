@@ -4,12 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import com.atento.conexao.Conexao;
 import com.atento.entidade.Candidato;
 import com.atento.servlet.cadastro.EmailDuplicadoException;
 import com.atento.servlet.cadastro.LinkExpiradoException;
 
-public class CandidatoDAO {
+public class CandidatoDAO implements DAO<Candidato>{
 	
 	private Connection conexao;
 	private String sql;
@@ -20,7 +21,7 @@ public class CandidatoDAO {
 		conexao = Conexao.getConnection();
 	}
 	
-	public void registrar(Candidato c) throws EmailDuplicadoException, PersistenciaException {
+	public void adicionar(Candidato c) throws EmailDuplicadoException, PersistenciaException {
 		sql = "insert into candidato(nome,sobrenome,email,telefone,celular,senha, status, link_verificacao) values (?,?,?,?,?,?,?,?)";
 		try {
 			p = conexao.prepareStatement(sql);
@@ -62,32 +63,32 @@ public class CandidatoDAO {
 		}
 	}
 	
-	public void atualizaCandidato(Candidato c) {
+	public void atualizar(Candidato c) {
 		sql = "Update candidato SET endereco = ?, cidade = ?, estado = ?, pais = ?, cep = ?,"+
 				"data_nasc = ?, anos_exp = ?, cargo_atual = ?, pret_salarial, facebook = ?,"
 				+ "twitter = ?, linkdin = ?, status = ?, n_amigos = ?, fb_frequencia = ?,"
 				+ "n_seguidores = ?, tw_frequencia = ?, ld_frequencia = ?, n_conexoes = ?, youtube = ?";
 		try {
 			p = conexao.prepareStatement(sql);
-			p.setString(1, c.getEndereco());
-			p.setString(2, c.getCidade());
-			p.setString(3, c.getEstado());
-			p.setString(4,c.getPais());
-			p.setString(5, c.getCep());
+			p.setString(1, c.getEndereco().getEndereco());
+			p.setString(2, c.getEndereco().getCidade());
+			p.setString(3, c.getEndereco().getEstado());
+			p.setString(4,c.getEndereco().getPais());
+			p.setString(5, c.getEndereco().getCep());
 			p.setDate(6, c.getData_nasc());
 			p.setInt(7, c.getAnos_exp());
 			p.setString(8, c.getCargo_atual());
 			p.setDouble(9, c.getPret_salarial());
-			p.setString(10, c.getFacebook());
-			p.setString(11, c.getTwiter());
-			p.setString(12, c.getLinkedin());
+			p.setString(10, c.getFacebook().getUrl());
+			p.setString(11, c.getTwitter().getUrl());
+			p.setString(12, c.getLinkedin().getUrl());
 			p.setInt(13, c.getStatus());
-			p.setInt(14, c.getFaceAmigos());
-			p.setInt(15, c.getFreqFace());
-			p.setInt(16, c.getTwitAmigos());
-			p.setInt(17, c.getFreqTwit());
-			p.setInt(18, c.getFreqLink());
-			p.setInt(19, c.getLinkAmigos());
+			p.setInt(14, c.getFacebook().getNumAmigos());
+			p.setInt(15, c.getFacebook().getFrequencia());
+			p.setInt(16, c.getTwitter().getNumAmigos());
+			p.setInt(17, c.getTwitter().getFrequencia());
+			p.setInt(18, c.getLinkedin().getFrequencia());
+			p.setInt(19, c.getLinkedin().getNumAmigos());
 			p.setString(20, c.getYoutube());
 			p.execute();
 			//sql = "insert into tag_candidato values(?,?)";
@@ -95,6 +96,10 @@ public class CandidatoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void excluir(Candidato c) {
+		
 	}
 	
 	public int logar(String email, String senha) {
@@ -117,7 +122,14 @@ public class CandidatoDAO {
 		return 0;
 	}
 	
-	public Candidato perfil(int id) {
+	
+	public List<Candidato> getTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public Candidato get(int id) {
 		Candidato candidato = null;
 		sql = "select * from candidato where id_candidato = ?";
 		try {
@@ -132,5 +144,6 @@ public class CandidatoDAO {
 		}
 		return candidato;
 	}
+
 
 }

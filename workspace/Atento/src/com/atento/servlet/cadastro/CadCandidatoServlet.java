@@ -10,11 +10,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.atento.dao.CandidatoDAO;
 import com.atento.dao.PersistenciaException;
 import com.atento.email.Email;
 import com.atento.entidade.Candidato;
+
 
 @WebServlet("/CadastraCandidato")
 public class CadCandidatoServlet extends HttpServlet {
@@ -56,7 +56,7 @@ public class CadCandidatoServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/mensagem.jsp");
 		
 		try {
-			dao.registrar(candidato);
+			dao.adicionar(candidato);
 			request.setAttribute("titulo", "Cadastro realizado com sucesso");
 			request.setAttribute("mensagem", "Seja bem vindo ao portal da Atento, nele você pode <b>realizar suas provas</b>, <b>candidatar a vagas</b> e <b>marcar entrevistas. Não esqueça de verificar seu e-mail antes de realizar login.</b>");
 			request.setAttribute("texto-botao", "LOGIN");
