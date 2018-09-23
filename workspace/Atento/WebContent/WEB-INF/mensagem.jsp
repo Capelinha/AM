@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.atento.entidade.Mensagem" %>
 <%@ include file="../atento-header.jsp" %>
 <main class="contact-form">
   	<script src='https://www.google.com/recaptcha/api.js'></script>
@@ -12,15 +13,20 @@
             <i class="fas fa-user-alt"></i>
             <h3>Info</h3>
         </header>
-
-	    <h4><%= request.getAttribute("titulo")%></h4>
-	    <p><%= request.getAttribute("mensagem")%></p>
+		
+		<%if (request.getAttribute("mensagem") != null) { 
+			Mensagem mensagem = (Mensagem) request.getAttribute("mensagem");
+		%>
+	    <h4><%= mensagem.getTitulo()%></h4>
+	    <p><%= mensagem.getMensagem()%></p>
 	    
 		<section id="perfil-bloco-botao">
-            <a href="<%= request.getAttribute("link-botao")%>" class="perfil-link">
-                <div class="perfil-botao"><%= request.getAttribute("texto-botao")%></div>
+            <a href="<%= mensagem.getLinkBotao()%>" class="perfil-link">
+                <div class="perfil-botao"><%= mensagem.getTextoBotao()%></div>
             </a>
         </section>
+        
+        <%} %>
         
         <!--Cantos com cruz-->
         <div class="bloco-cruz bloco-cruz-es bloco-cruz-v"> </div>

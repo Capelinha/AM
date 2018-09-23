@@ -204,7 +204,7 @@ reabilitados da Previdência Social.">
                         </li>
                         
                         <li class="logado <%if(!achou){ out.print(" hidden");}%>">
-                            <a href="perfil.jsp" class="">
+                            <a href="perfil" class="">
                                 <span class="text">Perfil</span>
                             </a>
                         </li>

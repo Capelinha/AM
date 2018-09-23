@@ -6,7 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import com.atento.conexao.Conexao;
+import com.atento.entidade.Arquivo;
 import com.atento.entidade.Candidato;
+import com.atento.entidade.Endereco;
+import com.atento.entidade.RedeSocial;
+import com.atento.entidade.Tag;
 import com.atento.servlet.candidato.cadastro.EmailDuplicadoException;
 import com.atento.servlet.candidato.cadastro.LinkExpiradoException;
 import com.atento.servlet.sessao.LoginInvalidoException;
@@ -76,10 +80,10 @@ public class CandidatoDAO implements DAO<Candidato>{
 			p.setString(3, c.getEndereco().getEstado());
 			p.setString(4,c.getEndereco().getPais());
 			p.setString(5, c.getEndereco().getCep());
-			p.setDate(6, c.getData_nasc());
-			p.setInt(7, c.getAnos_exp());
-			p.setString(8, c.getCargo_atual());
-			p.setDouble(9, c.getPret_salarial());
+			p.setDate(6, c.getDataNasc());
+			p.setInt(7, c.getAnosExp());
+			p.setString(8, c.getCargoAtual());
+			p.setDouble(9, c.getPretSalarial());
 			p.setString(10, c.getFacebook().getUrl());
 			p.setString(11, c.getTwitter().getUrl());
 			p.setString(12, c.getLinkedin().getUrl());
@@ -124,22 +128,40 @@ public class CandidatoDAO implements DAO<Candidato>{
 		throw new LoginInvalidoException("Email ou senha incorretos");
 	}
 	
-	
 	public List<Candidato> getTodos() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	
 	public Candidato get(int id) {
 		Candidato candidato = null;
-		sql = "select * from candidato where id_candidato = ?";
+
+		sql = "SELECT id_candidato, nome, sobrenome, email, senha, telefone, celular, anos_exp, cargo_atual, pret_salarial, youtube, notas, status, link_verificacao, data_nasc, facebook, n_amigos, fb_frequencia, twitter, n_seguidores, tw_frequencia, linkdin, n_conexoes, ld_frequencia, endereco, cidade, estado, pais, cep FROM candidato WHERE id_candidato = ?";
 		try {
 			p = conexao.prepareStatement(sql);
 			p.setInt(1, id);
 			rs = p.executeQuery();
 			if (rs.next()) {
-				//candidato = new Candidato();
+				 Candidato c = new Candidato(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getInt(8), rs.getString(9), rs.getDouble(10), rs.getString(11), rs.getString(12), rs.getInt(13), rs.getString(14), rs.getDate(15), new RedeSocial(rs.getString(16), rs.getInt(17), rs.getInt(18)), new RedeSocial(rs.getString(19), rs.getInt(20), rs.getInt(21)), new RedeSocial(rs.getString(22), rs.getInt(23), rs.getInt(24)), new Endereco(rs.getString(25), rs.getString(26), rs.getString(27), rs.getString(28), rs.getString(29)));
+				
+				 sql = "SELECT id_arquivo, arquivo, nome, extensao FROM arquivo WHERE id_candidato = ?";
+				 p = conexao.prepareStatement(sql);
+				 p.setInt(1, id);
+				 
+				 ResultSet rsAux = p.executeQuery();
+				 while(rsAux.next()) {
+					 c.addArquivo(new Arquivo(rsAux.getInt(1), rsAux.getString(2), rsAux.getString(3), rsAux.getString(4)));
+				 }
+				 rsAux.close();
+				 sql = "SELECT tag.id_tag, tag.tag FROM tag INNER JOIN tag_candidato ON tag.id_tag = tag_candidato.id_tag INNER JOIN candidato ON candidato.id_candidato = tag_candidato.id_candidato WHERE candidato.id_candidato = ?";
+				 p = conexao.prepareStatement(sql);
+				 p.setInt(1, id);
+				 
+				 rsAux = p.executeQuery();
+				 while(rsAux.next()) {
+					 c.addTag(new Tag(rsAux.getInt(1), rsAux.getString(2)));
+				 }
+				 rsAux.close();		
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

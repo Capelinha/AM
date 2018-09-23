@@ -14,15 +14,12 @@ import com.atento.dao.CandidatoDAO;
 import com.atento.dao.PersistenciaException;
 import com.atento.email.Email;
 import com.atento.entidade.Candidato;
+import com.atento.entidade.Mensagem;
 
 
 @WebServlet("/cadastrar")
 public class AutoCadastroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public AutoCadastroServlet() {
-       
-    }
     
     private String gerarMD5(String nome, String email, String senha) {
     	try {
@@ -54,30 +51,23 @@ public class AutoCadastroServlet extends HttpServlet {
 				
 		CandidatoDAO dao = new CandidatoDAO();
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/mensagem.jsp");
+		Mensagem mensagem;
 		
 		try {
 			dao.adicionar(candidato);
-			request.setAttribute("titulo", "Cadastro realizado com sucesso");
-			request.setAttribute("mensagem", "Seja bem vindo ao portal da Atento, nele você pode <b>realizar suas provas</b>, <b>candidatar a vagas</b> e <b>marcar entrevistas. Não esqueça de verificar seu e-mail antes de realizar login.</b>");
-			request.setAttribute("texto-botao", "LOGIN");
-			request.setAttribute("link-botao", "login.jsp");
+			mensagem = new Mensagem("Cadastro realizado com sucesso", "Seja bem vindo ao portal da Atento, nele você pode <b>realizar suas provas</b>, <b>candidatar a vagas</b> e <b>marcar entrevistas. Não esqueça de verificar seu e-mail antes de realizar login.</b>", "LOGIN", "login.jsp");
 			new Thread(() -> {
 				Email.enviar(email, "Ativação da conta Atento", "http://localhost:8080/Atento/ativarConta?email=" + email + "&codigo=" + candidato.getLinkVerificacao());
 			}).start();
 		} catch (EmailDuplicadoException e) {
-			request.setAttribute("titulo", "Conta já existe");
-			request.setAttribute("mensagem", "Infelizmente não conseguimos concluir seu cadastro pois <b>localizamos outra conta</b> atrelada ao e-mail informado");
-			request.setAttribute("texto-botao", "VOLTAR");
-			request.setAttribute("link-botao", "javascript:history.back()");
+			mensagem = new Mensagem("Conta já existe", "Infelizmente não conseguimos concluir seu cadastro pois <b>localizamos outra conta</b> atrelada ao e-mail informado", "VOLTAR", "javascript:history.back()");
 			e.printStackTrace();
 		} catch (PersistenciaException e) {
-			request.setAttribute("titulo", "Houve um problema ao cadastrar");
-			request.setAttribute("mensagem", "Infelizmente não conseguimos concluir seu cadastro.<b> Já estamos trabalhando para resolver esse problema.</b> Agradecemos a sua compreensão.");
-			request.setAttribute("texto-botao", "VOLTAR");
-			request.setAttribute("link-botao", "javascript:history.back()"); 
+			mensagem = new Mensagem("Houve um problema ao cadastrar", "Infelizmente não conseguimos concluir seu cadastro.<b> Já estamos trabalhando para resolver esse problema.</b> Agradecemos a sua compreensão.", "VOLTAR", "javascript:history.back()");
 			e.printStackTrace();
 		}
 		
+		request.setAttribute("mensagem", mensagem);
 		dispatcher.forward(request, response);
 	}
 

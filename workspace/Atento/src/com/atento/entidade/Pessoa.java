@@ -8,6 +8,19 @@ public class Pessoa {
 	protected String email;
 	protected String senha;
 	
+	public Pessoa() {
+		
+	}
+	
+	public Pessoa(int id, String nome, String sobrenome, String email, String senha) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.email = email;
+		this.senha = senha;
+	}
+	
 	public int getId() {
 		return id;
 	}

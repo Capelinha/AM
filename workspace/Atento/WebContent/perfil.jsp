@@ -1,4 +1,7 @@
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.atento.entidade.*" %>
 <%@ include file="atento-header.jsp" %>
 <main class="contact-form">
     <!-- Nosso codigo -->
@@ -6,7 +9,9 @@
         <i class="far fa-newspaper" id="titulo-pagina-icone"></i>
         <h2>Perfil</h2>
     </header>
-
+	<%if (request.getAttribute("candidato") != null) { 
+		Candidato c = (Candidato) request.getAttribute("candidato");
+	%>
     <!--Pessoal-->
 
     <section class="bloco-perfil" id="bloco-perfil-primeiro">
@@ -18,17 +23,18 @@
         <!-- Texto do bloco -->
         <table class="perfil-table-dados">
             <tr>
-                <td><b>Nome:</b> Mateus</td>
-                <td><b>Sobrenome:</b> de Oliveira Igreja</td>
+                <td><b>Nome:</b> <%=c.getNome() %></td>
+                <td><b>Sobrenome:</b> <%=c.getSobrenome() %></td>
             </tr>
             <tr>
-                <td><b>E-mail:</b> m.oliveiraigreja@Gmail.com</td>
-                <td><b>Nascimento: </b> 00/00/00</td>
+                <td><b>E-mail:</b> <%=c.getEmail() %></td>
+                <%SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");%>
+                <td><b>Nascimento: </b> <%=sdf.format(c.getDataNasc())%></td>
 
             </tr>
             <tr>
-                <td><b>Celular:</b> 96376-6372</td>
-                <td><b>Telefone:</b> 2148-1233</td>
+                <td><b>Celular:</b> <%=c.getCelular()%></td>
+                <td><b>Telefone:</b> <%=c.getTelefone()%></td>
             </tr>
         </table>
         <!--Cantos com cruz-->
@@ -49,16 +55,16 @@
         <!-- Texto do bloco -->
         <table class="perfil-table-dados">
             <tr>
-                <td><b>Endereço: </b> Lins de vasconcelos, 1222</td>
+                <td><b>Endereço: </b> <%=c.getEndereco().getEndereco() %></td>
             </tr>
             <tr>
-                <td><b>CEP: </b> 02541-554 </td>
-                <td><b>Cidade:</b> São Paulo </td>
+                <td><b>CEP: </b> <%=c.getEndereco().getCep() %> </td>
+                <td><b>Cidade:</b> <%=c.getEndereco().getCidade() %> </td>
 
             </tr>
             <tr>
-                <td><b>Estado:</b> São Paulo</td>
-                <td><b>País:</b> Brasil</td>
+                <td><b>Estado:</b> <%=c.getEndereco().getEstado() %></td>
+                <td><b>País:</b> <%=c.getEndereco().getPais() %></td>
             </tr>
         </table>
         <!--Cantos com cruz-->
@@ -80,16 +86,19 @@
 
         <table class="perfil-table-dados">
             <tr>
-                <td><b>Cargo atual:</b> Analista de RH</td>
+                <td><b>Cargo atual:</b> <%=c.getCargoAtual() %></td>
             </tr>
             <tr>
-                <td><b>Pretensão salarial: </b>R$ 0000,00</td>
+            	<% DecimalFormat df = new DecimalFormat("R$ 0.00");%>
+                <td><b>Pretensão salarial: </b> <%=df.format(c.getPretSalarial())%></td>
             </tr>
             <tr>
-                <td><b>Tempo de experiencia:</b> 10 anos</td>
+                <td><b>Tempo de experiencia:</b> <%=c.getAnosExp() %> anos</td>
             </tr>
             <tr>
-                <td><b>Tags:</b> awgawg,agwag,gaw</td>
+                <td><b>Tags:</b> <% for(Tag t : c.getTag()){
+                						out.print(t.getTag());
+                						}%> </td>
             </tr>
         </table>
 
@@ -112,34 +121,34 @@
         <table class="perfil-table-dados">
             <tr id="bloco-perfil-social">
                 <td>
-                    <a href="#">
+                    <a href="<%=c.getFacebook().getUrl()%>">
                         <div>
                             <i class="fab fa-facebook"></i>
                             <p>Facebook</p>
-                            <h6>10 amigos</h6>
+                            <h6><%= c.getFacebook().getNumAmigos()%> amigos</h6>
                         </div>
                     </a>
                 </td>
                 <td>
-                    <a href="#">
+                    <a href="<%=c.getTwitter().getUrl()%>">
                         <div>
                             <i class="fab fa-twitter"></i>
                             <p>Twitter</p>
-                            <h6>30 seguidores</h6>
+                            <h6><%=c.getTwitter().getNumAmigos()%> seguidores</h6>
                         </div>
                     </a>
                 </td>
                 <td>
-                    <a href="#">
+                    <a href="<%=c.getLinkedin().getUrl()%>">
                         <div>
                             <i class="fab fa-linkedin"></i>
                             <p>Linkedin</p>
-                            <h6>50 conexões</h6>
+                            <h6><%=c.getLinkedin().getNumAmigos()%> conexões</h6>
                         </div>
                     </a>
                 </td>
                 <td>
-                    <a href="#">
+                    <a href="<%=c.getYoutube()%>">
                         <div>
                             <i class="fab fa-youtube"></i>
                             <p>Vídeo</p>
@@ -295,5 +304,6 @@
             </a>
         </section>
     </section>
+    <%} %>
 </main>
 <%@ include file="atento-footer.jsp" %>

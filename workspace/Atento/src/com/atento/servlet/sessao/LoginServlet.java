@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.atento.dao.CandidatoDAO;
 import com.atento.dao.PersistenciaException;
+import com.atento.entidade.Mensagem;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -56,18 +57,20 @@ public class LoginServlet extends HttpServlet {
 				response.addCookie(idCookie);
 				request.setAttribute("reload", "true");
 			} catch (LoginInvalidoException e) {
+				Mensagem mensagem;
 				dispatcher = request.getRequestDispatcher("/WEB-INF/mensagem.jsp");
-				request.setAttribute("titulo", "Erro de login");
-				request.setAttribute("mensagem", "Infelizmente não conseguimos concluir seu login. Provavelmente o seu nome de usuario ou senha estão incorretos");
-				request.setAttribute("texto-botao", "VOLTAR");
-				request.setAttribute("link-botao", "javascript:history.back()");
+				
+				mensagem = new Mensagem("Erro de login", "Infelizmente não conseguimos concluir seu login. Provavelmente o seu nome de usuario ou senha estão incorretos", "VOLTAR", "javascript:history.back()");
+				
+				request.setAttribute("mensagem", mensagem);
 				e.printStackTrace();
 			}catch (PersistenciaException e) {
+				Mensagem mensagem;
 				dispatcher = request.getRequestDispatcher("/WEB-INF/mensagem.jsp");
-				request.setAttribute("titulo", "Houve um problema ao logar");
-				request.setAttribute("mensagem", "Infelizmente não conseguimos concluir seu login.<b> Já estamos trabalhando para resolver esse problema.</b> Agradecemos a sua compreensão.");
-				request.setAttribute("texto-botao", "VOLTAR");
-				request.setAttribute("link-botao", "javascript:history.back()"); 
+				
+				mensagem = new Mensagem("Houve um problema ao logar", "Infelizmente não conseguimos concluir seu login.<b> Já estamos trabalhando para resolver esse problema.</b> Agradecemos a sua compreensão." ,"VOLTAR", "javascript:history.back()");
+								
+				request.setAttribute("mensagem", mensagem);
 				e.printStackTrace();
 			}
 			

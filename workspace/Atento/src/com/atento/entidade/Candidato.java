@@ -1,21 +1,21 @@
 package com.atento.entidade;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Candidato extends Pessoa {
 
 	private String telefone;
 	private String celular;
-	private int anos_exp;
-	private String cargo_atual;
-	private double pret_salarial;
+	private int anosExp;
+	private String cargoAtual;
+	private double pretSalarial;
 	private String youtube;
 	private String notas;
 	private int status;
 	private String linkVerificacao;
-	private Date data_nasc;
-	private Inscricao inscricao;
+	private Date dataNasc;
 	private Collection<Arquivo> arquivo;
 	private Collection<Tag> tag;
 	private RedeSocial facebook;
@@ -32,30 +32,27 @@ public class Candidato extends Pessoa {
 		this.celular = celular;
 	}
 	
-	
 
-	public Candidato(String telefone, String celular, int anos_exp, String cargo_atual, double pret_salarial,
-			String youtube, String notas, int status, String linkVerificacao, Date data_nasc, Inscricao inscricao,
-			Collection<Arquivo> arquivo, Collection<Tag> tag, RedeSocial facebook, RedeSocial twitter,
+	public Candidato(int id, String nome, String sobrenome, String email, String senha, String telefone, String celular, int anosExp, String cargoAtual, double pretSalarial,
+			String youtube, String notas, int status, String linkVerificacao, Date dataNasc, RedeSocial facebook, RedeSocial twitter,
 			RedeSocial linkedin, Endereco endereco) {
-		super();
+		super(id, nome, sobrenome, email, senha);
 		this.telefone = telefone;
 		this.celular = celular;
-		this.anos_exp = anos_exp;
-		this.cargo_atual = cargo_atual;
-		this.pret_salarial = pret_salarial;
+		this.anosExp = anosExp;
+		this.cargoAtual = cargoAtual;
+		this.pretSalarial = pretSalarial;
 		this.youtube = youtube;
 		this.notas = notas;
 		this.status = status;
 		this.linkVerificacao = linkVerificacao;
-		this.data_nasc = data_nasc;
-		this.inscricao = inscricao;
-		this.arquivo = arquivo;
-		this.tag = tag;
+		this.dataNasc = dataNasc;
 		this.facebook = facebook;
 		this.twitter = twitter;
 		this.linkedin = linkedin;
 		this.endereco = endereco;
+		this.arquivo = new ArrayList<Arquivo>();
+		this.tag = new ArrayList<Tag>();
 	}
 
 
@@ -75,28 +72,28 @@ public class Candidato extends Pessoa {
 		this.celular = celular;
 	}
 
-	public int getAnos_exp() {
-		return anos_exp;
+	public int getAnosExp() {
+		return anosExp;
 	}
 
-	public void setAnos_exp(int anos_exp) {
-		this.anos_exp = anos_exp;
+	public void setAnosExp(int anos_exp) {
+		this.anosExp = anos_exp;
 	}
 
-	public String getCargo_atual() {
-		return cargo_atual;
+	public String getCargoAtual() {
+		return cargoAtual;
 	}
 
-	public void setCargo_atual(String cargo_atual) {
-		this.cargo_atual = cargo_atual;
+	public void setCargoAtual(String cargo_atual) {
+		this.cargoAtual = cargo_atual;
 	}
 
-	public double getPret_salarial() {
-		return pret_salarial;
+	public double getPretSalarial() {
+		return pretSalarial;
 	}
 
-	public void setPret_salarial(double pret_salarial) {
-		this.pret_salarial = pret_salarial;
+	public void setPretSalarial(double pret_salarial) {
+		this.pretSalarial = pret_salarial;
 	}
 
 	public String getYoutube() {
@@ -131,20 +128,12 @@ public class Candidato extends Pessoa {
 		this.linkVerificacao = linkVerificacao;
 	}
 
-	public Date getData_nasc() {
-		return data_nasc;
+	public Date getDataNasc() {
+		return dataNasc;
 	}
 
-	public void setData_nasc(Date data_nasc) {
-		this.data_nasc = data_nasc;
-	}
-
-	public Inscricao getInscricao() {
-		return inscricao;
-	}
-
-	public void setInscricao(Inscricao inscricao) {
-		this.inscricao = inscricao;
+	public void setDataNasc(Date data_nasc) {
+		this.dataNasc = data_nasc;
 	}
 
 	public Collection<Arquivo> getArquivo() {
@@ -154,9 +143,17 @@ public class Candidato extends Pessoa {
 	public void setArquivo(Collection<Arquivo> arquivo) {
 		this.arquivo = arquivo;
 	}
+	
+	public void addArquivo(Arquivo arquivo) {
+		this.arquivo.add(arquivo);
+	}
 
 	public Collection<Tag> getTag() {
 		return tag;
+	}
+	
+	public void addTag(Tag tag) {
+		this.tag.add(tag);
 	}
 
 	public void setTag(Collection<Tag> tag) {
