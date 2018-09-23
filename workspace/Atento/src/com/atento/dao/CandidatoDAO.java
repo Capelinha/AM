@@ -7,8 +7,9 @@ import java.sql.SQLException;
 import java.util.List;
 import com.atento.conexao.Conexao;
 import com.atento.entidade.Candidato;
-import com.atento.servlet.cadastro.EmailDuplicadoException;
-import com.atento.servlet.cadastro.LinkExpiradoException;
+import com.atento.servlet.candidato.cadastro.EmailDuplicadoException;
+import com.atento.servlet.candidato.cadastro.LinkExpiradoException;
+import com.atento.servlet.sessao.LoginInvalidoException;
 
 public class CandidatoDAO implements DAO<Candidato>{
 	
@@ -21,7 +22,7 @@ public class CandidatoDAO implements DAO<Candidato>{
 		conexao = Conexao.getConnection();
 	}
 	
-	public void adicionar(Candidato c) throws EmailDuplicadoException, PersistenciaException {
+	public void adicionar(Candidato c) throws EmailDuplicadoException{
 		sql = "insert into candidato(nome,sobrenome,email,telefone,celular,senha, status, link_verificacao) values (?,?,?,?,?,?,?,?)";
 		try {
 			p = conexao.prepareStatement(sql);
@@ -45,7 +46,7 @@ public class CandidatoDAO implements DAO<Candidato>{
 		}
 	}
 	
-	public void ativar(String email, String codigo) throws LinkExpiradoException, PersistenciaException {
+	public void ativar(String email, String codigo) throws LinkExpiradoException {
 		sql = "UPDATE candidato SET status = ? WHERE link_verificacao = ? AND email = ?";
 		try {
 			p = conexao.prepareStatement(sql);
@@ -102,24 +103,25 @@ public class CandidatoDAO implements DAO<Candidato>{
 		
 	}
 	
-	public int logar(String email, String senha) {
-		if (email.contains("atento.com")) {
-			sql = "select id_funcionario from funcionario where email = ? and senha = ?";
-		} else {
-			sql = "select id_candidato from candidato where email = ? and senha = ?";
-		}
+	public int logar(String email, String senha) throws LoginInvalidoException {
+
+		sql = "select id_candidato from candidato where email = ? and senha = ?";
+		
 		try {
 			p = conexao.prepareStatement(sql);
 			p.setString(1, email);
 			p.setString(2, senha);
 			rs = p.executeQuery();
+			
 			if (rs.next()) {
-				return rs.getInt(0);
+				return rs.getInt(1);
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
 		}
-		return 0;
+		throw new LoginInvalidoException("Email ou senha incorretos");
 	}
 	
 	

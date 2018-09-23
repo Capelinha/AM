@@ -1,4 +1,4 @@
-package com.atento.servlet.cadastro;
+package com.atento.servlet.candidato.cadastro;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -16,11 +16,11 @@ import com.atento.email.Email;
 import com.atento.entidade.Candidato;
 
 
-@WebServlet("/CadastraCandidato")
-public class CadCandidatoServlet extends HttpServlet {
+@WebServlet("/cadastrar")
+public class AutoCadastroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public CadCandidatoServlet() {
+    public AutoCadastroServlet() {
        
     }
     

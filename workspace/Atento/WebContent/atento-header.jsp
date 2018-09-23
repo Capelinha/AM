@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<% if(request.getAttribute("reload") != null)  {
+		String uri = request.getRequestURI();
+		String pageName = uri.substring(uri.lastIndexOf("/")+1);
+		response.sendRedirect(pageName);
+	}%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -185,11 +190,9 @@ reabilitados da Previdência Social.">
                        	  boolean achou = false;
 						  for (int i = 0; i < cookies.length; i++) {
 							  Cookie cookie = cookies[i];
-							  //String cookieName = cookie.getName();
-							  //String cookieValue = cookie.getValue();
-							  
 							  if(cookie.getName().equals("idSessao")){
-								  achou = true;
+								  if(cookie.getValue() != "")
+								  	achou = true;
 							  }
 						  }
 					   %>
@@ -214,7 +217,7 @@ reabilitados da Previdência Social.">
                         
                         
                         <li class="logado <%if(!achou){ out.print(" hidden");}%>">
-                            <a href="#" class="">
+                            <a href="logout" class="">
                                 <span class="text">Logout</span>
                             </a>
                         </li>	                        

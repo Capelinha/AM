@@ -1,4 +1,4 @@
-package com.atento.servlet.cadastro;
+package com.atento.servlet.candidato.cadastro;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;

@@ -13,7 +13,7 @@
             <h3>Login</h3>
         </header>
         <!--Provas-->
-        <form name="login" id="form-login">
+        <form name="login" id="form-login" action="login" method="post">
             <fieldset class="form-campo">
                 <label for="email"><b>Email</b></label>
                 <br>

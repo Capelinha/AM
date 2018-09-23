@@ -1,6 +1,6 @@
 package com.atento.dao;
 
-public class PersistenciaException extends Exception{
+public class PersistenciaException extends RuntimeException{
 	private static final long serialVersionUID = 1L;
 	
 	public PersistenciaException(String msg) {

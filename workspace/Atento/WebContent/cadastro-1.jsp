@@ -13,7 +13,7 @@
             <h3>Pessoal</h3>
         </header>
         <!--Campos-->
-        <form name="cadastro" id="form-cadastro" action="CadastraCandidato" onsubmit="return validarForm();" method="POST">
+        <form name="cadastro" id="form-cadastro" action="cadastrar" onsubmit="return validarForm();" method="POST">
             <table>
                 <tr>
                     <td colspan="2">
