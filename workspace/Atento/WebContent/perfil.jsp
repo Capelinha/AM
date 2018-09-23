@@ -276,12 +276,17 @@
         </header>
         <!-- Texto do bloco -->
         <section id="bloco-perfil-arquivo-lista">
-            <a href="">
-                <article class="bloco-perfil-arquivo">
-                    <i class="fas fa-file-invoice"></i>
-                    <p>curriculo.pdf</p>
-                </article>
-            </a>
+        	<% for(Arquivo a : c.getArquivo()){
+        		out.print("<a href=\""+ a.getArquivo() + "\">" +
+        						"<article class=\"bloco-perfil-arquivo\">" +
+                        			"<i class=\"fas fa-file-invoice\"></i>" +
+                        			"<p>"+ a.getNome() + a.getExtensao() + "</p>" +
+                    			"</article>" +
+                			"</a>");	
+        		
+        	}%>
+        	
+            
 
             <a href="">
                 <article class="bloco-perfil-arquivo">
