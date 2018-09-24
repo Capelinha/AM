@@ -142,7 +142,7 @@ public class CandidatoDAO implements DAO<Candidato>{
 		return null;
 	}
 	
-	public Candidato get(int id) {
+	public Candidato get(int id) throws PersistenciaException{
 
 		sql = "SELECT id_candidato, nome, sobrenome, email, senha, telefone, celular, anos_exp, cargo_atual, pret_salarial, youtube, notas, status, link_verificacao, data_nasc, facebook, n_amigos, fb_frequencia, twitter, n_seguidores, tw_frequencia, linkdin, n_conexoes, ld_frequencia, endereco, cidade, estado, pais, cep FROM candidato WHERE id_candidato = ?";
 		try {
@@ -174,6 +174,7 @@ public class CandidatoDAO implements DAO<Candidato>{
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
 		}
 		return null;
 	}
