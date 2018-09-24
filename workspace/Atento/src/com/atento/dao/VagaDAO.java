@@ -9,6 +9,8 @@ import java.util.List;
 
 import com.atento.conexao.Conexao;
 import com.atento.entidade.Endereco;
+import com.atento.entidade.PesoTag;
+import com.atento.entidade.Tag;
 import com.atento.entidade.Vaga;
 
 public class VagaDAO implements DAO<Vaga>{
@@ -101,7 +103,6 @@ public class VagaDAO implements DAO<Vaga>{
 				tags.add(new PesoTag(rs.getInt("Peso"),new Tag(rs.getInt("Id"), rs.getString("Tag"))));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return tags;
