@@ -41,5 +41,17 @@ public class Vaga {
 	private Departamento departamento;
 
 	private PesoComponente pesoComponente;
+	
+	public Vaga(int id, String titulo, String descricao, String endereco, String cidade, String pais,
+			Date dataDesejada) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.descricao = descricao;
+		this.endereco = endereco;
+		this.cidade = cidade;
+		this.pais = pais;
+		this.dataDesejada = dataDesejada;
+	}
 
 }
