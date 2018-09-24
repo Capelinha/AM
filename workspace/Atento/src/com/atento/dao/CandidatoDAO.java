@@ -43,7 +43,7 @@ public class CandidatoDAO implements DAO<Candidato>{
 		} catch (SQLException e) {
 			e.printStackTrace();
 			if(e.getSQLState().startsWith("23") && e.getMessage().contains("EMAIL_UQ")) {
-				throw new EmailDuplicadoException("Já existe uma conta com o endereço de email informado");
+				throw new EmailDuplicadoException("JÃ¡ existe uma conta com o endereÃ§o de email informado");
 			}else {
 				throw new PersistenciaException(e.getMessage(), e);
 			}
@@ -104,7 +104,16 @@ public class CandidatoDAO implements DAO<Candidato>{
 	}
 	
 	public void excluir(Candidato c) {
-		
+		sql = "delete from candidato where id_candidato = ?";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(0, c.getId());
+			p.execute();
+			sql = "";
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public int logar(String email, String senha) throws LoginInvalidoException {
