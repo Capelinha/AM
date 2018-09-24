@@ -1,6 +1,8 @@
 /.metadata/
+/.recommenders/
 *.class
 *.jar
+!workspace/Atento/WebContent/WEB-INF/lib/*.jar
 *.war
 *.nar
 *.ear
@@ -9,4 +11,4 @@
 *.rar
 hs_err_pid*
 Servers/
-/.recommenders/
+
