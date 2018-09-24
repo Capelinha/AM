@@ -100,6 +100,7 @@ public class CandidatoDAO implements DAO<Candidato>{
 			//codigo para tag_candidato
 		} catch (SQLException e) {
 			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
 		}
 	}
 	
@@ -107,12 +108,12 @@ public class CandidatoDAO implements DAO<Candidato>{
 		sql = "delete from candidato where id_candidato = ?";
 		try {
 			p = conexao.prepareStatement(sql);
-			p.setInt(0, c.getId());
+			p.setInt(1, c.getId());
 			p.execute();
 			sql = "";
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
 		}
 	}
 	

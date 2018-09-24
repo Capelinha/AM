@@ -23,22 +23,22 @@ public class VagaDAO implements DAO<Vaga>{
 	}
 
 
-	public void adicionar(Vaga t) throws PersistenciaException {
+	public void adicionar(Vaga t) {
 		
 	}
 
 
-	public void atualizar(Vaga t) throws PersistenciaException {
+	public void atualizar(Vaga t){
 		
 		
 	}
 
 
-	public void excluir(Vaga t) throws PersistenciaException {
+	public void excluir(Vaga t){
 
 	}
 
-	public List<Vaga> getTodos() throws PersistenciaException {
+	public List<Vaga> getTodos(){
 		List<Vaga> vagas = new ArrayList<>();
 		sql = "SELECT id_vaga, titulo, area_atuacao, descricao, endereco, cidade, pais, data_desejada FROM vaga";
 		try {
@@ -55,7 +55,7 @@ public class VagaDAO implements DAO<Vaga>{
 		return null;
 	}
 	
-	public List<Vaga> getTodosAtivas() throws PersistenciaException {
+	public List<Vaga> getTodosAtivas() {
 		List<Vaga> vagas = new ArrayList<>();
 		sql = "SELECT id_vaga, titulo, area_atuacao, descricao, endereco, cidade, estado, pais, data_desejada FROM vaga WHERE status = 2";
 		try {
@@ -72,7 +72,7 @@ public class VagaDAO implements DAO<Vaga>{
 		return null;
 	}
 
-	public Vaga get(int id) throws PersistenciaException {
+	public Vaga get(int id) {
 		sql = "select id_vaga, titulo, area_atuacao, descricao, requisitos, beneficios, endereco, cidade, estado, pais, NVL(salario, 0) as sal, data_desejada from vaga where id_vaga = ?";
 		try {
 			p = conexao.prepareStatement(sql);

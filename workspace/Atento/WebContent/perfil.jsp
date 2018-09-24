@@ -311,7 +311,7 @@
             <a href="cadastro-1.jsp" class="perfil-link">
                 <div class="perfil-botao">EDITAR PERFIL</div>
             </a>
-            <a href="#" class="perfil-link">
+            <a href="destruir-conta" class="perfil-link">
                 <div class="perfil-botao">DESTRUIR CONTA</div>
             </a>
         </section>

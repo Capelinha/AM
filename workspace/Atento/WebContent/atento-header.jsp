@@ -2,7 +2,7 @@
 <% if(request.getAttribute("reload") != null)  {
 		String uri = request.getRequestURI();
 		String pageName = uri.substring(uri.lastIndexOf("/")+1);
-		response.sendRedirect(pageName);
+		response.sendRedirect(pageName.substring(0, pageName.length()-4));
 	}%>
 <!DOCTYPE html>
 <html lang="en">
