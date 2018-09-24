@@ -82,12 +82,29 @@ public class VagaDAO implements DAO<Vaga>{
 				Vaga vaga = new Vaga(rs.getInt("id_vaga"), rs.getString("titulo"), rs.getString("descricao"), rs.getString("area_atuacao"), rs.getInt("sal"), new Endereco(rs.getString("endereco"), rs.getString("cidade"), rs.getString("estado"), rs.getString("pais")), rs.getString("requisitos"), rs.getString("beneficios"), rs.getDate("data_desejada"));
 				return vaga;
 			}else {
-				throw new PersistenciaException("Não foi encontrada uma vaga com o id informado");
+				throw new PersistenciaException("NÃ£o foi encontrada uma vaga com o id informado");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new PersistenciaException(e.getMessage(), e);
 		}
+	}
+	
+	public List<PesoTag> getTagsVaga(int id) {
+		List<PesoTag> tags = new ArrayList<>();
+		 sql = "SELECT tag.id_tag as Id, tag.tag as Tag, tag_vaga.peso as Peso FROM tag INNER JOIN tag_vaga ON tag.id_tag = tag_vaga.id_tag INNER JOIN vaga ON vaga.id_vaga = tag_vaga.id_vaga WHERE vaga.id_vaga = ?";
+		 try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, id);
+			rs = p.executeQuery();
+			while(rs.next()) {
+				tags.add(new PesoTag(rs.getInt("Peso"),new Tag(rs.getInt("Id"), rs.getString("Tag"))));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tags;
 	}
 	
 }
