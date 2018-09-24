@@ -32,6 +32,10 @@ public class Candidato extends Pessoa {
 		this.celular = celular;
 	}
 	
+	public Candidato(int id) {
+		this.id = id;
+	}
+	
 
 	public Candidato(int id, String nome, String sobrenome, String email, String senha, String telefone, String celular, int anosExp, String cargoAtual, double pretSalarial,
 			String youtube, String notas, int status, String linkVerificacao, Date dataNasc, RedeSocial facebook, RedeSocial twitter,
