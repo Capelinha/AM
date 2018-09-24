@@ -1,9 +1,7 @@
 package com.atento.servlet.candidato.painel;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,14 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import com.atento.dao.VagaDAO;
 import com.atento.entidade.Vaga;
 
-@WebServlet("/PainelVagasServlet")
+@WebServlet("/painel-vagas")
 public class PainelVagasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		VagaDAO dao = new VagaDAO();
-		List<Vaga> vagas = dao.getTodos();
+		List<Vaga> vagas = dao.getTodosAtivas();
  		request.setAttribute("vagas", vagas);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/painel-vagas.jsp");
 		

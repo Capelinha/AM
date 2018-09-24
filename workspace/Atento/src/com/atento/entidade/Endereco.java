@@ -17,6 +17,14 @@ public class Endereco {
 		this.cep = cep;
 	}
 	
+	public Endereco(String endereco, String cidade, String estado, String pais) {
+		super();
+		this.endereco = endereco;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.pais = pais;
+	}
+	
 	public String getEndereco() {
 		return endereco;
 	}

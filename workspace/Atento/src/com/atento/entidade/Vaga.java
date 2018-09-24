@@ -5,57 +5,33 @@ import java.sql.Date;
 public class Vaga {
 
 	private int id;
-
 	private String titulo;
-
 	private String descricao;
-
 	private int qtd;
-
 	private String area;
-
 	private double salario;
-
-	private String endereco;
-
-	private String cidade;
-
-	private String estado;
-
-	private String pais;
-
-	private int tempo_exp;
-
+	private Endereco endereco;
+	private int tempoExp;
 	private String requisitos;
-
 	private String beneficios;
-
 	private int status;
-
 	private Date dataAbertura;
-
 	private Date dataDesejada;
-
 	private Inscricao inscricao;
-
 	private Departamento departamento;
-
 	private PesoComponente pesoComponente;
 	
-	public Vaga(int id, String titulo, String descricao, String endereco, String cidade, String pais,
-			Date dataDesejada) {
+	public Vaga(int id, String titulo, String descricao, Date dataDesejada, String areaAtuacao, Endereco endereco) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
 		this.descricao = descricao;
 		this.endereco = endereco;
-		this.cidade = cidade;
-		this.pais = pais;
 		this.dataDesejada = dataDesejada;
+		this.area = areaAtuacao;
 	}
 	
-	public Vaga(int id, String titulo, String descricao, String area, double salario, String endereco, String cidade,
-			String estado, String pais, String requisitos, String beneficios, Date dataDesejada) {
+	public Vaga(int id, String titulo, String descricao, String area, double salario, Endereco endereco, String requisitos, String beneficios, Date dataDesejada) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -63,12 +39,140 @@ public class Vaga {
 		this.area = area;
 		this.salario = salario;
 		this.endereco = endereco;
-		this.cidade = cidade;
-		this.estado = estado;
-		this.pais = pais;
 		this.requisitos = requisitos;
 		this.beneficios = beneficios;
 		this.dataDesejada = dataDesejada;
 	}
 
+	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public int getQtd() {
+		return qtd;
+	}
+
+	public void setQtd(int qtd) {
+		this.qtd = qtd;
+	}
+
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+	}
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	public int getTempoExp() {
+		return tempoExp;
+	}
+
+	public void setTempoExp(int tempoExp) {
+		this.tempoExp = tempoExp;
+	}
+
+	public String getRequisitos() {
+		return requisitos;
+	}
+
+	public void setRequisitos(String requisitos) {
+		this.requisitos = requisitos;
+	}
+
+	public String getBeneficios() {
+		return beneficios;
+	}
+
+	public void setBeneficios(String beneficios) {
+		this.beneficios = beneficios;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public Date getDataAbertura() {
+		return dataAbertura;
+	}
+
+	public void setDataAbertura(Date dataAbertura) {
+		this.dataAbertura = dataAbertura;
+	}
+
+	public Date getDataDesejada() {
+		return dataDesejada;
+	}
+
+	public void setDataDesejada(Date dataDesejada) {
+		this.dataDesejada = dataDesejada;
+	}
+
+	public Inscricao getInscricao() {
+		return inscricao;
+	}
+
+	public void setInscricao(Inscricao inscricao) {
+		this.inscricao = inscricao;
+	}
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
+
+	public PesoComponente getPesoComponente() {
+		return pesoComponente;
+	}
+
+	public void setPesoComponente(PesoComponente pesoComponente) {
+		this.pesoComponente = pesoComponente;
+	}
+
+	
 }

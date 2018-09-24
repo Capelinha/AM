@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.atento.conexao.Conexao;
+import com.atento.entidade.Endereco;
 import com.atento.entidade.Vaga;
 
 public class VagaDAO implements DAO<Vaga>{
@@ -21,56 +22,69 @@ public class VagaDAO implements DAO<Vaga>{
 		conexao = Conexao.getConnection();
 	}
 
-	@Override
-	public void adicionar(Vaga t) throws Exception {
-		// TODO Auto-generated method stub
+
+	public void adicionar(Vaga t) throws PersistenciaException {
 		
 	}
 
-	@Override
-	public void atualizar(Vaga t) throws Exception {
-		// TODO Auto-generated method stub
+
+	public void atualizar(Vaga t) throws PersistenciaException {
+		
 		
 	}
 
-	@Override
-	public void excluir(Vaga t) throws Exception {
-		// TODO Auto-generated method stub
-		
+
+	public void excluir(Vaga t) throws PersistenciaException {
+
 	}
 
-	@Override
-	public List<Vaga> getTodos() {
+	public List<Vaga> getTodos() throws PersistenciaException {
 		List<Vaga> vagas = new ArrayList<>();
-		sql = "select id_vaga, titulo, area_atuacao, descricao, endereco, cidade, pais, data_desejada where status = 2";
+		sql = "SELECT id_vaga, titulo, area_atuacao, descricao, endereco, cidade, pais, data_desejada FROM vaga";
 		try {
 			p = conexao.prepareStatement(sql);
 			rs = p.executeQuery();
 			while (rs.next()) {
-				vagas.add(new Vaga(rs.getInt("id_vaga"), rs.getString("titulo"), rs.getString("descricao"), rs.getString("endereco"), rs.getString("cidade"),rs.getString("pais"), rs.getDate("data_desejada")));
+				vagas.add(new Vaga(rs.getInt("id_vaga"), rs.getString("titulo"), rs.getString("descricao"), rs.getDate("data_desejada"), rs.getString("area_atuacao"), new Endereco(rs.getString("endereco"), rs.getString("cidade"), rs.getString("estado"),rs.getString("pais"))));
 			}
 			return vagas;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			new PersistenciaException(e.getMessage(), e);
+		}
+		return null;
+	}
+	
+	public List<Vaga> getTodosAtivas() throws PersistenciaException {
+		List<Vaga> vagas = new ArrayList<>();
+		sql = "SELECT id_vaga, titulo, area_atuacao, descricao, endereco, cidade, estado, pais, data_desejada FROM vaga WHERE status = 2";
+		try {
+			p = conexao.prepareStatement(sql);
+			rs = p.executeQuery();
+			while (rs.next()) {
+				vagas.add(new Vaga(rs.getInt("id_vaga"), rs.getString("titulo"), rs.getString("descricao"), rs.getDate("data_desejada"), rs.getString("area_atuacao"), new Endereco(rs.getString("endereco"), rs.getString("cidade"), rs.getString("estado"),rs.getString("pais"))));
+			}
+			return vagas;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			new PersistenciaException(e.getMessage(), e);
 		}
 		return null;
 	}
 
-	@Override
-	public Vaga get(int id) {
+	public Vaga get(int id) throws PersistenciaException {
 		sql = "select id_vaga, titulo, area_atuacao, descricao, requisitos, beneficios, endereco, cidade, estado, pais, NVL(salario, 0) as sal, data_desejada from vaga where id_vaga = ?";
 		try {
 			p = conexao.prepareStatement(sql);
 			p.setInt(0, id);
 			rs = p.executeQuery();
 			if (rs.next()) {
-				Vaga vaga = new Vaga(rs.getInt("id_vaga"), rs.getString("titulo"), rs.getString("descricao"), rs.getString("area_atuacao"), rs.getInt("sal"), rs.getString("endereco"), rs.getString("cidade"), rs.getString("estado"), rs.getString("pais"), rs.getString("requisitos"), rs.getString("beneficios"), rs.getDate("data_desejada"));
+				Vaga vaga = new Vaga(rs.getInt("id_vaga"), rs.getString("titulo"), rs.getString("descricao"), rs.getString("area_atuacao"), rs.getInt("sal"), new Endereco(rs.getString("endereco"), rs.getString("cidade"), rs.getString("estado"), rs.getString("pais")), rs.getString("requisitos"), rs.getString("beneficios"), rs.getDate("data_desejada"));
 				return vaga;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			new PersistenciaException(e.getMessage(), e);
 		}
 		return null;
 	}
