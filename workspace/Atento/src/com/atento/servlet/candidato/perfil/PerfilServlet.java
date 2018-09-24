@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.atento.dao.CandidatoDAO;
+import com.atento.dao.PersistenciaException;
 import com.atento.entidade.Candidato;
 import com.atento.entidade.Mensagem;
 
@@ -36,13 +37,21 @@ public class PerfilServlet extends HttpServlet {
 			String idSessao;
 
 			if ((idCandidato = cookiesH.get("idCandidato")) != null && (idSessao = cookiesH.get("idSessao")) != null) {
-				CandidatoDAO dao = new CandidatoDAO();
-
-				Candidato c = dao.get(Integer.parseInt(idCandidato));
-				request.setAttribute("candidato", c);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/perfil.jsp");
-
-				dispatcher.forward(request, response);
+				try {
+					CandidatoDAO dao = new CandidatoDAO();
+	
+					Candidato c = dao.get(Integer.parseInt(idCandidato));
+					request.setAttribute("candidato", c);
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/perfil.jsp");
+	
+					dispatcher.forward(request, response);
+				}catch(PersistenciaException e) {
+					RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/mensagem.jsp");
+					Mensagem m = new Mensagem("Erro de carregamento", "Ocorreu um erro ao tentar carregar seu perfil, tente novamente mais tarde", "VOLTAR", "javascript:history.back()");
+					request.setAttribute("mensagem", m);
+					
+					dispatcher.forward(request, response);
+				}
 			}
 		}else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/mensagem.jsp");
