@@ -174,7 +174,7 @@ reabilitados da Previdência Social.">
                     <ul class="text-right">
                     
                     	<li class="">
-                            <a href="painel-vagas.jsp" class="painel-vagas.jsp">
+                            <a href="painel-vagas" class="painel-vagas.jsp">
                                 <span class="text">Painel de vagas</span>
                             </a>
                         </li>

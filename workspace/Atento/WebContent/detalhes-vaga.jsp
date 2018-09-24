@@ -1,17 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="atento-header.jsp" %>
+<%@ page import="com.atento.entidade.*" %>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <main class="contact-form">
     <header id="titulo-pagina">
         <i class="far fa-newspaper" id="titulo-pagina-icone"></i>
         <h2>Informações da vaga</h2>
     </header>
+    
+    <%if (request.getAttribute("vaga") != null) { 
+		Vaga v = (Vaga) request.getAttribute("vaga");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		DecimalFormat df = new DecimalFormat("R$ 0.00");
+		
+	%>
+	
     <!-- Cabeçalho da vaga -->
 
     <header id="cabecalho-detvaga">
         <i class="far fa-building"></i>
         <section id="cabecalho-detvaga-texto">
-            <h2>Consultor de negócios</h2>
-            <h4>Auxiliar/operacional</h4>
+            <h2> <%= v.getTitulo()  %></h2>
+            <h4> <%= v.getArea() %></h4>
         </section>
         <a href="login.jsp" id="cabecalho-detvaga-link">
             <div id="cabecalho-detvaga-botao">CANDIDATAR-SE</div>
@@ -27,11 +39,7 @@
         </header>
         <!-- Texto do bloco -->
         <p>
-            Realizar a venda de produtos de adquirencia (máquinas de cartões), para pessoas Física e/ou Jurídica. Atuar com venda consultiva.
-            <br>
-            <br>Prospectar e credenciar estabelecimentos realizando de pós-venda e auxilio dos clientes credenciados.
-            <br>
-            <br>Jornada de trabalho: Segunda à Sexta-feira 09:00H às 17:00H || Sábado 09:00H às 15:00
+            <%= v.getDescricao().replaceAll("\n","<br />") %>
         </p>
         <!--Cantos com cruz-->
         <div class="bloco-cruz bloco-cruz-es bloco-cruz-v"> </div>
@@ -50,10 +58,7 @@
         </header>
         <!-- Texto do bloco -->
         <p>
-            - Maiores de 18 anos;
-            <br>- Ensino médio completo;
-            <br>- Possuir veículo e CNH;
-            <br>- Ter experiências com vendas externas.
+            <%= v.getRequisitos().replaceAll("\n","<br />") %>
 
         </p>
         <!--Cantos com cruz-->
@@ -73,9 +78,7 @@
         </header>
         <!-- Texto do bloco -->
         <p>
-            - Tíquete-alimentação;
-            <br>- Tíquete-refeição;
-            <br>- Vale-transporte.
+            <%= v.getBeneficios().replaceAll("\n","<br />") %>
         </p>
         <!--Cantos com cruz-->
         <div class="bloco-cruz bloco-cruz-es bloco-cruz-v"> </div>
@@ -93,7 +96,7 @@
             <h3>Local</h3>
         </header>
         <!-- Texto do bloco -->
-        <p>Aclimação - São paulo/SP (Brasil)</p>
+        <p><%= v.getEndereco().getCidade() %> / <%= v.getEndereco().getEstado()%> (<%= v.getEndereco().getPais() %>)</p>
         <!--Cantos com cruz-->
         <div class="bloco-cruz bloco-cruz-es bloco-cruz-v"> </div>
         <div class="bloco-cruz bloco-cruz-es"> </div>
@@ -116,7 +119,7 @@
                 <i class="far fa-money-bill-alt"></i>
                 <div class="bloco-detvaga-info-texto">
                     <h5>Salário</h5>
-                    <h4>Não informado</h4>
+                    <h4><%= (v.getSalario() <= 0) ? "Não informado" : df.format(v.getSalario())%></h4>
                 </div>
             </section>
 
@@ -124,7 +127,7 @@
                 <i class="far fa-calendar-check"></i>
                 <div class="bloco-detvaga-info-texto">
                     <h5>Data final</h5>
-                    <h4><time datetime="01/09/2018">01/09/2018</time></h4>
+                    <h4><time datetime="<%= sdf.format(new Date(v.getDataDesejada().getTime())) %>"><%= sdf.format(new Date(v.getDataDesejada().getTime())) %></time></h4>
                 </div>
             </section>
 
@@ -139,5 +142,6 @@
         <div class="bloco-cruz bloco-cruz-di bloco-cruz-v"> </div>
         <div class="bloco-cruz bloco-cruz-di"> </div>
     </section>
+    <%} %>
 </main>
 <%@ include file="atento-footer.jsp" %>

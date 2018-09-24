@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -103,7 +104,7 @@
             </tr>
             <tr>
                 <td><b>Tags:</b> <% for(Tag t : c.getTag()){
-                						out.print(t.getTag());
+                						out.print((((ArrayList<Tag>) c.getTag()).indexOf(t) == c.getTag().size() - 1) ? t.getTag() + "." : t.getTag()+ ", ");
                 						}%> </td>
             </tr>
         </table>

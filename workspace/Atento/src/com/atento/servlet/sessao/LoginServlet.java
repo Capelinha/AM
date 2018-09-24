@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 			CandidatoDAO dao = new CandidatoDAO();
 			try {
 				int id = dao.logar(email, senha);
-				dispatcher = request.getRequestDispatcher("painel-vagas.jsp");
+				dispatcher = request.getRequestDispatcher("painel-vagas");
 				Cookie userCookie = new Cookie("idSessao", gerarMD5(email,senha));
 				Cookie idCookie = new Cookie("idCandidato", Integer.toString(id));
 				userCookie.setMaxAge(60*60*24*365); 

@@ -23,7 +23,7 @@ public class DetalhesVagaServlet extends HttpServlet {
 			VagaDAO dao = new VagaDAO();
 			Vaga vaga = dao.get(id);
 			request.setAttribute("vaga", vaga);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/detalhes-vagas.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/detalhes-vaga.jsp");
 			
 			dispatcher.forward(request,response);
 		}catch (Exception e) {

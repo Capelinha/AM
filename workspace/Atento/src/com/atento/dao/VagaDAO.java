@@ -76,17 +76,18 @@ public class VagaDAO implements DAO<Vaga>{
 		sql = "select id_vaga, titulo, area_atuacao, descricao, requisitos, beneficios, endereco, cidade, estado, pais, NVL(salario, 0) as sal, data_desejada from vaga where id_vaga = ?";
 		try {
 			p = conexao.prepareStatement(sql);
-			p.setInt(0, id);
+			p.setInt(1, id);
 			rs = p.executeQuery();
 			if (rs.next()) {
 				Vaga vaga = new Vaga(rs.getInt("id_vaga"), rs.getString("titulo"), rs.getString("descricao"), rs.getString("area_atuacao"), rs.getInt("sal"), new Endereco(rs.getString("endereco"), rs.getString("cidade"), rs.getString("estado"), rs.getString("pais")), rs.getString("requisitos"), rs.getString("beneficios"), rs.getDate("data_desejada"));
 				return vaga;
+			}else {
+				throw new PersistenciaException("Não foi encontrada uma vaga com o id informado");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			new PersistenciaException(e.getMessage(), e);
+			throw new PersistenciaException(e.getMessage(), e);
 		}
-		return null;
 	}
 	
 }
