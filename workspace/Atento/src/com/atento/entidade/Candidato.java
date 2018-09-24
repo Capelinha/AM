@@ -59,7 +59,14 @@ public class Candidato extends Pessoa {
 		this.tag = new ArrayList<Tag>();
 	}
 
-
+	public Candidato(String youtube, RedeSocial facebook, RedeSocial twitter, RedeSocial linkedin) {
+		super();
+		this.youtube = youtube;
+		this.facebook = facebook;
+		this.twitter = twitter;
+		this.linkedin = linkedin;
+	}
+	
 	public String getTelefone() {
 		return telefone;
 	}
