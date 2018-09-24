@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import com.atento.conexao.Conexao;
 import com.atento.entidade.Arquivo;
@@ -202,7 +203,7 @@ public class CandidatoDAO implements DAO<Candidato>{
 	}
 
 	public List<Tag> getTagsCandidato(int id) {
-		List<Tag> tags = new ArrayList<>();
+		List<Tag> tags = new ArrayList<Tag>();
 		 sql = "SELECT tag.id_tag, tag.tag FROM tag INNER JOIN tag_candidato ON tag.id_tag = tag_candidato.id_tag INNER JOIN candidato ON candidato.id_candidato = tag_candidato.id_candidato WHERE candidato.id_candidato = ?";
 		 try {
 			p = conexao.prepareStatement(sql);
