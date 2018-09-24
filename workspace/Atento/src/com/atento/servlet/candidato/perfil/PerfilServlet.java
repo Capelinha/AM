@@ -13,36 +13,45 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.atento.dao.CandidatoDAO;
 import com.atento.entidade.Candidato;
+import com.atento.entidade.Mensagem;
 
 @WebServlet("/perfil")
 public class PerfilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		Cookie[] cookies = request.getCookies();
 
-		HashMap<String, String> cookiesH = new HashMap<String, String>();
-		  
-		for (int i = 0; i < cookies.length; i++) {
-		  String name = cookies[i].getName();
-		  String value = cookies[i].getValue();
-		  cookiesH.put(name, value);
-		}
-		
-		String idCandidato;
-		String idSessao;
-		
-		if((idCandidato = cookiesH.get("idCandidato")) != null &&  (idSessao = cookiesH.get("idSessao")) != null) {
-			CandidatoDAO dao = new CandidatoDAO();
+		if (cookies != null) {
+			HashMap<String, String> cookiesH = new HashMap<String, String>();
+
+			for (int i = 0; i < cookies.length; i++) {
+				String name = cookies[i].getName();
+				String value = cookies[i].getValue();
+				cookiesH.put(name, value);
+			}
+
+			String idCandidato;
+			String idSessao;
+
+			if ((idCandidato = cookiesH.get("idCandidato")) != null && (idSessao = cookiesH.get("idSessao")) != null) {
+				CandidatoDAO dao = new CandidatoDAO();
+
+				Candidato c = dao.get(Integer.parseInt(idCandidato));
+				request.setAttribute("candidato", c);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/perfil.jsp");
+
+				dispatcher.forward(request, response);
+			}
+		}else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/mensagem.jsp");
+			Mensagem m = new Mensagem("Não logado", "Você não está logado para exibir seu perfil", "LOGAR", "login.jsp");
+			request.setAttribute("mensagem", m);
 			
-			Candidato c = dao.get(Integer.parseInt(idCandidato));
-			request.setAttribute("candidato", c);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/perfil.jsp");
-			
-			dispatcher.forward(request,response);
+			dispatcher.forward(request, response);
 		}
-		
-		
+
 	}
 
 }

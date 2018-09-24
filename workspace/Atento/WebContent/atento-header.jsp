@@ -187,14 +187,16 @@ reabilitados da Previdência Social.">
                        
                        <%
                           Cookie[] cookies = request.getCookies();
-                       	  boolean achou = false;
-						  for (int i = 0; i < cookies.length; i++) {
-							  Cookie cookie = cookies[i];
-							  if(cookie.getName().equals("idSessao")){
-								  if(cookie.getValue() != "")
-								  	achou = true;
+                          boolean achou = false;
+                          if(cookies != null){
+							  for (int i = 0; i < cookies.length; i++) {
+								  Cookie cookie = cookies[i];
+								  if(cookie.getName().equals("idSessao")){
+									  if(cookie.getValue() != "")
+									  	achou = true;
+								  }
 							  }
-						  }
+                          }
 					   %>
 					   
 					    <li class="<%if(achou){ out.print(" hidden");}%>">
