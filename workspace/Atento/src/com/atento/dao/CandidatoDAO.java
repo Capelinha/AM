@@ -179,6 +179,44 @@ public class CandidatoDAO implements DAO<Candidato>{
 		}
 		return null;
 	}
+	
+	public Candidato redesSociais(int id){
+		sql = "select facebook, twitter, linkdin, n_amigos, n_seguidores, n_conexoes, youtube,"
+				+ "fb_frequencia, tw_frequencia, ld_frequencia from candidato where id_candidato = ?";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(0, id);
+			rs = p.executeQuery();
+			if (rs.next()){
+				RedeSocial f = new RedeSocial(rs.getString("facebook"), rs.getInt("n_amigos"),rs.getInt("fb_frequencia"));
+				RedeSocial t = new RedeSocial(rs.getString("twitter"), rs.getInt("n_seguidores"),rs.getInt("tw_frequencia"));
+				RedeSocial l = new RedeSocial(rs.getString("linkdin"),rs.getInt("n_conexoes"),rs.getInt("ld_frequencia"));
+				Candidato c = new Candidato(rs.getString("youtube"), f, t, l);
+				return c;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public List<Tag> getTagsCandidato(int id) {
+		List<Tag> tags = new ArrayList<>();
+		 sql = "SELECT tag.id_tag, tag.tag FROM tag INNER JOIN tag_candidato ON tag.id_tag = tag_candidato.id_tag INNER JOIN candidato ON candidato.id_candidato = tag_candidato.id_candidato WHERE candidato.id_candidato = ?";
+		 try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, id);
+			rs = p.executeQuery();
+			while(rs.next()) {
+				tags.add(new Tag(rs.getInt(1), rs.getString(2)));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tags;
+	}
 
 
 }
