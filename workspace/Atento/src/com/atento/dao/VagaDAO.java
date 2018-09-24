@@ -59,7 +59,19 @@ public class VagaDAO implements DAO<Vaga>{
 
 	@Override
 	public Vaga get(int id) {
-		// TODO Auto-generated method stub
+		sql = "select id_vaga, titulo, area_atuacao, descricao, requisitos, beneficios, endereco, cidade, estado, pais, NVL(salario, 0) as sal, data_desejada from vaga where id_vaga = ?";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(0, id);
+			rs = p.executeQuery();
+			if (rs.next()) {
+				Vaga vaga = new Vaga(rs.getInt("id_vaga"), rs.getString("titulo"), rs.getString("descricao"), rs.getString("area_atuacao"), rs.getInt("sal"), rs.getString("endereco"), rs.getString("cidade"), rs.getString("estado"), rs.getString("pais"), rs.getString("requisitos"), rs.getString("beneficios"), rs.getDate("data_desejada"));
+				return vaga;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 	
