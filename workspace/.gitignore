@@ -2,7 +2,7 @@
 /.recommenders/
 *.class
 *.jar
-!workspace/Atento/WebContent/WEB-INF/lib/*.jar
+!/Atento/WebContent/WEB-INF/lib/*.jar
 *.war
 *.nar
 *.ear
