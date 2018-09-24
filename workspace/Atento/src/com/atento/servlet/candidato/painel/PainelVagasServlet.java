@@ -21,7 +21,7 @@ public class PainelVagasServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		VagaDAO dao = new VagaDAO();
-		List<Vaga> vagas = new ArrayList<Vaga>();
+		List<Vaga> vagas = dao.getTodos();
  		request.setAttribute("vagas", vagas);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/painel-vagas.jsp");
 		
