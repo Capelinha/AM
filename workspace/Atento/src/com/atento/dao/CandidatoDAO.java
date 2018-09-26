@@ -72,7 +72,7 @@ public class CandidatoDAO implements DAO<Candidato>{
 	public void atualizar(Candidato c) {
 		sql = "Update candidato SET endereco = ?, cidade = ?, estado = ?, pais = ?, cep = ?,"+
 				"data_nasc = ?, anos_exp = ?, cargo_atual = ?, pret_salarial, facebook = ?,"
-				+ "twitter = ?, linkdin = ?, status = ?, n_amigos = ?, fb_frequencia = ?,"
+				+ "twitter = ?, linkedin = ?, status = ?, n_amigos = ?, fb_frequencia = ?,"
 				+ "n_seguidores = ?, tw_frequencia = ?, ld_frequencia = ?, n_conexoes = ?, youtube = ?";
 		try {
 			p = conexao.prepareStatement(sql);
@@ -146,7 +146,7 @@ public class CandidatoDAO implements DAO<Candidato>{
 	
 	public Candidato get(int id) throws PersistenciaException{
 
-		sql = "SELECT id_candidato, nome, sobrenome, email, senha, telefone, celular, anos_exp, cargo_atual, pret_salarial, youtube, notas, status, link_verificacao, data_nasc, facebook, n_amigos, fb_frequencia, twitter, n_seguidores, tw_frequencia, linkdin, n_conexoes, ld_frequencia, endereco, cidade, estado, pais, cep FROM candidato WHERE id_candidato = ?";
+		sql = "SELECT id_candidato, nome, sobrenome, email, senha, telefone, celular, anos_exp, cargo_atual, pret_salarial, youtube, notas, status, link_verificacao, data_nasc, facebook, n_amigos, fb_frequencia, twitter, n_seguidores, tw_frequencia, linkedin, n_conexoes, ld_frequencia, endereco, cidade, estado, pais, cep FROM candidato WHERE id_candidato = ?";
 		try {
 			p = conexao.prepareStatement(sql);
 			p.setInt(1, id);

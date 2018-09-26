@@ -1,24 +1,113 @@
 package com.atento.entidade;
 
 import java.sql.Date;
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Tentativa {
 
+	private int id;
 	private int nota;
-
 	private Date inicio;
-
 	private Date fim;
-
 	private int status;
-
 	private DadosProva dadosProva;
-
 	private Candidato candidato;
-
-	private Collection<Resposta> resposta;
-
+	private List<Resposta> resposta;
 	private Inscricao inscricao;
+	
+	public Tentativa(int id, int nota, Date inicio, Date fim, int status, Candidato candidato, Inscricao inscricao) {
+		this.id = id;
+		this.nota = nota;
+		this.inicio = inicio;
+		this.fim = fim;
+		this.status = status;
+		this.candidato = candidato;
+		this.inscricao = inscricao;
+		resposta = new ArrayList<Resposta>();	
+	}
+	
+	
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+	public int getNota() {
+		return nota;
+	}
+
+	public void setNota(int nota) {
+		this.nota = nota;
+	}
+
+	public Date getInicio() {
+		return inicio;
+	}
+
+	public void setInicio(Date inicio) {
+		this.inicio = inicio;
+	}
+
+	public Date getFim() {
+		return fim;
+	}
+
+	public void setFim(Date fim) {
+		this.fim = fim;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public DadosProva getDadosProva() {
+		return dadosProva;
+	}
+
+	public void setDadosProva(DadosProva dadosProva) {
+		this.dadosProva = dadosProva;
+	}
+
+	public Candidato getCandidato() {
+		return candidato;
+	}
+
+	public void setCandidato(Candidato candidato) {
+		this.candidato = candidato;
+	}
+
+	public List<Resposta> getResposta() {
+		return resposta;
+	}
+
+	public void setResposta(List<Resposta> resposta) {
+		this.resposta = resposta;
+	}
+	
+	public void addResposta(Resposta resposta) {
+		this.resposta.add(resposta);
+	}
+
+	public Inscricao getInscricao() {
+		return inscricao;
+	}
+
+	public void setInscricao(Inscricao inscricao) {
+		this.inscricao = inscricao;
+	}
+	
+	
+
+	
 }

@@ -1,10 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="atento-header.jsp" %>
+<%@ page import="com.atento.entidade.*" %>
+<%@page import="java.util.Date"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <main class="contact-form">
     <header id="titulo-pagina">
         <i class="fas fa-file-alt" id="titulo-pagina-icone"></i>
         <h2>Provas</h2>
     </header>
+    
+    <%if (request.getAttribute("provas") != null) { 
+		List<Vaga> vagas = (ArrayList<Vaga>) request.getAttribute("provas");
+		for(Vaga v : vagas){
+	%>
     
     <!--Bloco provas pendentes-->
     <section class="bloco-provas">

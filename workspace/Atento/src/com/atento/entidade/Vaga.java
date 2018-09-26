@@ -17,7 +17,6 @@ public class Vaga {
 	private int status;
 	private Date dataAbertura;
 	private Date dataDesejada;
-	private Inscricao inscricao;
 	private Departamento departamento;
 	private PesoComponente pesoComponente;
 	
@@ -45,6 +44,31 @@ public class Vaga {
 	}
 
 	
+
+	public Vaga(int id, String titulo, String descricao, int qtd, String area, double salario, Endereco endereco,
+			int tempoExp, String requisitos, String beneficios, int status, Date dataAbertura, Date dataDesejada, Departamento departamento, PesoComponente pesoComponente) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.descricao = descricao;
+		this.qtd = qtd;
+		this.area = area;
+		this.salario = salario;
+		this.endereco = endereco;
+		this.tempoExp = tempoExp;
+		this.requisitos = requisitos;
+		this.beneficios = beneficios;
+		this.status = status;
+		this.dataAbertura = dataAbertura;
+		this.dataDesejada = dataDesejada;
+		this.departamento = departamento;
+		this.pesoComponente = pesoComponente;
+	}
+
+
+	public Vaga(int id) {
+		this.id = id;
+	}
 
 	public int getId() {
 		return id;
@@ -150,13 +174,6 @@ public class Vaga {
 		this.dataDesejada = dataDesejada;
 	}
 
-	public Inscricao getInscricao() {
-		return inscricao;
-	}
-
-	public void setInscricao(Inscricao inscricao) {
-		this.inscricao = inscricao;
-	}
 
 	public Departamento getDepartamento() {
 		return departamento;
