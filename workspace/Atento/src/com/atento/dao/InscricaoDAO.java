@@ -22,8 +22,12 @@ public class InscricaoDAO implements DAO<Inscricao>{
 
 	@Override
 	public void adicionar(Inscricao t) throws Exception {
-		// TODO Auto-generated method stub
-		
+		sql = "insert into inscricao values(?,?,?,?)";
+		p = conexao.prepareStatement(sql);
+		p.setInt(0, t.getStatus());
+		p.setInt(1, t.getVaga().getId());
+		p.setInt(2, t.getCandidato().getId());
+		p.setInt(3, t.getScore());
 	}
 
 	@Override
