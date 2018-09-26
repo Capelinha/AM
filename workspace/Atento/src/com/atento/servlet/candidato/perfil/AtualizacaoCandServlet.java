@@ -58,16 +58,20 @@ public class AtualizacaoCandServlet extends HttpServlet {
 		int freqLink = Integer.parseInt(request.getParameter("linkedin-freq"));
 		String youtube = request.getParameter("youtube");
 		
+		RedeSocial f = new RedeSocial(facebook,nFace,freqFace);
+		RedeSocial t = new RedeSocial(twitter,nTwit,freqTwit);
+		RedeSocial l = new RedeSocial(linkedin,nLink,freqLink);
+		Endereco end = new Endereco(endereco, cidade, estado, pais, cep);
+		
 		CandidatoDAO dao = new CandidatoDAO();
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		
 		try {			
 			Date data = new Date(format.parse(nascString).getTime());
 			Candidato candidato = new Candidato(id, nome, sobrenome, email, senha, telefone, celular, 
-					endereco, cidade, estado, pais, cep, data, anos, 
-					cargo, pretensao, facebook,	nFace, freqFace, twitter, 
-					nTwit, freqTwit, linkedin, nLink, freqLink, youtube, "", 2);
-			dao.atualizaCandidato(candidato);
+					anos,cargo,pretensao, youtube, "", 2,"",data,  
+					  f, t,l, end);
+			dao.atualizar(candidato);
 		} catch(ParseException e) {
 			e.printStackTrace();
 		}
