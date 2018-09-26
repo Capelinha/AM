@@ -417,7 +417,7 @@
                         <fieldset class="form-campo">
                             <label for="twiter"><b>Link Twitter</b></label>
                             <br>
-                            <input type="url" name="twiter" value="<%=validarStr(c.getTwitter().getUrl()) %>" placeholder="">
+                            <input type="url" name="twitter" value="<%=validarStr(c.getTwitter().getUrl()) %>" placeholder="">
                             <br>
 
                         </fieldset>
