@@ -1,5 +1,8 @@
 package com.atento.entidade;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +25,7 @@ public class Candidato extends Pessoa {
 	private RedeSocial twitter;
 	private RedeSocial linkedin;
 	private Endereco endereco;
+	private String idSessao;
 	
 	public Candidato(String nome, String sobrenome, String email, String telefone, String celular, String senha) {
 		this.nome = nome;
@@ -31,6 +35,7 @@ public class Candidato extends Pessoa {
 		this.telefone = telefone;
 		this.celular = celular;
 		this.tag = new ArrayList<Tag>();
+		this.idSessao = gerarMD5();
 	}
 	
 	public Candidato(int id) {
@@ -58,6 +63,7 @@ public class Candidato extends Pessoa {
 		this.endereco = endereco;
 		this.arquivo = new ArrayList<Arquivo>();
 		this.tag = new ArrayList<Tag>();
+		this.idSessao = gerarMD5();
 	}
 	
 	public Candidato(int id, String nome, String sobrenome, String senha, String telefone, String celular, int anosExp, String cargoAtual, double pretSalarial,
@@ -83,6 +89,7 @@ public class Candidato extends Pessoa {
 		this.endereco = endereco;
 		this.arquivo = new ArrayList<Arquivo>();
 		this.tag = tag;
+		this.idSessao = gerarMD5();
 	}
 
 	public Candidato(String youtube, RedeSocial facebook, RedeSocial twitter, RedeSocial linkedin) {
@@ -119,6 +126,11 @@ public class Candidato extends Pessoa {
 
 	public String getCargoAtual() {
 		return cargoAtual;
+	}
+	
+
+	public String getIdSessao() {
+		return idSessao;
 	}
 
 	public void setCargoAtual(String cargo_atual) {
@@ -229,6 +241,21 @@ public class Candidato extends Pessoa {
 		this.endereco = endereco;
 	}
 	
-	
+	private String gerarMD5() {
+    	try {
+			MessageDigest md;
+			String texto = email + senha;
+			md = MessageDigest.getInstance("MD5");
+			byte[] messageDigest = md.digest(texto.getBytes());
+	        BigInteger number = new BigInteger(1, messageDigest);
+	        String hash = number.toString(16);
+	        return hash;
+	        
+		} catch (NoSuchAlgorithmException e1) {
+			e1.printStackTrace();
+		}
+    	
+    	return "OJBGfg8aIyy";
+    }
 
 }

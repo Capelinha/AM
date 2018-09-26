@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String senha = request.getParameter("senha");
-		
+		request.setCharacterEncoding("UTF-8");
 		RequestDispatcher dispatcher;
 		
 		if (!email.contains("atento.com")) {

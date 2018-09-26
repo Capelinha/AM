@@ -19,6 +19,7 @@ import com.atento.dao.CandidatoDAO;
 import com.atento.dao.TagDAO;
 import com.atento.entidade.Candidato;
 import com.atento.entidade.Endereco;
+import com.atento.entidade.Mensagem;
 import com.atento.entidade.RedeSocial;
 import com.atento.entidade.Tag;
 
@@ -30,6 +31,7 @@ public class AtualizacaoCandServlet extends HttpServlet {
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Cookie[] cookies = request.getCookies();
+		request.setCharacterEncoding("UTF-8");
 
 		if (cookies != null) {
 			HashMap<String, String> cookiesH = new HashMap<String, String>();
@@ -44,10 +46,16 @@ public class AtualizacaoCandServlet extends HttpServlet {
 			String idSessao;
 
 			if ((idCandidato = cookiesH.get("idCandidato")) != null && (idSessao = cookiesH.get("idSessao")) != null) {
+				CandidatoDAO cdao = new CandidatoDAO();
+				Candidato ca = cdao.get(Integer.parseInt(idCandidato));
+				
 				int id = Integer.parseInt(idCandidato);
 				String nome = request.getParameter("nome");
 				String sobrenome = request.getParameter("sobrenome");
 				String senha = request.getParameter("senha");
+				if(senha.equals("null"));
+					senha = ca.getSenha();
+		
 				String telefone = request.getParameter("telefone");
 				String celular = request.getParameter("celular");
 				String endereco = request.getParameter("endereco");
@@ -73,9 +81,10 @@ public class AtualizacaoCandServlet extends HttpServlet {
 				
 				ArrayList<Tag> at = new ArrayList<>();
 				
-				for(String s : tags) {
-					at.add(new Tag(Integer.parseInt(s)));
-				}
+				if(tags != null)
+					for(String s : tags) {
+						at.add(new Tag(Integer.parseInt(s)));
+					}
 				
 				RedeSocial f = new RedeSocial(facebook,nFace,freqFace);
 				RedeSocial t = new RedeSocial(twitter,nTwit,freqTwit);
@@ -91,19 +100,55 @@ public class AtualizacaoCandServlet extends HttpServlet {
 							anos,cargo,pretensao, youtube, "", 2,"",data,  
 							  f, t,l, end, at);
 					dao.atualizar(candidato);
+					
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/mensagem.jsp");
+					Mensagem mensagem = new Mensagem("Atualização realizada com sucesso", "Seu cadastro foi atualizado com sucesso.", "PERFIL", "perfil");
+					request.setAttribute("mensagem", mensagem);
+					dispatcher.forward(request, response);
+					
 				} catch(ParseException e) {
 					e.printStackTrace();
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/mensagem.jsp");
+					Mensagem mensagem = new Mensagem("Houve um problema ao atualizar seu perfil", "Infelizmente não conseguimos concluir sua atualização.<b> Já estamos trabalhando para resolver esse problema.</b> Agradecemos a sua compreensão.", "VOLTAR", "javascript:history.back()");
+					request.setAttribute("mensagem", mensagem);
+					dispatcher.forward(request, response);
 				}
+			}else {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/mensagem.jsp");
+				Mensagem m = new Mensagem("Não logado", "Você não está logado para editar seu perfil", "LOGAR", "login.jsp");
+				request.setAttribute("mensagem", m);
+				
+				dispatcher.forward(request, response);
 			}
 		}
 		
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastro-2.jsp");
-		TagDAO tdao = new TagDAO();
-		request.setAttribute("tags", tdao.getTodos());
-		dispatcher.forward(request, response);
+		Cookie[] cookies = request.getCookies();
+		
+		if (cookies != null) {
+			HashMap<String, String> cookiesH = new HashMap<String, String>();
+
+			for (int i = 0; i < cookies.length; i++) {
+				String name = cookies[i].getName();
+				String value = cookies[i].getValue();
+				cookiesH.put(name, value);
+			}
+
+			String idCandidato;
+			String idSessao;
+			
+			if ((idCandidato = cookiesH.get("idCandidato")) != null && (idSessao = cookiesH.get("idSessao")) != null) {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastro-2.jsp");
+				CandidatoDAO cdao = new CandidatoDAO();
+				
+				TagDAO tdao = new TagDAO();
+				request.setAttribute("tags", tdao.getTodos());
+				request.setAttribute("candidato", cdao.get(Integer.parseInt(idCandidato)));
+				dispatcher.forward(request, response);
+			}
+		}
 	}
 
 }
