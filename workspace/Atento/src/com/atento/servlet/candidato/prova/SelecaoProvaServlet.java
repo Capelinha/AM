@@ -51,7 +51,7 @@ public class SelecaoProvaServlet extends HttpServlet {
 					}
 					
 					request.setAttribute("tentativas", at);
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/escolha-provas.jsp");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/escolha-provas.jsp");
 	
 					dispatcher.forward(request, response);
 				}catch(PersistenciaException e) {

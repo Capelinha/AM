@@ -151,6 +151,7 @@
 #cabecalho-detvaga-texto {
 	float: left;
 	margin-left: 10px;
+	max-width:85%;
 }
 
 #cabecalho-detvaga-texto h2 {
@@ -302,7 +303,7 @@
 	background-image: linear-gradient(#FF7900, #ff891f);
 	position: absolute;
 	top: -1px;
-	right: 0px;
+	right: -1px;
 }
 
 .bloco-int-prova-nota h4 {

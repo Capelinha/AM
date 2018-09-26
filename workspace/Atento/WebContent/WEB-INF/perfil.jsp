@@ -5,7 +5,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.atento.entidade.*" %>
-<%@ include file="atento-header.jsp" %>
+<%@ include file="../atento-header.jsp" %>
 <main class="contact-form">
 	<%! 
    		public String validarStr(String p) { 
@@ -314,4 +314,4 @@
     </section>
     <%} %>
 </main>
-<%@ include file="atento-footer.jsp" %>
+<%@ include file="../atento-footer.jsp" %>

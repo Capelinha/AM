@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="atento-header.jsp" %>
+<%@ include file="../atento-header.jsp" %>
 <%@ page import="com.atento.entidade.*" %>
 <%@page import="java.util.Date"%>
 <%@page import="java.util.ArrayList"%>
@@ -12,10 +12,7 @@
     
     <%if (request.getAttribute("tentativas") != null) { 
     	ArrayList<Tentativa> ta = (ArrayList<Tentativa>) request.getAttribute("tentativas");
-		for(Tentativa t : ta){
-			String conteudos = "";
-			for(DadosProva p : t.getVaga().getDadosProva())
-				conteudos += p.getProva().getAreaConhecimento() + "; ";
+		
 	%>
     
     <!--Bloco provas pendentes-->
@@ -25,7 +22,12 @@
             <h3>Provas pendentes</h3>
         </header>
         <!--Provas-->
-        <% if(t.getStatus() == 1) out.print(
+        <% for(Tentativa t : ta){
+			String conteudos = "";
+			for(DadosProva p : t.getVaga().getDadosProva())
+				conteudos += p.getProva().getAreaConhecimento() + "; ";
+        
+        	if(t.getStatus() == 1) out.print(
         		"<a href=\"questao.jsp\">" +
 	                "<article class=\"bloco-int-prova\">" +
 	                    "<h4>" + t.getVaga().getTitulo() + "</h4>" +
@@ -36,7 +38,7 @@
 	                    "</div>" +
 	                "</article>" +
             	"</a>"
-            	);%>
+           );}%>
         
 
         <!--Cantos com cruz-->
@@ -57,18 +59,23 @@
             <h3>Provas realizadas</h3>
         </header>
         <!--Provas-->
-        <% if(t.getStatus() == 2) out.print(
-        		"<a href=\"questao.jsp\">" +
-	                "<article class=\"bloco-int-prova\">" +
-	                    "<h4>" + t.getVaga().getTitulo() + "</h4>" +
-	                    "<h5>Multipla escolha</h5>" +
-	                    "<p>Conteúdos: " + conteudos + "</p>" +
-	                    "<div class=\"bloco-int-prova-nota\">" +
-	                        "<h4>NOTA<br>" + t.getNota() + "</h4>" +
-	                    "</div>" +
-	                "</article>" +
-            	"</a>"
-            	);%>
+        <% for(Tentativa t : ta){
+				String conteudos = "";
+				for(DadosProva p : t.getVaga().getDadosProva())
+					conteudos += p.getProva().getAreaConhecimento() + "; ";
+        
+	        	if(t.getStatus() == 2) out.print(
+	        		"<a href=\"questao.jsp\">" +
+		                "<article class=\"bloco-int-prova\">" +
+		                    "<h4>" + t.getVaga().getTitulo() + "</h4>" +
+		                    "<h5>Multipla escolha</h5>" +
+		                    "<p>Conteúdos: " + conteudos + "</p>" +
+		                    "<div class=\"bloco-int-prova-nota\">" +
+		                        "<h4>NOTA<br>" + t.getNota() + "</h4>" +
+		                    "</div>" +
+		                "</article>" +
+	            	"</a>"
+            	);}%>
 
 		<!--Cantos com cruz-->
 		<div class="bloco-cruz bloco-cruz-es bloco-cruz-v"> </div>
@@ -81,6 +88,6 @@
 		<div class="bloco-cruz bloco-cruz-di"> </div>
 	</section>
 </main>
-<%}}%>
-<%@ include file="atento-footer.jsp" %>
+<%}%>
+<%@ include file="../atento-footer.jsp" %>
            

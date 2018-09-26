@@ -1,6 +1,6 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="atento-header.jsp" %>
+<%@ include file="../atento-header.jsp" %>
 <%@ page import="com.atento.entidade.*" %>
 <%@page import="java.util.Date"%>
 <%@page import="java.util.ArrayList"%>
@@ -609,4 +609,4 @@
 	    
 </script>
 <%} %>
-<%@ include file="atento-footer.jsp" %>
+<%@ include file="../atento-footer.jsp" %>

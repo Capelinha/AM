@@ -20,7 +20,7 @@ public class PainelVagasServlet extends HttpServlet {
 		VagaDAO dao = new VagaDAO();
 		List<Vaga> vagas = dao.getTodosAtivas();
  		request.setAttribute("vagas", vagas);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/painel-vagas.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/painel-vagas.jsp");
 		
 		dispatcher.forward(request,response);
 	}
@@ -29,7 +29,7 @@ public class PainelVagasServlet extends HttpServlet {
 		VagaDAO dao = new VagaDAO();
 		List<Vaga> vagas = dao.getTodosAtivas();
  		request.setAttribute("vagas", vagas);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/painel-vagas.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/painel-vagas.jsp");
 		
 		dispatcher.forward(request,response);
 	}

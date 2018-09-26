@@ -140,7 +140,7 @@ public class AtualizacaoCandServlet extends HttpServlet {
 			String idSessao;
 			
 			if ((idCandidato = cookiesH.get("idCandidato")) != null && (idSessao = cookiesH.get("idSessao")) != null) {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastro-2.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/cadastro-2.jsp");
 				CandidatoDAO cdao = new CandidatoDAO();
 				
 				TagDAO tdao = new TagDAO();

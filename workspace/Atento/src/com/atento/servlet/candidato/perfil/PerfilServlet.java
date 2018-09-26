@@ -43,7 +43,7 @@ public class PerfilServlet extends HttpServlet {
 	
 					Candidato c = dao.get(Integer.parseInt(idCandidato));
 					request.setAttribute("candidato", c);
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/perfil.jsp");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/perfil.jsp");
 	
 					dispatcher.forward(request, response);
 				}catch(PersistenciaException e) {
