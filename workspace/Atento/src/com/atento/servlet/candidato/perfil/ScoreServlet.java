@@ -38,33 +38,12 @@ public class ScoreServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int score = 0;
 		int scoreAmigos = 0;
+		int maxScore = 0;
 		int id_candidato = Integer.parseInt(request.getParameter("id_candidato"));
 		int id_vaga = Integer.parseInt(request.getParameter("id_vaga"));
 		CandidatoDAO cDAO = new CandidatoDAO();
 		PesoDAO pDAO = new PesoDAO();
 		VagaDAO vDAO = new VagaDAO();
-		
-		Candidato c = cDAO.redesSociais(id_candidato);
-		PesoComponente peso = pDAO.get(id_vaga);
-		if (c.getFacebook() != null){
-			score += peso.getFacebook();
-			scoreAmigos = c.getFacebook().getNumAmigos() / 50;
-			scoreAmigos = scoreAmigos * peso.getnAmigos();
-			score += scoreAmigos;
-		}
-		if (c.getTwitter() != null){
-			score += peso.getTwitter();
-			scoreAmigos = c.getTwitter().getNumAmigos() / 50;
-			scoreAmigos = scoreAmigos * peso.getnSeguidores();
-			score += scoreAmigos;
-		}
-		if (c.getLinkedin() != null){
-			score += peso.getLinkdin();
-			scoreAmigos = c.getLinkedin().getNumAmigos() / 50;
-			scoreAmigos = scoreAmigos * peso.getnAmigos();
-			score += scoreAmigos;
-		}
-		
 		List<Tag> tagsCand = cDAO.getTagsCandidato(id_candidato);
 		List<PesoTag> tagsVaga = vDAO.getTagsVaga(id_vaga);
 		
@@ -74,6 +53,39 @@ public class ScoreServlet extends HttpServlet {
 					score += tVaga.getPeso();
 				}
 			}
+			maxScore += tVaga.getPeso();
+		}
+		
+		if(score >= (maxScore * 0.5)) {			
+			Candidato c = cDAO.redesSociais(id_candidato);
+			PesoComponente peso = pDAO.get(id_vaga);
+			if (c.getFacebook() != null){
+				score += peso.getFacebook();
+				scoreAmigos = c.getFacebook().getNumAmigos() / 50;
+				scoreAmigos = scoreAmigos * peso.getnAmigos();
+				score += scoreAmigos;
+			}
+			if (c.getTwitter() != null){
+				score += peso.getTwitter();
+				scoreAmigos = c.getTwitter().getNumAmigos() / 50;
+				scoreAmigos = scoreAmigos * peso.getnSeguidores();
+				score += scoreAmigos;
+			}
+			if (c.getLinkedin() != null){
+				score += peso.getLinkdin();
+				scoreAmigos = c.getLinkedin().getNumAmigos() / 50;
+				scoreAmigos = scoreAmigos * peso.getnAmigos();
+				score += scoreAmigos;
+			}
+			Inscricao i = new Inscricao(2, score, new Vaga(id_vaga),new Candidato(id_candidato));
+			try {
+				new InscricaoDAO().adicionar(i);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			//Você não se qualifica para essa vaga
 		}
 		
 	}
