@@ -289,12 +289,7 @@
         	
             
 
-            <a href="">
-                <article class="bloco-perfil-arquivo">
-                    <i class="fas fa-file-invoice"></i>
-                    <p>curriculo.pdf</p>
-                </article>
-            </a>
+         
 
             <!--Cantos com cruz-->
             <div class="bloco-cruz bloco-cruz-es bloco-cruz-v"> </div>
@@ -308,7 +303,7 @@
         </section>
 
         <section id="perfil-bloco-botao">
-            <a href="cadastro-1.jsp" class="perfil-link">
+            <a href="atualizar-perfil" class="perfil-link">
                 <div class="perfil-botao">EDITAR PERFIL</div>
             </a>
             <a href="destruir-conta" class="perfil-link">

@@ -1,12 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="atento-header.jsp" %>
+<%@ page import="com.atento.entidade.*" %>
+<%@page import="java.util.ArrayList"%>
 <main class="contact-form">
     <header id="titulo-pagina">
         <i class="fas fa-file-alt" id="titulo-pagina-icone"></i>
         <h2>Cadastro</h2>
     </header>
+    <%if (request.getAttribute("tags") != null) {
+    	
+		ArrayList<Tag> tags = (ArrayList<Tag>) request.getAttribute("tags");
 
-    <form name="cadastro" id="form-cadastro">
+	%>
+
+    <form name="cadastro" id="form-cadastro" action="atualizar-perfil" method="post">
     	<section class="bloco-form-cadastro form-cad-bloco">
 	        <header class="bloco-titulo">
 	            <i class="fas fa-user-alt"></i>
@@ -31,17 +38,6 @@
                             <label for="sobrenome"><b>Sobrenome *</b></label>
                             <br>
                             <input type="text" name="sobrenome" value="" placeholder="" required>
-                            <br>
-                        </fieldset>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td colspan="2">
-                        <fieldset class="form-campo">
-                            <label for="email"><b>E-mail *</b></label>
-                            <br>
-                            <input type="email" name="email" value="" placeholder="" required>
                             <br>
                         </fieldset>
                     </td>
@@ -269,13 +265,9 @@
                             <label for="tags"><b>Tags de habilidade</b></label>
                             <br>
                             <select class="form-control" id="form-tags-select" name="tags" multiple="multiple" data-placeholder="Selecione as tags" style="width: 100%;">
-			                    <option>Alabama</option>
-			                    <option>Alaska</option>
-			                    <option>California</option>
-			                    <option>Delaware</option>
-			                    <option>Tennessee</option>
-			                    <option>Texas</option>
-			                    <option>Washington</option>
+			                    <%for(Tag t : tags){
+			            				out.print("<option value=\"" + t.getId() + "\">" + t.getTag() + "</option>");
+			            		}%>
 					        </select>
                             <br>
 
@@ -475,7 +467,6 @@
                     
                     <td>
                         <fieldset class="form-campo">
-                            <label for="linkdin-freq"><b>Frequência de uso</b></label>
                             <br>
                             <select name="linkdin-freq">
                             	<option value="3" selected>Não uso</option>
@@ -536,7 +527,7 @@
             </table>
             
             <fieldset id="form-acoes">
-                <input type="submit" onclick="window.location.href='cadastro-3.jsp'" class="form-botao" value="AVANÇAR" name="btn-proximo">
+                <input type="submit" class="form-botao" value="AVANÇAR" name="btn-proximo">
             </fieldset>
 
            <!--Cantos com cruz-->
@@ -551,6 +542,8 @@
         </section>
     </form>
 </main>
+
+<%} %>
 
 <!-- jQuery 3 -->
 <script src="js/jquery.min.js"></script>

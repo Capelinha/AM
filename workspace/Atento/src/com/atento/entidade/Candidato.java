@@ -2,7 +2,7 @@ package com.atento.entidade;
 
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 public class Candidato extends Pessoa {
 
@@ -16,8 +16,8 @@ public class Candidato extends Pessoa {
 	private int status;
 	private String linkVerificacao;
 	private Date dataNasc;
-	private Collection<Arquivo> arquivo;
-	private Collection<Tag> tag;
+	private List<Arquivo> arquivo;
+	private List<Tag> tag;
 	private RedeSocial facebook;
 	private RedeSocial twitter;
 	private RedeSocial linkedin;
@@ -30,6 +30,7 @@ public class Candidato extends Pessoa {
 		this.senha = senha;
 		this.telefone = telefone;
 		this.celular = celular;
+		this.tag = new ArrayList<Tag>();
 	}
 	
 	public Candidato(int id) {
@@ -58,13 +59,38 @@ public class Candidato extends Pessoa {
 		this.arquivo = new ArrayList<Arquivo>();
 		this.tag = new ArrayList<Tag>();
 	}
+	
+	public Candidato(int id, String nome, String sobrenome, String senha, String telefone, String celular, int anosExp, String cargoAtual, double pretSalarial,
+			String youtube, String notas, int status, String linkVerificacao, Date dataNasc, RedeSocial facebook, RedeSocial twitter,
+			RedeSocial linkedin, Endereco endereco, List<Tag> tag) {
+		this.id = id;
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.senha = senha;
+		this.telefone = telefone;
+		this.celular = celular;
+		this.anosExp = anosExp;
+		this.cargoAtual = cargoAtual;
+		this.pretSalarial = pretSalarial;
+		this.youtube = youtube;
+		this.notas = notas;
+		this.status = status;
+		this.linkVerificacao = linkVerificacao;
+		this.dataNasc = dataNasc;
+		this.facebook = facebook;
+		this.twitter = twitter;
+		this.linkedin = linkedin;
+		this.endereco = endereco;
+		this.arquivo = new ArrayList<Arquivo>();
+		this.tag = tag;
+	}
 
 	public Candidato(String youtube, RedeSocial facebook, RedeSocial twitter, RedeSocial linkedin) {
-		super();
 		this.youtube = youtube;
 		this.facebook = facebook;
 		this.twitter = twitter;
 		this.linkedin = linkedin;
+		this.tag = new ArrayList<Tag>();
 	}
 	
 	public String getTelefone() {
@@ -147,11 +173,11 @@ public class Candidato extends Pessoa {
 		this.dataNasc = data_nasc;
 	}
 
-	public Collection<Arquivo> getArquivo() {
+	public List<Arquivo> getArquivo() {
 		return arquivo;
 	}
 
-	public void setArquivo(Collection<Arquivo> arquivo) {
+	public void setArquivo(List<Arquivo> arquivo) {
 		this.arquivo = arquivo;
 	}
 	
@@ -159,7 +185,7 @@ public class Candidato extends Pessoa {
 		this.arquivo.add(arquivo);
 	}
 
-	public Collection<Tag> getTag() {
+	public List<Tag> getTag() {
 		return tag;
 	}
 	
@@ -167,7 +193,7 @@ public class Candidato extends Pessoa {
 		this.tag.add(tag);
 	}
 
-	public void setTag(Collection<Tag> tag) {
+	public void setTag(List<Tag> tag) {
 		this.tag = tag;
 	}
 

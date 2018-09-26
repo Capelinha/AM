@@ -71,9 +71,9 @@ public class CandidatoDAO implements DAO<Candidato>{
 	
 	public void atualizar(Candidato c) {
 		sql = "Update candidato SET endereco = ?, cidade = ?, estado = ?, pais = ?, cep = ?,"+
-				"data_nasc = ?, anos_exp = ?, cargo_atual = ?, pret_salarial, facebook = ?,"
+				"data_nasc = ?, anos_exp = ?, cargo_atual = ?, pret_salarial= ?, facebook = ?,"
 				+ "twitter = ?, linkedin = ?, status = ?, n_amigos = ?, fb_frequencia = ?,"
-				+ "n_seguidores = ?, tw_frequencia = ?, ld_frequencia = ?, n_conexoes = ?, youtube = ?";
+				+ "n_seguidores = ?, tw_frequencia = ?, ld_frequencia = ?, n_conexoes = ?, youtube = ?, nome = ?, sobrenome = ?, senha = ?, telefone = ?, celular = ? WHERE id_candidato = ?";
 		try {
 			p = conexao.prepareStatement(sql);
 			p.setString(1, c.getEndereco().getEndereco());
@@ -96,12 +96,24 @@ public class CandidatoDAO implements DAO<Candidato>{
 			p.setInt(18, c.getLinkedin().getFrequencia());
 			p.setInt(19, c.getLinkedin().getNumAmigos());
 			p.setString(20, c.getYoutube());
+			p.setString(21, c.getNome());
+			p.setString(22, c.getSobrenome());
+			p.setString(23, c.getSenha());
+			p.setString(24, c.getTelefone());
+			p.setString(25, c.getCelular());
+			p.setInt(26, c.getId());
 			p.execute();
+			
+			sql = "DELETE from tag_candidato where id_candidato = ?";
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, c.getId());
+			p.execute();
+			
 			sql = "insert into tag_candidato values(?,?)";
 			p = conexao.prepareStatement(sql);
 			for (Tag t : c.getTag()) {
-				p.setInt(0, t.getId());
-				p.setInt(1, c.getId());
+				p.setInt(1, t.getId());
+				p.setInt(2, c.getId());
 				p.execute();
 			}
 		} catch (SQLException e) {

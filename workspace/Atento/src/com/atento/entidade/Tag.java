@@ -10,6 +10,11 @@ public class Tag {
 		this.id = id;
 		this.tag = tag;
 	}
+	
+	public Tag(int id) {
+		super();
+		this.id = id;
+	}
 	public int getId() {
 		return id;
 	}
