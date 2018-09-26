@@ -1,4 +1,4 @@
-package com.atento.servlet;
+package com.atento.servlet.candidato.perfil;
 
 import java.io.IOException;
 import java.sql.Date;
