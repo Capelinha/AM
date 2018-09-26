@@ -11,7 +11,6 @@ public class Tentativa {
 	private Date inicio;
 	private Date fim;
 	private int status;
-	private DadosProva dadosProva;
 	private Candidato candidato;
 	private List<Resposta> resposta;
 	private Vaga vaga;
@@ -71,13 +70,7 @@ public class Tentativa {
 		this.status = status;
 	}
 
-	public DadosProva getDadosProva() {
-		return dadosProva;
-	}
 
-	public void setDadosProva(DadosProva dadosProva) {
-		this.dadosProva = dadosProva;
-	}
 
 	public Candidato getCandidato() {
 		return candidato;

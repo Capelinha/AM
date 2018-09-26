@@ -28,7 +28,7 @@
 				conteudos += p.getProva().getAreaConhecimento() + "; ";
         
         	if(t.getStatus() == 1) out.print(
-        		"<a href=\"questao.jsp\">" +
+        		"<a href=\"questao.jsp?id=" + t.getId() + "\">" +
 	                "<article class=\"bloco-int-prova\">" +
 	                    "<h4>" + t.getVaga().getTitulo() + "</h4>" +
 	                    "<h5>Multipla escolha</h5>" +
@@ -65,7 +65,7 @@
 					conteudos += p.getProva().getAreaConhecimento() + "; ";
         
 	        	if(t.getStatus() == 2) out.print(
-	        		"<a href=\"questao.jsp\">" +
+	        		"<a href=\"#\">" +
 		                "<article class=\"bloco-int-prova\">" +
 		                    "<h4>" + t.getVaga().getTitulo() + "</h4>" +
 		                    "<h5>Multipla escolha</h5>" +

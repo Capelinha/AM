@@ -76,6 +76,7 @@ public class TentativaDAO implements DAO<Tentativa> {
 			throw new PersistenciaException(e.getMessage(), e);
 		}
 	}
+
 	
 	
 

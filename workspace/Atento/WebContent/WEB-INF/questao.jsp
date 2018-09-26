@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="atento-header.jsp" %>
+<%@ include file="../atento-header.jsp" %>
 <main class="contact-form">
     <header id="titulo-pagina-questao">
         <section id="titulo-pagina">
@@ -93,4 +93,4 @@
 
     <!-- NOSSO CODIGO -->
 </main>
-<%@ include file="atento-footer.jsp" %>
+<%@ include file="../atento-footer.jsp" %>
