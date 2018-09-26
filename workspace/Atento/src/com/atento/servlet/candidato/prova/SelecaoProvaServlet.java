@@ -12,11 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.atento.dao.CandidatoDAO;
 import com.atento.dao.PersistenciaException;
+import com.atento.dao.ProvaDAO;
 import com.atento.dao.TentativaDAO;
 import com.atento.dao.VagaDAO;
-import com.atento.entidade.Candidato;
 import com.atento.entidade.Mensagem;
 import com.atento.entidade.Tentativa;
 
@@ -45,12 +44,14 @@ public class SelecaoProvaServlet extends HttpServlet {
 					TentativaDAO tdao = new TentativaDAO();
 					ArrayList<Tentativa> at = (ArrayList<Tentativa>) tdao.getParaCandidato(Integer.parseInt(idCandidato));
 					VagaDAO vdao = new VagaDAO();
+					ProvaDAO pdao = new ProvaDAO();
 					for(Tentativa t : at) {
-						vdao.get(t.getInscricao());
+						vdao.get(t);
+						pdao.getTodosParaVaga(t.getVaga());
 					}
 					
 					request.setAttribute("tentativas", at);
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/escolha-prova.jsp");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/escolha-provas.jsp");
 	
 					dispatcher.forward(request, response);
 				}catch(PersistenciaException e) {

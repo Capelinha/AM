@@ -14,16 +14,16 @@ public class Tentativa {
 	private DadosProva dadosProva;
 	private Candidato candidato;
 	private List<Resposta> resposta;
-	private Inscricao inscricao;
+	private Vaga vaga;
 	
-	public Tentativa(int id, int nota, Date inicio, Date fim, int status, Candidato candidato, Inscricao inscricao) {
+	public Tentativa(int id, int nota, Date inicio, Date fim, int status, Candidato candidato, Vaga vaga) {
 		this.id = id;
 		this.nota = nota;
 		this.inicio = inicio;
 		this.fim = fim;
 		this.status = status;
 		this.candidato = candidato;
-		this.inscricao = inscricao;
+		this.vaga = vaga;
 		resposta = new ArrayList<Resposta>();	
 	}
 	
@@ -99,12 +99,12 @@ public class Tentativa {
 		this.resposta.add(resposta);
 	}
 
-	public Inscricao getInscricao() {
-		return inscricao;
+	public Vaga getVaga() {
+		return vaga;
 	}
 
-	public void setInscricao(Inscricao inscricao) {
-		this.inscricao = inscricao;
+	public void setVaga(Vaga vaga) {
+		this.vaga = vaga;
 	}
 	
 	

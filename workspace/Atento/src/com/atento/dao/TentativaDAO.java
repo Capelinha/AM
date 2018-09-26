@@ -9,7 +9,6 @@ import java.util.List;
 
 import com.atento.conexao.Conexao;
 import com.atento.entidade.Candidato;
-import com.atento.entidade.Inscricao;
 import com.atento.entidade.Tentativa;
 import com.atento.entidade.Vaga;
 
@@ -49,7 +48,7 @@ public class TentativaDAO implements DAO<Tentativa> {
 			rs = p.executeQuery();
 			if (rs.next()) {
 				Candidato c =  new Candidato(rs.getInt("id_candidato"));
-				Tentativa t = new Tentativa(rs.getInt("id_tentativa"),rs.getInt("nota"), rs.getDate("inicio"), rs.getDate("fim"), rs.getInt("status"),c, new Inscricao(new Vaga(rs.getInt("id_vaga")), c));
+				Tentativa t = new Tentativa(rs.getInt("id_tentativa"),rs.getInt("nota"), rs.getDate("inicio"), rs.getDate("fim"), rs.getInt("status"),c, new Vaga(rs.getInt("id_vaga")));
 				return t;
 			}else {
 				throw new PersistenciaException("Não foi encontrada uma vaga com o id informado");
@@ -69,7 +68,7 @@ public class TentativaDAO implements DAO<Tentativa> {
 			Candidato c =  new Candidato(id);
 			ArrayList<Tentativa> t = new ArrayList<>();
 			while (rs.next()) {
-				t.add(new Tentativa(rs.getInt("id_tentativa"),rs.getInt("nota"), rs.getDate("inicio"), rs.getDate("fim"), rs.getInt("status"),c, new Inscricao(new Vaga(rs.getInt("id_vaga")), c)));
+				t.add(new Tentativa(rs.getInt("id_tentativa"),rs.getInt("nota"), rs.getDate("inicio"), rs.getDate("fim"), rs.getInt("status"),c, new Vaga(rs.getInt("id_vaga"))));
 			}
 			return t;
 		} catch (SQLException e) {

@@ -1,6 +1,7 @@
 package com.atento.entidade;
 
 import java.sql.Date;
+import java.util.List;
 
 public class Vaga {
 
@@ -12,6 +13,7 @@ public class Vaga {
 	private double salario;
 	private Endereco endereco;
 	private int tempoExp;
+	private List<DadosProva> dadosProva;
 	private String requisitos;
 	private String beneficios;
 	private int status;
@@ -76,6 +78,16 @@ public class Vaga {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	
+
+	public List<DadosProva> getDadosProva() {
+		return dadosProva;
+	}
+
+	public void setDadosProva(List<DadosProva> dadosProva) {
+		this.dadosProva = dadosProva;
 	}
 
 	public String getTitulo() {

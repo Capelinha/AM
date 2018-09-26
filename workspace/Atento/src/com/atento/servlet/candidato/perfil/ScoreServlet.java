@@ -10,12 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.atento.dao.CandidatoDAO;
+import com.atento.dao.InscricaoDAO;
 import com.atento.dao.PesoDAO;
 import com.atento.dao.VagaDAO;
 import com.atento.entidade.Candidato;
+import com.atento.entidade.Inscricao;
 import com.atento.entidade.PesoComponente;
 import com.atento.entidade.PesoTag;
 import com.atento.entidade.Tag;
+import com.atento.entidade.Vaga;
 
 /**
  * Servlet implementation class ScoreServlet
@@ -81,11 +84,9 @@ public class ScoreServlet extends HttpServlet {
 			try {
 				new InscricaoDAO().adicionar(i);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} else {
-			//Você não se qualifica para essa vaga
 		}
 		
 	}

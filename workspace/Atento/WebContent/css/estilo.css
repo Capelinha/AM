@@ -301,7 +301,7 @@
 	background-color: #FF7900;
 	background-image: linear-gradient(#FF7900, #ff891f);
 	position: absolute;
-	top: 0px;
+	top: -1px;
 	right: 0px;
 }
 

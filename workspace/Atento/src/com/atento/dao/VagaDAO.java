@@ -14,6 +14,7 @@ import com.atento.entidade.Inscricao;
 import com.atento.entidade.PesoComponente;
 import com.atento.entidade.PesoTag;
 import com.atento.entidade.Tag;
+import com.atento.entidade.Tentativa;
 import com.atento.entidade.Vaga;
 
 public class VagaDAO implements DAO<Vaga>{
@@ -95,7 +96,7 @@ public class VagaDAO implements DAO<Vaga>{
 		}
 	}
 	
-	public void get(Inscricao i) {
+	public void get(Tentativa i) {
 		i.setVaga(get(i.getVaga().getId()));
 	}
 		

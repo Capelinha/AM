@@ -10,9 +10,12 @@
         <h2>Provas</h2>
     </header>
     
-    <%if (request.getAttribute("provas") != null) { 
-		List<Vaga> vagas = (ArrayList<Vaga>) request.getAttribute("provas");
-		for(Vaga v : vagas){
+    <%if (request.getAttribute("tentativas") != null) { 
+    	ArrayList<Tentativa> ta = (ArrayList<Tentativa>) request.getAttribute("tentativas");
+		for(Tentativa t : ta){
+			String conteudos = "";
+			for(DadosProva p : t.getVaga().getDadosProva())
+				conteudos += p.getProva().getAreaConhecimento() + "; ";
 	%>
     
     <!--Bloco provas pendentes-->
@@ -22,15 +25,19 @@
             <h3>Provas pendentes</h3>
         </header>
         <!--Provas-->
-        <a href="questao.jsp">
-            <article class="bloco-int-prova">
-                <h4>Analista de RH</h4>
-                <h5>Multipla escolha</h5>
-                <p>Conteúdos: Conhecimentos geral</p>
-                <div class="bloco-int-prova-nota">
-                    <h4>NOTA<br>--</h4></div>
-            </article>
-        </a>
+        <% if(t.getStatus() == 1) out.print(
+        		"<a href=\"questao.jsp\">" +
+	                "<article class=\"bloco-int-prova\">" +
+	                    "<h4>" + t.getVaga().getTitulo() + "</h4>" +
+	                    "<h5>Multipla escolha</h5>" +
+	                    "<p>Conteúdos: " + conteudos + "</p>" +
+	                    "<div class=\"bloco-int-prova-nota\">" +
+	                        "<h4>NOTA<br>--</h4>" +
+	                    "</div>" +
+	                "</article>" +
+            	"</a>"
+            	);%>
+        
 
         <!--Cantos com cruz-->
         <div class="bloco-cruz bloco-cruz-es bloco-cruz-v"> </div>
@@ -50,16 +57,18 @@
             <h3>Provas realizadas</h3>
         </header>
         <!--Provas-->
-        <a href="questao.jsp">
-            <article class="bloco-int-prova">
-                <h4>Consultor de marketing</h4>
-                <h5>Multipla escolha</h5>
-                <p>Conteúdos: Storytelling e Conhecimentos geral</p>
-                <div class="bloco-int-prova-nota">
-                    <h4>NOTA<br>10<h4>
-                </div>
-			</article>
-		</a>
+        <% if(t.getStatus() == 2) out.print(
+        		"<a href=\"questao.jsp\">" +
+	                "<article class=\"bloco-int-prova\">" +
+	                    "<h4>" + t.getVaga().getTitulo() + "</h4>" +
+	                    "<h5>Multipla escolha</h5>" +
+	                    "<p>Conteúdos: " + conteudos + "</p>" +
+	                    "<div class=\"bloco-int-prova-nota\">" +
+	                        "<h4>NOTA<br>" + t.getNota() + "</h4>" +
+	                    "</div>" +
+	                "</article>" +
+            	"</a>"
+            	);%>
 
 		<!--Cantos com cruz-->
 		<div class="bloco-cruz bloco-cruz-es bloco-cruz-v"> </div>
@@ -72,5 +81,6 @@
 		<div class="bloco-cruz bloco-cruz-di"> </div>
 	</section>
 </main>
+<%}}%>
 <%@ include file="atento-footer.jsp" %>
            

@@ -212,7 +212,7 @@ reabilitados da Previdência Social.">
                         </li>
                         
                         <li class="logado <%if(!achou){ out.print(" hidden");}%>">
-                            <a href="escolha-provas.jsp" class="">
+                            <a href="provas" class="">
                                 <span class="text">Provas</span>
                             </a>
                         </li>

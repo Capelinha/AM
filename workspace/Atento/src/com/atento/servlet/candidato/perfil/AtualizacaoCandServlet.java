@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.atento.dao.CandidatoDAO;
 import com.atento.entidade.Candidato;
+import com.atento.entidade.Endereco;
+import com.atento.entidade.RedeSocial;
 
 /**
  * Servlet implementation class servletAtualizarCand
