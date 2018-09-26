@@ -97,8 +97,13 @@ public class CandidatoDAO implements DAO<Candidato>{
 			p.setInt(19, c.getLinkedin().getNumAmigos());
 			p.setString(20, c.getYoutube());
 			p.execute();
-			//sql = "insert into tag_candidato values(?,?)";
-			//codigo para tag_candidato
+			sql = "insert into tag_candidato values(?,?)";
+			p = conexao.prepareStatement(sql);
+			for (Tag t : c.getTag()) {
+				p.setInt(0, t.getId());
+				p.setInt(1, c.getId());
+				p.execute();
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new PersistenciaException(e.getMessage(), e);
