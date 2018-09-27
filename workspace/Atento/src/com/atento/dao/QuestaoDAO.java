@@ -37,14 +37,14 @@ public class QuestaoDAO implements DAO<Prova> {
 	}
 	
 	public List<Questao> getTodosParaProva(int id) {
-		sql = "select id_questao, titulo, texto, alternativa_a, alternativa_b, alternativa_c, alternativa_d, alternativa_e, resposta, status WHERE id_prova = ?";
+		sql = "select id_questao, titulo, texto, alternativa_a, alternativa_b, alternativa_c, alternativa_d, alternativa_e, resposta, status FROM questao WHERE id_prova = ?";
 		try {
 			p = conexao.prepareStatement(sql);
 			p.setInt(1, id);
 			rs = p.executeQuery();
 			ArrayList<Questao> ap = new ArrayList<>();
 			while (rs.next()) {
-				ap.add(new Questao(rs.getInt("id_questao"), rs.getString("titulo"), rs.getString("texto"), rs.getString("alternativa_a"), rs.getString("alternativa_b"), rs.getString("alternativa_c"), rs.getString("alternativa_d"), rs.getString("alternativa_e"), rs.getString("resposta").charAt(0), rs.getInt("status")));
+				ap.add(new Questao(rs.getInt("id_questao"), rs.getString("titulo"), rs.getString("texto"), rs.getString("alternativa_a"), rs.getString("alternativa_b"), rs.getString("alternativa_c"), rs.getString("alternativa_d"), rs.getString("alternativa_e"), rs.getString("resposta").charAt(0), rs.getInt("status"), new Prova(id)));
 			}
 			return ap;
 		} catch (SQLException e) {
@@ -54,7 +54,23 @@ public class QuestaoDAO implements DAO<Prova> {
 	}
 	
 	public void getTodosParaProva(Prova v) {
-		v.setQuestao(getTodosParaProva(v.getId()));
+		
+		sql = "select id_questao, titulo, texto, alternativa_a, alternativa_b, alternativa_c, alternativa_d, alternativa_e, resposta, status FROM questao WHERE id_prova = ?";
+		try {
+			int id = v.getId();
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, id);
+			rs = p.executeQuery();
+			ArrayList<Questao> ap = new ArrayList<>();
+			while (rs.next()) {
+				ap.add(new Questao(rs.getInt("id_questao"), rs.getString("titulo"), rs.getString("texto"), rs.getString("alternativa_a"), rs.getString("alternativa_b"), rs.getString("alternativa_c"), rs.getString("alternativa_d"), rs.getString("alternativa_e"), rs.getString("resposta").charAt(0), rs.getInt("status"), v));
+			}
+			
+			v.setQuestao(ap);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
+		}
 	}
 
 	public Prova get(int id) {

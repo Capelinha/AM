@@ -39,7 +39,7 @@ public class RespostaDAO implements DAO<Prova> {
 	}
 	
 	public List<Resposta> getTodosParaTentativa(Tentativa t) {
-		sql = "select resposta, id_questao WHERE id_tentativa = ?";
+		sql = "select resposta, id_questao FROM resposta_questao WHERE id_tentativa = ?";
 		try {
 			p = conexao.prepareStatement(sql);
 			p.setInt(1, t.getId());
@@ -48,7 +48,7 @@ public class RespostaDAO implements DAO<Prova> {
 			while (rs.next()) {
 				for(DadosProva dp : t.getVaga().getDadosProva()) {
 					for(Questao q : dp.getProva().getQuestao()) {
-						if(q.getId() == rs.getInt("idquestap"))
+						if(q.getId() == rs.getInt("id_questao"))
 							ap.add(new Resposta(rs.getString("resposta").charAt(0), q, t));
 					}
 					

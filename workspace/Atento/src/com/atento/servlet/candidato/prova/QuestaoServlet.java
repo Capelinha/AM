@@ -61,9 +61,19 @@ public class QuestaoServlet extends HttpServlet {
 						qdao.getTodosParaProva(dp.getProva());
 					}
 					
-					List<Resposta> r = rdao.getTodosParaTentativa(tentativa);
+					List<Resposta> ar = rdao.getTodosParaTentativa(tentativa);
 					
-					request.setAttribute("provas", v);
+					HashMap<Prova, Integer> nq = new HashMap<>();
+					
+					for(DadosProva dp : tentativa.getVaga().getDadosProva()) {
+						nq.put(dp.getProva(), 0);
+					}
+					
+					for(Resposta r : ar) {
+						nq.put(r.getQuestao().getProva(), nq.get(r.getQuestao().getProva()) + 1);
+					}
+					
+					request.setAttribute("provas", null);
 					RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/questao.jsp");
 	
 					dispatcher.forward(request, response);

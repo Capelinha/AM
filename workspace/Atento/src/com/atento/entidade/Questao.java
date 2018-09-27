@@ -12,9 +12,10 @@ public class Questao {
 	private String alternativaE;
 	private char correta;
 	private int status;
+	private Prova prova;
 	
 	public Questao(int id, String titulo, String texto, String alternativaA, String alternativaB, String alternativaC,
-			String alternativaD, String alternativaE, char correta, int status) {
+			String alternativaD, String alternativaE, char correta, int status, Prova prova) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -26,7 +27,19 @@ public class Questao {
 		this.alternativaE = alternativaE;
 		this.correta = correta;
 		this.status = status;
+		this.prova = prova;
 	}
+
+	
+	public Prova getProva() {
+		return prova;
+	}
+
+
+	public void setProva(Prova prova) {
+		this.prova = prova;
+	}
+
 
 	public int getId() {
 		return id;

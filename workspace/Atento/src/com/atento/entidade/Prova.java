@@ -17,6 +17,11 @@ public class Prova {
 		this.areaConhecimento = areaConhecimento;
 		this.questao = new ArrayList<Questao>();
 	}
+	
+	public Prova(int id) {
+		super();
+		this.id = id;
+	}
 
 	public int getId() {
 		return id;
