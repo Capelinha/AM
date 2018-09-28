@@ -8,13 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import com.atento.conexao.Conexao;
 import com.atento.entidade.DadosProva;
-import com.atento.entidade.Prova;
 import com.atento.entidade.Questao;
 import com.atento.entidade.Resposta;
 import com.atento.entidade.Tentativa;
-import com.atento.entidade.Vaga;
 
-public class RespostaDAO implements DAO<Prova> {
+public class RespostaDAO implements DAO<Resposta> {
 	
 	private Connection conexao;
 	private String sql;
@@ -24,17 +22,29 @@ public class RespostaDAO implements DAO<Prova> {
 	public RespostaDAO() {
 		conexao = Conexao.getConnection();
 	}
-
-	public void adicionar(Prova t) throws Exception {	
+	
+	public void adicionar(Resposta resposta) {
+		sql = "INSERT INTO resposta_questao (id_tentativa, id_questao, resposta) VALUES(?,?,?)";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, resposta.getTentativa().getId());
+			p.setInt(2, resposta.getQuestao().getId());
+			p.setString(3, String.valueOf(resposta.getResposta()));
+			rs = p.executeQuery();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
+		}
 	}
 
-	public void atualizar(Prova t) throws Exception {
+	public void atualizar(Resposta t) throws Exception {
 	}
 
-	public void excluir(Prova t) throws Exception {
+	public void excluir(Resposta t) throws Exception {
 	}
 
-	public List<Prova> getTodos() {
+	public List<Resposta> getTodos() {
 		return null;
 	}
 	
@@ -62,10 +72,7 @@ public class RespostaDAO implements DAO<Prova> {
 	}
 	
 
-	public Prova get(int id) {
+	public Resposta get(int id) {
 		return null;
 	}
-	
-	
-
 }

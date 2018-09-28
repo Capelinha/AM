@@ -31,6 +31,11 @@ public class Questao {
 	}
 
 	
+	public Questao(int id) {
+		this.id = id;
+	}
+
+
 	public Prova getProva() {
 		return prova;
 	}

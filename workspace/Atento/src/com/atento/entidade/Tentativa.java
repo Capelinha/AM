@@ -26,7 +26,11 @@ public class Tentativa {
 		resposta = new ArrayList<Resposta>();	
 	}
 	
-	
+	public Tentativa(int id) {
+		this.id = id;
+	}
+
+
 
 	public int getId() {
 		return id;

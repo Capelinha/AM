@@ -14,6 +14,10 @@ public class Resposta {
 		this.questao = questao;
 		this.tentativa = tentativa;
 	}
+	public Resposta(char resposta, Tentativa tentativa) {
+		this.resposta = resposta;
+		this.tentativa = tentativa;
+	}
 	public char getResposta() {
 		return resposta;
 	}

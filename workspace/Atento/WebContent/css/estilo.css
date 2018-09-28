@@ -552,8 +552,9 @@
 .bloco-questao-alt p {
 	display: inline-block;
 	vertical-align: middle;
-	margin: 10px;
+	margin-left: 10px;
 	font-weight: bold;
+	max-width: 80%;
 }
 
 .questao-botao {
