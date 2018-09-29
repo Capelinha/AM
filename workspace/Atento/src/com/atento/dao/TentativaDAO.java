@@ -24,7 +24,41 @@ public class TentativaDAO implements DAO<Tentativa> {
 	}
 
 	public void adicionar(Tentativa t) {
-		
+		sql = "INSERT INTO tentativa (inicio, n_logins, status, id_candidato, id_vaga) VALUES(sysdate, 0, 1, ?,?)";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, t.getCandidato().getId());
+			p.setInt(2, t.getVaga().getId());
+			rs = p.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
+		}
+	}
+	
+	public void encerrar(Tentativa t) {
+		sql = "UPDATE tentativa SET fim = sysdate, status = 2 nota = ? WHERE id_tentativa = ? ";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(2, t.getNota());
+			p.setInt(2, t.getId());
+			p.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
+		}
+	}
+	
+	public void somarLogin(Tentativa t) {
+		sql = "UPDATE tentativa SET n_logins = n_logins + 1 WHERE id_tentativa = ? ";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, t.getId());
+			p.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
+		}
 	}
 
 	public void atualizar(Tentativa t)  {

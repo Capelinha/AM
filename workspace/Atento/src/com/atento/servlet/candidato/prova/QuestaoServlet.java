@@ -30,6 +30,7 @@ import com.atento.entidade.Tentativa;
 public class QuestaoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Cookie[] cookies = request.getCookies();
@@ -53,7 +54,8 @@ public class QuestaoServlet extends HttpServlet {
 					String resposta = (String) request.getParameter("alternativa");
 					RespostaDAO rdao = new RespostaDAO();
 					rdao.adicionar(new Resposta(resposta.charAt(0), new Questao(idQuestao), new Tentativa(id)));
-					
+					TentativaDAO tdao = new TentativaDAO();
+					tdao.somarLogin(new Tentativa(id));
 					response.sendRedirect("questao?id=" + id); 
 	
 				}catch(PersistenciaException e) {

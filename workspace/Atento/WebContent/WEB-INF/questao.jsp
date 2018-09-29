@@ -30,7 +30,7 @@
 			<input type="hidden" name="idQuestao" value="<%= q.getId()%>">
 	        <section class="bloco-questao-enun">
 	            <div class="bloco-questao-enun-num">
-	                <h3><%=request.getAttribute("nRespostas")%></h3>
+	                <h3><%=((Integer)request.getAttribute("nRespostas") + 1)%></h3>
 	            </div>
 	            <p><%=q.getTexto() %></p>
 	        </section>

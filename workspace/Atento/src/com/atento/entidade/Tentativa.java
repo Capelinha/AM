@@ -26,6 +26,18 @@ public class Tentativa {
 		resposta = new ArrayList<Resposta>();	
 	}
 	
+	
+	
+	public Tentativa(Candidato candidato, Vaga vaga) {
+		super();
+		this.inicio = inicio;
+		this.status = status;
+		this.candidato = candidato;
+		this.vaga = vaga;
+	}
+
+
+
 	public Tentativa(int id) {
 		this.id = id;
 	}

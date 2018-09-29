@@ -25,7 +25,7 @@
             <h2> <%= v.getTitulo()  %></h2>
             <h4> <%= v.getArea() %></h4>
         </section>
-        <a href="candidatar?=<%=v.getId() %>" id="cabecalho-detvaga-link">
+        <a href="candidatar?vaga=<%=v.getId() %>" id="cabecalho-detvaga-link">
             <div id="cabecalho-detvaga-botao">CANDIDATAR-SE</div>
         </a>
     </header>
