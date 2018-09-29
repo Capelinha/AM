@@ -10,7 +10,6 @@ import java.util.List;
 import com.atento.conexao.Conexao;
 import com.atento.entidade.Departamento;
 import com.atento.entidade.Endereco;
-import com.atento.entidade.Inscricao;
 import com.atento.entidade.PesoComponente;
 import com.atento.entidade.PesoTag;
 import com.atento.entidade.Tag;

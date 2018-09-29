@@ -37,10 +37,10 @@ public class TentativaDAO implements DAO<Tentativa> {
 	}
 	
 	public void encerrar(Tentativa t) {
-		sql = "UPDATE tentativa SET fim = sysdate, status = 2 nota = ? WHERE id_tentativa = ? ";
+		sql = "UPDATE tentativa SET fim = sysdate, status = 2, nota = ? WHERE id_tentativa = ?";
 		try {
 			p = conexao.prepareStatement(sql);
-			p.setInt(2, t.getNota());
+			p.setInt(1, t.getNota());
 			p.setInt(2, t.getId());
 			p.executeUpdate();
 		} catch (SQLException e) {

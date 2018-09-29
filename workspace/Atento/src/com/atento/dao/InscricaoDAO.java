@@ -6,8 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import com.atento.conexao.Conexao;
+import com.atento.entidade.Candidato;
 import com.atento.entidade.Inscricao;
-import com.atento.servlet.candidato.cadastro.EmailDuplicadoException;
+import com.atento.entidade.Vaga;
 import com.atento.servlet.candidato.painel.InscricaoDuplicadaException;
 
 public class InscricaoDAO implements DAO<Inscricao>{
@@ -21,7 +22,7 @@ public class InscricaoDAO implements DAO<Inscricao>{
 		conexao = Conexao.getConnection();
 	}
 
-	public void adicionar(Inscricao t) throws Exception {
+	public void adicionar(Inscricao t) throws InscricaoDuplicadaException  {
 		sql = "insert into inscricao(status, id_vaga, id_candidato, score) values(?,?,?,?)";
 		
 		try {
@@ -40,23 +41,57 @@ public class InscricaoDAO implements DAO<Inscricao>{
 		}
 	}
 
-	@Override
-	public void atualizar(Inscricao t) throws Exception {
+
+	public void atualizar(Inscricao t)  {
+		sql = "UPDATE inscricao SET status = ?, score = ? WHERE id_candidato = ? AND id_vaga = ?";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, t.getStatus());
+			p.setInt(2, t.getScore());
+			p.setInt(3, t.getCandidato().getId());
+			p.setInt(4, t.getVaga().getId());
+			p.execute();
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
+		}
 	}
 
-	@Override
-	public void excluir(Inscricao t) throws Exception {
+
+	public void excluir(Inscricao t)  {
 		
 	}
 
-	@Override
+
 	public List<Inscricao> getTodos() {
 		return null;
 	}
 
-	@Override
+
 	public Inscricao get(int id) {
 		return null;
+	}
+	
+	public Inscricao get(int idVaga, int idCandidato) {
+		sql = "SELECT status, score FROM inscricao WHERE id_vaga = ? AND id_candidato = ?";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, idVaga);
+			p.setInt(2, idCandidato);
+			rs = p.executeQuery();
+			if (rs.next()) {
+				
+				Inscricao inscricao = new Inscricao(rs.getInt("status"), rs.getInt("score"), new Vaga(idVaga), new Candidato(idCandidato));
+				return inscricao;
+			}else {
+				throw new PersistenciaException("Não foi encontrada uma inscricao com o id informado");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
+		}
 	}
 	
 }

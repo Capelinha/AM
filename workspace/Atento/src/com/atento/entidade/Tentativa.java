@@ -30,8 +30,6 @@ public class Tentativa {
 	
 	public Tentativa(Candidato candidato, Vaga vaga) {
 		super();
-		this.inicio = inicio;
-		this.status = status;
 		this.candidato = candidato;
 		this.vaga = vaga;
 	}

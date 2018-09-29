@@ -31,6 +31,7 @@ public class QuestaoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	
+	@SuppressWarnings("unused")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Cookie[] cookies = request.getCookies();
@@ -76,6 +77,7 @@ public class QuestaoServlet extends HttpServlet {
 		
 	}
 
+	@SuppressWarnings("unused")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Cookie[] cookies = request.getCookies();
@@ -154,9 +156,7 @@ public class QuestaoServlet extends HttpServlet {
 					}
 					
 					if(acabouProva) {
-						RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/mensagem.jsp");
-						Mensagem m = new Mensagem("Prova finalizada", "Parabens, você terminou a prova.", "PROVAS", "provas");
-						request.setAttribute("mensagem", m);
+						RequestDispatcher dispatcher = request.getRequestDispatcher("finalizar-prova");
 						dispatcher.forward(request, response);
 					}else {
 						RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/questao.jsp");
@@ -165,6 +165,7 @@ public class QuestaoServlet extends HttpServlet {
 					
 					
 				}catch(PersistenciaException e) {
+					e.printStackTrace();
 					RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/mensagem.jsp");
 					Mensagem m = new Mensagem("Erro de carregamento", "Ocorreu um erro ao tentar carregar a prova, tente novamente mais tarde", "VOLTAR", "javascript:history.back()");
 					request.setAttribute("mensagem", m);

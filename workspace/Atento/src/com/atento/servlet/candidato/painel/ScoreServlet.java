@@ -1,7 +1,6 @@
 package com.atento.servlet.candidato.painel;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -29,6 +28,7 @@ import com.atento.entidade.Vaga;
 public class ScoreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@SuppressWarnings("unused")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Cookie[] cookies = request.getCookies();

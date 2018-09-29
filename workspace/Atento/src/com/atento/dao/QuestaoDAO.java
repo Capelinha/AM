@@ -7,10 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import com.atento.conexao.Conexao;
-import com.atento.entidade.DadosProva;
 import com.atento.entidade.Prova;
 import com.atento.entidade.Questao;
-import com.atento.entidade.Vaga;
 
 public class QuestaoDAO implements DAO<Prova> {
 	

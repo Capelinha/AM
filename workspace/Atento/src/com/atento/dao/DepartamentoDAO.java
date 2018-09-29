@@ -18,7 +18,7 @@ public class DepartamentoDAO implements DAO<Departamento> {
 	ResultSet rs;
 	
 	public DepartamentoDAO(){
-		conexao = new Conexao().getConnection();
+		conexao = Conexao.getConnection();
 	}
 	
 	@Override
