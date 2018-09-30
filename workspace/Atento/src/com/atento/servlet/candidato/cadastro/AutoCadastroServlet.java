@@ -47,7 +47,7 @@ public class AutoCadastroServlet extends HttpServlet {
 		String celular = request.getParameter("celular");
 		String senha = request.getParameter("senha");
 		Candidato candidato = new Candidato(nome, sobrenome, email, telefone, celular, senha);
-		candidato.setStatus(1);		
+		candidato.setStatus(2);		
 		candidato.setLinkVerificacao(gerarMD5(nome, email, senha));
 				
 		CandidatoDAO dao = new CandidatoDAO();
