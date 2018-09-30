@@ -40,7 +40,7 @@ public class ArquivosServlet extends HttpServlet {
 				try {
 					CandidatoDAO cdao = new CandidatoDAO();
 					Candidato ca = cdao.get(Integer.parseInt(idCandidato));
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastro-3.jsp");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/cadastro-3.jsp");
 					request.setAttribute("candidato", ca);
 					dispatcher.forward(request, response);
 				}catch(Exception e) {

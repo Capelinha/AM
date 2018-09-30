@@ -103,7 +103,7 @@ public class AtualizacaoCandServlet extends HttpServlet {
 					dao.atualizar(candidato);
 					
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/mensagem.jsp");
-					Mensagem mensagem = new Mensagem("Atualização realizada com sucesso", "Seu cadastro foi atualizado com sucesso.", "PERFIL", "perfil");
+					Mensagem mensagem = new Mensagem("Atualização realizada com sucesso", "Seu cadastro foi atualizado com sucesso.", "ARQUIVOS", "arquivos");
 					request.setAttribute("mensagem", mensagem);
 					dispatcher.forward(request, response);
 					
