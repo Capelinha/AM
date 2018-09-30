@@ -12,17 +12,17 @@
             <h3>Arquivo</h3>
         </header>
         <!--Provas-->
-        <form name="arquivo" id="form-arquivo">
+        <form name="arquivo" id="form-arquivo" method="post" action="arquivos" enctype="multipart/form-data">
             <figure>
                 <i class="fas fa-file-word" id="form-arquivo-figuras-outros"></i>
                 <i class="fas fa-file-pdf" id="form-arquivo-figuras-pdf"></i>
                 <i class="fas fa-file-archive" id="form-arquivo-figuras-outros"></i>
             </figure>
-            <p>Arraste seu curriculo, carta de apresentação ou qualquer outro arquivo para cá para realizar o upload. </p>
+            <p>Selecione seu curriculo, carta de apresentação ou qualquer outro arquivo para para realizar o upload. </p>
             <input type="file" id="form-arquivo-input" name="arquivo" value="" placeholder="" required>
             <h4> Qualquer arquivo PDF ou WORD <br>No maximo 5MB </h4>
             <fieldset id="form-acoes">
-                <input type="submit" class="form-botao" onclick="window.location.href='perfil.jsp'" value="ENVIAR" name="btn-enviar">
+                <input type="submit" class="form-botao" value="ENVIAR" name="btn-enviar">
             </fieldset>
         </form>
 
