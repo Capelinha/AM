@@ -116,6 +116,21 @@ public class CandidatoDAO implements DAO<Candidato>{
 				p.setInt(2, c.getId());
 				p.execute();
 			}
+			
+			sql = "insert into arquivo (arquivo, nome, extensao, id_candidato) values(?,?,?,?)";
+			p = conexao.prepareStatement(sql);
+			
+			for (Arquivo a : c.getArquivo()) {
+				if(a.getId() == 0) {
+					
+					p.setString(1, a.getArquivo());
+					p.setString(2, a.getNome());
+					p.setString(3, a.getExtensao());
+					p.setInt(4, c.getId());
+					p.execute();
+				}
+				
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new PersistenciaException(e.getMessage(), e);
@@ -213,7 +228,7 @@ public class CandidatoDAO implements DAO<Candidato>{
 				return c;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			new PersistenciaException(e.getMessage(), e);
 			e.printStackTrace();
 		}
 		return null;
@@ -230,10 +245,22 @@ public class CandidatoDAO implements DAO<Candidato>{
 				tags.add(new Tag(rs.getInt(1), rs.getString(2)));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			new PersistenciaException(e.getMessage(), e);
 			e.printStackTrace();
 		}
 		return tags;
+	}
+
+	public void excluirArquivo(int id) {
+		sql = "delete from arquivo where id_arquivo = ?";
+		try {
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, id);
+			p.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
+		}	
 	}
 
 

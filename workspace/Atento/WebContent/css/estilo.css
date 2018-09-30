@@ -443,14 +443,17 @@
 
 .bloco-perfil-arquivo {
 	text-align: center;
-	margin: 5px;
+	margin: 10px;
 	padding: 10px;
 	border: 2px solid #ff7900;
+	max-width: 150px;
+	min-width: 130px;
 }
 
 .bloco-perfil-arquivo p {
 	margin-top: 10px;
 	text-wrap: word-spacing;
+	word-break: break-all;
 }
 
 .bloco-perfil-arquivo i {
@@ -803,6 +806,25 @@
 }
 
 /* cadastro-3.html */
+
+.bloco-perfil-arquivo{
+	position: relative;
+}
+
+.botao-x{
+	position: absolute;
+	left: -16px;
+	top: -16px;
+	border-radius: 100%;
+	
+}
+
+
+.botao-x i{
+	font-size:32px;	
+	background-color: #FFF;
+}
+
 .bloco-form-arquivo {
 	width: 100%;
 	border: 2px dashed #FF7900;

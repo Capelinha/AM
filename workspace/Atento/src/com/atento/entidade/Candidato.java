@@ -34,6 +34,7 @@ public class Candidato extends Pessoa {
 		this.senha = senha;
 		this.telefone = telefone;
 		this.celular = celular;
+		this.arquivo = new ArrayList<Arquivo>();
 		this.tag = new ArrayList<Tag>();
 		this.idSessao = gerarMD5();
 	}
@@ -98,6 +99,7 @@ public class Candidato extends Pessoa {
 		this.twitter = twitter;
 		this.linkedin = linkedin;
 		this.tag = new ArrayList<Tag>();
+		this.arquivo = new ArrayList<Arquivo>();
 	}
 	
 	public String getTelefone() {

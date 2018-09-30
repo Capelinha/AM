@@ -17,6 +17,17 @@ public class Arquivo {
 		this.extensao = extensao;
 	}
 	
+	
+	
+	public Arquivo(String arquivo, String nome, String extensao) {
+		super();
+		this.arquivo = arquivo;
+		this.nome = nome;
+		this.extensao = extensao;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

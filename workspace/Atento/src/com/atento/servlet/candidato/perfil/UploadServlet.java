@@ -20,10 +20,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import com.atento.dao.CandidatoDAO;
+import com.atento.entidade.Arquivo;
+import com.atento.entidade.Candidato;
 import com.atento.entidade.Mensagem;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
-@WebServlet("/arquivos")
+@WebServlet("/upload")
 public class UploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -50,15 +53,6 @@ public class UploadServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Cookie[] cookies = request.getCookies();
 		request.setCharacterEncoding("UTF-8");
-		
-		
-		for (Part part : request.getParts()) {
-			if(part.getContentType() != null) {
-				String nome = getFileName(part);
-				String ext = nome.split("\\.")[nome.split("\\.").length-1];
-				part.write("E:/uploads" + File.separator + gerarMD5(getFileName(part)) + "." + ext);
-			}
-		}
 
 		if (cookies != null) {
 			HashMap<String, String> cookiesH = new HashMap<String, String>();
@@ -73,15 +67,24 @@ public class UploadServlet extends HttpServlet {
 			String idSessao;
 
 			if ((idCandidato = cookiesH.get("idCandidato")) != null && (idSessao = cookiesH.get("idSessao")) != null) {
-				//CandidatoDAO cdao = new CandidatoDAO();
-				//Candidato ca = cdao.get(Integer.parseInt(idCandidato));
-				
 				try {			
 
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/mensagem.jsp");
-					Mensagem mensagem = new Mensagem("Atualização realizada com sucesso", "Seus arquivos foram atualizados com sucesso.", "PERFIL", "perfil");
-					request.setAttribute("mensagem", mensagem);
-					dispatcher.forward(request, response);
+					CandidatoDAO cdao = new CandidatoDAO();
+					Candidato ca = cdao.get(Integer.parseInt(idCandidato));
+					
+					for (Part part : request.getParts()) {
+						if(part.getContentType() != null) {
+							String nome = getFileName(part);
+							String md5 = gerarMD5(getFileName(part));
+							String ext = nome.split("\\.")[nome.split("\\.").length-1];
+							part.write("E:/uploads" + File.separator + md5 + "." + ext);
+							ca.addArquivo(new Arquivo(md5, nome.replaceAll(ext, ""), ext));	
+						}
+					}
+					
+					cdao.atualizar(ca);
+
+					response.sendRedirect ( "arquivos" );  
 					
 				} catch(Exception e) {
 					e.printStackTrace();
@@ -108,29 +111,6 @@ public class UploadServlet extends HttpServlet {
 	        }
 	    return null;
 	}
-	
-	@SuppressWarnings("unused")
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Cookie[] cookies = request.getCookies();
-		
-		if (cookies != null) {
-			HashMap<String, String> cookiesH = new HashMap<String, String>();
-
-			for (int i = 0; i < cookies.length; i++) {
-				String name = cookies[i].getName();
-				String value = cookies[i].getValue();
-				cookiesH.put(name, value);
-			}
-
-			String idCandidato;
-			String idSessao;
-			
-			if ((idCandidato = cookiesH.get("idCandidato")) != null && (idSessao = cookiesH.get("idSessao")) != null) {
-				
-			}
-		}
-	}
-	
 	
 
 }
