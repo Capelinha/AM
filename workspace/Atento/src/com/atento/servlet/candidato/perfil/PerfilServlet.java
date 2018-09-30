@@ -1,6 +1,7 @@
 package com.atento.servlet.candidato.perfil;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -12,14 +13,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.atento.dao.CandidatoDAO;
+import com.atento.dao.InscricaoDAO;
 import com.atento.dao.PersistenciaException;
+import com.atento.dao.TentativaDAO;
+import com.atento.dao.VagaDAO;
 import com.atento.entidade.Candidato;
+import com.atento.entidade.Inscricao;
 import com.atento.entidade.Mensagem;
+import com.atento.entidade.Tentativa;
 
 @WebServlet("/perfil")
 public class PerfilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@SuppressWarnings("unused")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -42,6 +49,19 @@ public class PerfilServlet extends HttpServlet {
 					CandidatoDAO dao = new CandidatoDAO();
 	
 					Candidato c = dao.get(Integer.parseInt(idCandidato));
+					TentativaDAO tDao = new TentativaDAO();
+					InscricaoDAO iDao = new InscricaoDAO();
+					VagaDAO vDao = new VagaDAO();
+					ArrayList<Inscricao> ai = (ArrayList<Inscricao>) iDao.getParaCandidato(Integer.parseInt(idCandidato));
+					for(Inscricao i : ai) {
+						vDao.get(i);
+					}
+					ArrayList <Tentativa> at = (ArrayList<Tentativa>) tDao.getParaCandidato(Integer.parseInt(idCandidato));
+					for(Tentativa t : at) {
+						vDao.get(t);
+					}
+					request.setAttribute("inscricao", ai);
+					request.setAttribute("tentativas", at);
 					request.setAttribute("candidato", c);
 					RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/perfil.jsp");
 	

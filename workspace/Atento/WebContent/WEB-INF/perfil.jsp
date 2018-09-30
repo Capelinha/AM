@@ -17,8 +17,10 @@
         <i class="far fa-newspaper" id="titulo-pagina-icone"></i>
         <h2>Perfil</h2>
     </header>
-	<%if (request.getAttribute("candidato") != null) { 
+	<%if (request.getAttribute("candidato") != null && request.getAttribute("tentativas") != null && request.getAttribute("inscricao") != null) { 
 		Candidato c = (Candidato) request.getAttribute("candidato");
+		ArrayList<Tentativa> at = (ArrayList<Tentativa>) request.getAttribute("tentativas");
+		ArrayList<Inscricao> ai = (ArrayList<Inscricao>) request.getAttribute("inscricao");
 	%>
     <!--Pessoal-->
 
@@ -184,20 +186,49 @@
         <!-- Texto do bloco -->
         <table id="perfil-tabela">
             <tr>
-                <th>#</th>
+                <th># Vaga</th>
                 <th>Título</th>
-                <th>Data</th>
+                <th> Data </th>
                 <th>Status</th>
                 <th>Meu status</th>
             </tr>
 
-            <tr>
-                <td>1</td>
-                <td>Analista de RH</td>
-                <td>01/09</td>
-                <td>Fechada</td>
-                <td>Aprovado</td>
-            </tr>
+            <%sdf = new SimpleDateFormat("dd/MM");
+              for(Inscricao t : ai){
+            	
+            	String status = "";
+            	switch(t.getStatus()){
+	            	case 1:
+	        			status = "Canculando score";
+	        		break;
+            		case 2:
+            			status = "Realizando prova";
+            		break;
+            		case 3:
+            			status = "Seleção manual";
+            		break;
+            		case 4:
+            			status = "Marcar entrevista";
+            		break;
+            		case 5:
+            			status = "Entrevista marcada";
+            		break;
+            		case 6:
+            			status = "Aprovado";
+            		break;
+            		case 7:
+            			status = "Reprovado";
+            		break;
+            	}
+            	
+				out.print("<tr>" +
+			            	"<td>" + t.getVaga().getId() + "</td>" +
+			                "<td>" + t.getVaga().getTitulo() + "</td>" +
+			                "<td>" + sdf.format(t.getVaga().getDataAbertura()) +"</td>" +
+			                "<td>" + ((t.getStatus() == 1) ? "Preenchida" : ((t.getStatus() == 2) ? "Ativa" : "Suspensa")) + "</td>" +
+			                "<td>" + status + "</td>" +
+			              "</tr>");
+						}%>
         </table>
         <!--Cantos com cruz-->
         <div class="bloco-cruz bloco-cruz-es bloco-cruz-v"> </div>
@@ -222,13 +253,14 @@
                 <th>Data</th>
                 <th>Nota</th>
             </tr>
-
-            <tr>
-            	<td>1</td>
-                <td>Analista de RH</td>
-                <td>01/09</td>
-                <td>10</td>
-            </tr>
+			<%for(Tentativa t : at){
+				out.print("<tr>" +
+			            	"<td>" + t.getVaga().getId() + "</td>" +
+			                "<td>" + t.getVaga().getTitulo() + "</td>" +
+			                "<td>" + sdf.format(t.getInicio()) +"</td>" +
+			                "<td>" + ((t.getStatus() == 2) ? t.getNota() : " - ") + "</td>" +
+			              "</tr>");
+						}%>
         </table>
         <!--Cantos com cruz-->
         <div class="bloco-cruz bloco-cruz-es bloco-cruz-v"> </div>

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import com.atento.conexao.Conexao;
 import com.atento.entidade.Candidato;
@@ -41,7 +42,6 @@ public class InscricaoDAO implements DAO<Inscricao>{
 		}
 	}
 
-
 	public void atualizar(Inscricao t)  {
 		sql = "UPDATE inscricao SET status = ?, score = ? WHERE id_candidato = ? AND id_vaga = ?";
 		try {
@@ -59,19 +59,35 @@ public class InscricaoDAO implements DAO<Inscricao>{
 		}
 	}
 
-
 	public void excluir(Inscricao t)  {
 		
 	}
-
 
 	public List<Inscricao> getTodos() {
 		return null;
 	}
 
-
 	public Inscricao get(int id) {
 		return null;
+	}
+	
+	public List<Inscricao> getParaCandidato(int id) {
+		sql = "SELECT status, score, id_vaga FROM inscricao WHERE id_candidato = ?";
+		try {
+			List<Inscricao> li = new ArrayList<>();
+			p = conexao.prepareStatement(sql);
+			p.setInt(1, id);
+			rs = p.executeQuery();
+			while (rs.next()) {
+				Inscricao inscricao = new Inscricao(rs.getInt("status"), rs.getInt("score"), new Vaga(rs.getInt("id_vaga")), new Candidato(id));
+				li.add(inscricao);
+			}
+			
+			return li;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
+		}
 	}
 	
 	public Inscricao get(int idVaga, int idCandidato) {

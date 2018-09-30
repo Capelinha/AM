@@ -10,6 +10,7 @@ import java.util.List;
 import com.atento.conexao.Conexao;
 import com.atento.entidade.Departamento;
 import com.atento.entidade.Endereco;
+import com.atento.entidade.Inscricao;
 import com.atento.entidade.PesoComponente;
 import com.atento.entidade.PesoTag;
 import com.atento.entidade.Tag;
@@ -93,6 +94,10 @@ public class VagaDAO implements DAO<Vaga>{
 			e.printStackTrace();
 			throw new PersistenciaException(e.getMessage(), e);
 		}
+	}
+	
+	public void get(Inscricao i) {
+		i.setVaga(get(i.getVaga().getId()));
 	}
 	
 	public void get(Tentativa i) {
