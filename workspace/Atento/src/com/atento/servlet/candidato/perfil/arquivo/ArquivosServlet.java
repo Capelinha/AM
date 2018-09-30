@@ -1,4 +1,4 @@
-package com.atento.servlet.candidato.perfil;
+package com.atento.servlet.candidato.perfil.arquivo;
 
 import java.io.IOException;
 import java.util.HashMap;

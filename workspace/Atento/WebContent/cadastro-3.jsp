@@ -68,7 +68,7 @@
             <input type="file" id="form-arquivo-input" name="arquivo" value="" placeholder="" required>
             <h4> Qualquer arquivo PDF ou WORD <br>No maximo 5MB </h4>
             <fieldset id="form-acoes">
-                <input type="submit" class="form-botao" value="ENVIAR" name="btn-enviar">
+                <input type="submit" id="botao-upload" class="form-botao hidden" value="ENVIAR" name="btn-enviar">
             </fieldset>
         </form>
 
@@ -83,4 +83,12 @@
         <div class="bloco-cruz bloco-cruz-di"> </div>
     </section>
 </main>
+<script>
+	$("document").ready(function(){
+	
+	    $("#form-arquivo-input").change(function() {
+	        $('#botao-upload').removeClass("hidden");
+	    });
+	});
+</script>
 <%@ include file="atento-footer.jsp" %>

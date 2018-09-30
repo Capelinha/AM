@@ -1,4 +1,4 @@
-package com.atento.servlet.candidato.perfil;
+package com.atento.servlet.candidato.perfil.arquivo;
 
 import java.io.File;
 import java.io.IOException;
@@ -75,10 +75,19 @@ public class UploadServlet extends HttpServlet {
 					for (Part part : request.getParts()) {
 						if(part.getContentType() != null) {
 							String nome = getFileName(part);
-							String md5 = gerarMD5(getFileName(part));
 							String ext = nome.split("\\.")[nome.split("\\.").length-1];
-							part.write("E:/uploads" + File.separator + md5 + "." + ext);
-							ca.addArquivo(new Arquivo(md5, nome.replaceAll(ext, ""), ext));	
+							if(part.getSize() < 5000000L) {
+								if(ext.contains("docx") || ext.contains("pdf")){
+									String md5 = gerarMD5(getFileName(part));
+									
+									part.write("E:/uploads" + File.separator + md5 + "." + ext);
+									ca.addArquivo(new Arquivo(md5, nome.replaceAll(ext, ""), ext));
+								}else {
+									throw new ArquivoInvalidoException("Arquivo com formato inválido.");
+								}
+							}else {
+								throw new ArquivoInvalidoException("Arquivo maior que 5MB.");
+							}
 						}
 					}
 					
@@ -86,7 +95,14 @@ public class UploadServlet extends HttpServlet {
 
 					response.sendRedirect ( "arquivos" );  
 					
-				} catch(Exception e) {
+				} catch(ArquivoInvalidoException e) {
+					e.printStackTrace();
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/mensagem.jsp");
+					Mensagem mensagem = new Mensagem("Arquivo inválido", "Infelizmente seu arquivo é maior que <b>5MB</b> ou não contem a extensão <b>.docx .pdf</b>.", "VOLTAR", "javascript:history.back()");
+					request.setAttribute("mensagem", mensagem);
+					dispatcher.forward(request, response);
+				
+				}catch(Exception e) {
 					e.printStackTrace();
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/mensagem.jsp");
 					Mensagem mensagem = new Mensagem("Houve um problema ao atualizar seus arquivos", "Infelizmente não conseguimos concluir sua atualização.<b> Já estamos trabalhando para resolver esse problema.</b> Agradecemos a sua compreensão.", "VOLTAR", "javascript:history.back()");
