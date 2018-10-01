@@ -94,7 +94,7 @@ public class ScoreServlet extends HttpServlet {
 						new TentativaDAO().adicionar(t);
 						RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/mensagem.jsp");
 						Mensagem m = new Mensagem("Sucesso",
-								"Parabens, você se candidatou a essa vaga. Existem provas pendentes.", "PROVAS",
+								"Parabens, vocÃª se candidatou a essa vaga. Existem provas pendentes.", "PROVAS",
 								"provas");
 						request.setAttribute("mensagem", m);
 
@@ -102,7 +102,7 @@ public class ScoreServlet extends HttpServlet {
 
 					} else {
 						RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/mensagem.jsp");
-						Mensagem m = new Mensagem("Não compativel", "Desculpe mas você não compativel para essa vaga",
+						Mensagem m = new Mensagem("NÃ£o compativel", "Desculpe mas vocÃª nÃ£o Ã© compativel para essa vaga",
 								"VOLTAR", "javascript:history.back()");
 						request.setAttribute("mensagem", m);
 
@@ -112,7 +112,7 @@ public class ScoreServlet extends HttpServlet {
 				}catch (InscricaoDuplicadaException e) {
 					e.printStackTrace();
 					RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/mensagem.jsp");
-					Mensagem m = new Mensagem("Inscrição duplicada", "Atenção, você já está inscrito para essa vaga.", "VOLTAR", "javascript:history.back()");
+					Mensagem m = new Mensagem("InscriÃ§Ã£o duplicada", "AtenÃ§Ã£o, vocÃª jÃ¡ estÃ¡ inscrito para essa vaga.", "VOLTAR", "javascript:history.back()");
 					request.setAttribute("mensagem", m);
 
 					dispatcher.forward(request, response);
@@ -129,7 +129,7 @@ public class ScoreServlet extends HttpServlet {
 			}
 		} else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/mensagem.jsp");
-			Mensagem m = new Mensagem("Não logado", "Você não está logado para se candidatar", "LOGAR", "login.jsp");
+			Mensagem m = new Mensagem("NÃ£o logado", "VocÃª nÃ£o estÃ¡ logado para se candidatar", "LOGAR", "login.jsp");
 			request.setAttribute("mensagem", m);
 
 			dispatcher.forward(request, response);
