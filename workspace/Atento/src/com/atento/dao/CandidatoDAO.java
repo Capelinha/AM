@@ -176,6 +176,23 @@ public class CandidatoDAO implements DAO<Candidato>{
 		return null;
 	}
 	
+	public Arquivo getArquivo(int id) {
+		try {
+			 sql = "SELECT id_arquivo, arquivo, nome, extensao FROM arquivo WHERE id_arquivo = ?";
+			 p = conexao.prepareStatement(sql); 
+			 p.setInt(1, id);
+			 rs = p.executeQuery();
+			 if(rs.next()) {
+				 return new Arquivo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
+			 }
+			 rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new PersistenciaException(e.getMessage(), e);
+		}
+		return null;
+	}
+	
 	public Candidato get(int id) throws PersistenciaException{
 
 		sql = "SELECT id_candidato, nome, sobrenome, email, senha, telefone, celular, anos_exp, cargo_atual, pret_salarial, youtube, notas, status, link_verificacao, data_nasc, facebook, n_amigos, fb_frequencia, twitter, n_seguidores, tw_frequencia, linkedin, n_conexoes, ld_frequencia, endereco, cidade, estado, pais, cep FROM candidato WHERE id_candidato = ?";

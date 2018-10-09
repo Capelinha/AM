@@ -79,9 +79,10 @@ public class UploadServlet extends HttpServlet {
 							if(part.getSize() < 5000000L) {
 								if(ext.contains("docx") || ext.contains("pdf")){
 									String md5 = gerarMD5(getFileName(part));
-									
-									part.write("E:/uploads" + File.separator + md5 + "." + ext);
-									ca.addArquivo(new Arquivo(md5, nome.replaceAll(ext, ""), ext));
+									String path = getServletContext().getRealPath("/uploads");
+									part.write(path + File.separator + md5 + "." + ext); 
+									String pathFile = "uploads/" + md5 + "." + ext;
+									ca.addArquivo(new Arquivo(pathFile, nome.replaceAll(ext, ""), ext));
 								}else {
 									throw new ArquivoInvalidoException("Arquivo com formato inválido.");
 								}

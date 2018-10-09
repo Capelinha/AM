@@ -70,7 +70,7 @@ public class ScoreServlet extends HttpServlet {
 					if (score >= (maxScore * 0.5)) {
 						Candidato c = cDAO.get(idCandidato);
 						
-						if (c.getFacebook() != null) {
+						if (c.getFacebook() != null) { 
 							score += v.getPesoComponente().getFacebook();
 							scoreAmigos = c.getFacebook().getNumAmigos() / 50;
 							scoreAmigos = scoreAmigos * v.getPesoComponente().getnAmigos();

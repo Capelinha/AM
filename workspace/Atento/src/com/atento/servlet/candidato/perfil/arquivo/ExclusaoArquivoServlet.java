@@ -1,5 +1,6 @@
 package com.atento.servlet.candidato.perfil.arquivo;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.atento.dao.CandidatoDAO;
+import com.atento.entidade.Arquivo;
 import com.atento.entidade.Candidato;
 import com.atento.entidade.Mensagem;
 
@@ -42,7 +44,10 @@ public class ExclusaoArquivoServlet extends HttpServlet {
 				try {
 					int id = Integer.parseInt(request.getParameter("id"));
 					CandidatoDAO cdao = new CandidatoDAO();
+					Arquivo c = cdao.getArquivo(id);
 					cdao.excluirArquivo(id);
+					File file = new File(c.getArquivo());
+				    boolean fileDelete = file.delete();
 					Candidato ca = cdao.get(Integer.parseInt(idCandidato));
 					response.sendRedirect ( "arquivos" ); 
 				}catch(Exception e) {

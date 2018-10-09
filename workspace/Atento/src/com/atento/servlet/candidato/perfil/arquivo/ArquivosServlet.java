@@ -18,7 +18,7 @@ import com.atento.entidade.Mensagem;
 @WebServlet("/arquivos")
 public class ArquivosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+ 
 		
 	@SuppressWarnings("unused")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
