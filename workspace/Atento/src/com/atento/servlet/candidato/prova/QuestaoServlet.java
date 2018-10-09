@@ -56,6 +56,7 @@ public class QuestaoServlet extends HttpServlet {
 					RespostaDAO rdao = new RespostaDAO();
 					rdao.adicionar(new Resposta(resposta.charAt(0), new Questao(idQuestao), new Tentativa(id)));
 					TentativaDAO tdao = new TentativaDAO();
+					tdao.somarLogin(new Tentativa(id));
 					response.sendRedirect("questao?id=" + id); 
 	
 				}catch(PersistenciaException e) {
@@ -127,8 +128,6 @@ public class QuestaoServlet extends HttpServlet {
 					int nQuestoes = 0;
 					
 					boolean acabouProva = true;
-
-					tdao.somarLogin(tentativa);
 					
 					for(DadosProva dp : tentativa.getVaga().getDadosProva()) {
 						nQuestoes += dp.getnQuestoes();
