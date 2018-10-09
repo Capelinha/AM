@@ -8,8 +8,8 @@ public class Conexao {
 	private static Connection connection;
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl";
-    private static final String USUARIO = "rm77807";
-    private static final String SENHA = "L@reno1501";
+    private static final String USUARIO = "";
+    private static final String SENHA = "";
 
     public Conexao() {}
 
